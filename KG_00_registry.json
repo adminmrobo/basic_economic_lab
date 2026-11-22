@@ -1,0 +1,1110 @@
+{
+ "version": "1.0",
+ "date": "2026-11-23",
+ "ids": {
+  "lab:concept/scarcity": {
+   "ko": "희소성",
+   "en": "scarcity",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/opportunity-cost": {
+   "ko": "기회비용",
+   "en": "opportunity cost",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/marginal-thinking": {
+   "ko": "한계적 판단",
+   "en": "thinking at the margin",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/01-duel-fly": {
+   "ko": "모델 유지(연 3,600만 원)",
+   "en": "duel choice A 01",
+   "page": "01_ten_principles",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/01-duel-robo": {
+   "ko": "쇼핑몰 창업(1억3천 − 1억)",
+   "en": "duel choice B 01",
+   "page": "01_ten_principles",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/economic-good": {
+   "ko": "경제재",
+   "en": "economic good",
+   "page": "01_ten_principles",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/free-good": {
+   "ko": "무료재",
+   "en": "free good",
+   "page": "01_ten_principles",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/transfer-income": {
+   "ko": "이전소득",
+   "en": "transfer income",
+   "page": "01_ten_principles",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/explicit-cost": {
+   "ko": "명시적 비용",
+   "en": "explicit cost",
+   "page": "01_ten_principles",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/implicit-cost": {
+   "ko": "암묵적 비용",
+   "en": "implicit cost",
+   "page": "01_ten_principles",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/sunk-cost": {
+   "ko": "매몰비용",
+   "en": "sunk cost",
+   "page": "01_ten_principles",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/economic-profit": {
+   "ko": "경제적 이윤",
+   "en": "economic profit",
+   "page": "01_ten_principles",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/marginal-benefit": {
+   "ko": "한계편익",
+   "en": "marginal benefit",
+   "page": "01_ten_principles",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/marginal-cost": {
+   "ko": "한계비용",
+   "en": "marginal cost",
+   "page": "01_ten_principles",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/incentive": {
+   "ko": "유인",
+   "en": "incentive",
+   "page": "01_ten_principles",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/economic-model": {
+   "ko": "경제모형",
+   "en": "economic model",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/ppf": {
+   "ko": "생산가능곡선",
+   "en": "production possibility frontier",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/positive-normative": {
+   "ko": "실증경제학과 규범경제학",
+   "en": "positive vs normative economics",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/02-duel-fly": {
+   "ko": "그 근처 곡선 기울기로 계산(≈19.6대)",
+   "en": "duel choice A 02",
+   "page": "02_think_like_economist",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/02-duel-robo": {
+   "ko": "처음 20대 때와 같다고 가정(2.0대)",
+   "en": "duel choice B 02",
+   "page": "02_think_like_economist",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/assumption": {
+   "ko": "가정",
+   "en": "assumption",
+   "page": "02_think_like_economist",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/consumption-function": {
+   "ko": "소비함수",
+   "en": "consumption function",
+   "page": "02_think_like_economist",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/mpc": {
+   "ko": "한계소비성향",
+   "en": "marginal propensity to consume",
+   "page": "02_think_like_economist",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/trade-off": {
+   "ko": "상충관계",
+   "en": "trade-off",
+   "page": "02_think_like_economist",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/increasing-opportunity-cost": {
+   "ko": "기회비용 체증",
+   "en": "increasing opportunity cost",
+   "page": "02_think_like_economist",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/economic-growth": {
+   "ko": "경제성장",
+   "en": "economic growth",
+   "page": "02_think_like_economist",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/microeconomics": {
+   "ko": "미시경제학",
+   "en": "microeconomics",
+   "page": "02_think_like_economist",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/macroeconomics": {
+   "ko": "거시경제학",
+   "en": "macroeconomics",
+   "page": "02_think_like_economist",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/positive-economics": {
+   "ko": "실증경제학",
+   "en": "positive economics",
+   "page": "02_think_like_economist",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/normative-economics": {
+   "ko": "규범경제학",
+   "en": "normative economics",
+   "page": "02_think_like_economist",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/demand": {
+   "ko": "수요",
+   "en": "demand",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/supply": {
+   "ko": "공급",
+   "en": "supply",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/market-equilibrium": {
+   "ko": "시장균형",
+   "en": "market equilibrium",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/03-duel-fly": {
+   "ko": "균형가격 2만 원",
+   "en": "duel choice A 03",
+   "page": "03_supply_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/03-duel-robo": {
+   "ko": "3만 원(팔려는 양 7장)",
+   "en": "duel choice B 03",
+   "page": "03_supply_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/quantity-demanded": {
+   "ko": "수요량",
+   "en": "quantity demanded",
+   "page": "03_supply_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/normal-good": {
+   "ko": "정상재",
+   "en": "normal good",
+   "page": "03_supply_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/inferior-good": {
+   "ko": "열등재",
+   "en": "inferior good",
+   "page": "03_supply_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/substitutes": {
+   "ko": "대체재",
+   "en": "substitutes",
+   "page": "03_supply_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/complements": {
+   "ko": "보완재",
+   "en": "complements",
+   "page": "03_supply_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/quantity-supplied": {
+   "ko": "공급량",
+   "en": "quantity supplied",
+   "page": "03_supply_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/excess-demand": {
+   "ko": "초과수요",
+   "en": "excess demand",
+   "page": "03_supply_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/excess-supply": {
+   "ko": "초과공급",
+   "en": "excess supply",
+   "page": "03_supply_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/price-elasticity": {
+   "ko": "수요의 가격탄력성",
+   "en": "price elasticity of demand",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/elasticity-revenue": {
+   "ko": "탄력성과 총수입",
+   "en": "elasticity and total revenue",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/income-cross-elasticity": {
+   "ko": "소득·교차·공급 탄력성",
+   "en": "income, cross-price and supply elasticity",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/04-duel-fly": {
+   "ko": "10% 인하(63)",
+   "en": "duel choice A 04",
+   "page": "04_elasticity",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/04-duel-robo": {
+   "ko": "10% 인상(77)",
+   "en": "duel choice B 04",
+   "page": "04_elasticity",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/elastic": {
+   "ko": "탄력적",
+   "en": "elastic",
+   "page": "04_elasticity",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/inelastic": {
+   "ko": "비탄력적",
+   "en": "inelastic",
+   "page": "04_elasticity",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/arc-elasticity": {
+   "ko": "호 탄력성",
+   "en": "arc elasticity",
+   "page": "04_elasticity",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/total-revenue": {
+   "ko": "총수입",
+   "en": "total revenue",
+   "page": "04_elasticity",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/unit-elastic": {
+   "ko": "단위탄력적",
+   "en": "unit elastic",
+   "page": "04_elasticity",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/income-elasticity": {
+   "ko": "소득탄력성",
+   "en": "income elasticity",
+   "page": "04_elasticity",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/cross-elasticity": {
+   "ko": "교차탄력성",
+   "en": "cross-price elasticity",
+   "page": "04_elasticity",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/supply-elasticity": {
+   "ko": "공급탄력성",
+   "en": "price elasticity of supply",
+   "page": "04_elasticity",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/price-ceiling": {
+   "ko": "가격상한제",
+   "en": "price ceiling",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/price-floor": {
+   "ko": "가격하한제",
+   "en": "price floor",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/tax-incidence": {
+   "ko": "조세의 귀착",
+   "en": "tax incidence",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/05-duel-fly": {
+   "ko": "규제 없음(균형 2만 원)",
+   "en": "duel choice A 05",
+   "page": "05_government_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/05-duel-robo": {
+   "ko": "상한 1만 원",
+   "en": "duel choice B 05",
+   "page": "05_government_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/rationing": {
+   "ko": "할당",
+   "en": "rationing",
+   "page": "05_government_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/black-market": {
+   "ko": "암시장",
+   "en": "black market",
+   "page": "05_government_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/minimum-wage": {
+   "ko": "최저임금",
+   "en": "minimum wage",
+   "page": "05_government_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/statutory-incidence": {
+   "ko": "법적 귀착",
+   "en": "statutory incidence",
+   "page": "05_government_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/economic-incidence": {
+   "ko": "경제적 귀착",
+   "en": "economic incidence",
+   "page": "05_government_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/tax-shifting": {
+   "ko": "조세의 전가",
+   "en": "tax shifting",
+   "page": "05_government_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/consumer-surplus": {
+   "ko": "소비자잉여",
+   "en": "consumer surplus",
+   "page": "11f_final_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/producer-surplus": {
+   "ko": "생산자잉여",
+   "en": "producer surplus",
+   "page": "11f_final_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/total-surplus": {
+   "ko": "총잉여와 효율성",
+   "en": "total surplus and efficiency",
+   "page": "11f_final_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/06-duel-fly": {
+   "ko": "균형 거래량 40",
+   "en": "duel choice A 06",
+   "page": "06_market_efficiency",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/06-duel-robo": {
+   "ko": "거래량 60",
+   "en": "duel choice B 06",
+   "page": "06_market_efficiency",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/willingness-to-pay": {
+   "ko": "지불용의",
+   "en": "willingness to pay",
+   "page": "06_market_efficiency",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/price-discrimination": {
+   "ko": "가격차별",
+   "en": "price discrimination",
+   "page": "06_market_efficiency",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/willingness-to-sell": {
+   "ko": "공급용의",
+   "en": "willingness to sell",
+   "page": "06_market_efficiency",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/efficiency": {
+   "ko": "효율성",
+   "en": "efficiency",
+   "page": "06_market_efficiency",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/equity": {
+   "ko": "형평성",
+   "en": "equity",
+   "page": "06_market_efficiency",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/market-failure": {
+   "ko": "시장실패",
+   "en": "market failure",
+   "page": "06_market_efficiency",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/deadweight-loss": {
+   "ko": "사중손실",
+   "en": "deadweight loss",
+   "page": "11f_final_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/elasticity-dwl": {
+   "ko": "탄력성과 사중손실",
+   "en": "elasticity and deadweight loss",
+   "page": "11f_final_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/laffer-curve": {
+   "ko": "래퍼 곡선",
+   "en": "Laffer curve",
+   "page": "11f_final_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/07-duel-fly": {
+   "ko": "세금 20",
+   "en": "duel choice A 07",
+   "page": "07_cost_of_taxation",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/07-duel-robo": {
+   "ko": "세금 40",
+   "en": "duel choice B 07",
+   "page": "07_cost_of_taxation",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/tax-revenue": {
+   "ko": "세수",
+   "en": "tax revenue",
+   "page": "07_cost_of_taxation",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/tax-wedge": {
+   "ko": "쐐기",
+   "en": "tax wedge",
+   "page": "07_cost_of_taxation",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/perfect-competition": {
+   "ko": "완전경쟁시장",
+   "en": "perfect competition",
+   "page": "11f_final_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/monopoly": {
+   "ko": "독점",
+   "en": "monopoly",
+   "page": "11f_final_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/oligopoly": {
+   "ko": "과점과 용의자의 딜레마",
+   "en": "oligopoly and prisoners' dilemma",
+   "page": "11f_final_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/08-duel-fly": {
+   "ko": "약속 지키기(30)",
+   "en": "duel choice A 08",
+   "page": "08_market_structure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/08-duel-robo": {
+   "ko": "몰래 늘리기(40)",
+   "en": "duel choice B 08",
+   "page": "08_market_structure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/price-taker": {
+   "ko": "가격수용자",
+   "en": "price taker",
+   "page": "08_market_structure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/market-structure": {
+   "ko": "시장구조",
+   "en": "market structure",
+   "page": "08_market_structure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/marginal-revenue": {
+   "ko": "한계수입",
+   "en": "marginal revenue",
+   "page": "08_market_structure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/natural-monopoly": {
+   "ko": "자연독점",
+   "en": "natural monopoly",
+   "page": "08_market_structure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/collusion": {
+   "ko": "담합",
+   "en": "collusion, cartel",
+   "page": "08_market_structure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/prisoners-dilemma": {
+   "ko": "용의자의 딜레마",
+   "en": "prisoners' dilemma",
+   "page": "08_market_structure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/dominant-strategy": {
+   "ko": "우월전략",
+   "en": "dominant strategy",
+   "page": "08_market_structure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/monopolistic-competition": {
+   "ko": "독점적 경쟁",
+   "en": "monopolistic competition",
+   "page": "08_market_structure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/externality": {
+   "ko": "외부효과",
+   "en": "externality",
+   "page": "11f_final_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/public-good": {
+   "ko": "공공재",
+   "en": "public good",
+   "page": "11f_final_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/gini": {
+   "ko": "소득분배와 지니계수",
+   "en": "income distribution and Gini coefficient",
+   "page": "11f_final_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/09-duel-fly": {
+   "ko": "피구세 20(30단위)",
+   "en": "duel choice A 09",
+   "page": "09_market_failure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/09-duel-robo": {
+   "ko": "시장에 맡김(40단위)",
+   "en": "duel choice B 09",
+   "page": "09_market_failure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/negative-externality": {
+   "ko": "외부불경제",
+   "en": "negative externality",
+   "page": "09_market_failure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/positive-externality": {
+   "ko": "외부경제",
+   "en": "positive externality",
+   "page": "09_market_failure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/pigouvian-tax": {
+   "ko": "피구세",
+   "en": "Pigouvian tax",
+   "page": "09_market_failure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/coase-theorem": {
+   "ko": "코즈의 정리",
+   "en": "Coase theorem",
+   "page": "09_market_failure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/non-rivalry": {
+   "ko": "비경합성",
+   "en": "non-rivalry",
+   "page": "09_market_failure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/non-excludability": {
+   "ko": "비배제성",
+   "en": "non-excludability",
+   "page": "09_market_failure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/free-riding": {
+   "ko": "무임승차",
+   "en": "free riding",
+   "page": "09_market_failure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/lorenz-curve": {
+   "ko": "로렌츠 곡선",
+   "en": "Lorenz curve",
+   "page": "09_market_failure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/decile-ratio": {
+   "ko": "10분위분배율",
+   "en": "decile distribution ratio",
+   "page": "09_market_failure",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/gdp": {
+   "ko": "GDP와 실질 GDP",
+   "en": "GDP and real GDP",
+   "page": "11f_final_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/unemployment-rate": {
+   "ko": "실업률과 고용지표",
+   "en": "unemployment rate and employment indicators",
+   "page": "11f_final_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/phillips-curve": {
+   "ko": "인플레이션과 필립스 곡선",
+   "en": "inflation and the Phillips curve",
+   "page": "11f_final_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/10-duel-fly": {
+   "ko": "실질 GDP로 계산(12.2%)",
+   "en": "duel choice A 10",
+   "page": "10_macro_economy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/10-duel-robo": {
+   "ko": "명목 GDP로 계산(73.5%)",
+   "en": "duel choice B 10",
+   "page": "10_macro_economy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/gnp": {
+   "ko": "GNP",
+   "en": "gross national product",
+   "page": "10_macro_economy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/nominal-gdp": {
+   "ko": "명목 GDP",
+   "en": "nominal GDP",
+   "page": "10_macro_economy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/real-gdp": {
+   "ko": "실질 GDP",
+   "en": "real GDP",
+   "page": "10_macro_economy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/gdp-deflator": {
+   "ko": "GDP 디플레이터",
+   "en": "GDP deflator",
+   "page": "10_macro_economy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/business-cycle": {
+   "ko": "경기변동",
+   "en": "business cycle",
+   "page": "10_macro_economy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/employment-rate": {
+   "ko": "고용률",
+   "en": "employment rate",
+   "page": "10_macro_economy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/labor-force": {
+   "ko": "경제활동인구",
+   "en": "labor force",
+   "page": "10_macro_economy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/discouraged-worker": {
+   "ko": "실망실업자",
+   "en": "discouraged worker",
+   "page": "10_macro_economy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/inflation": {
+   "ko": "인플레이션",
+   "en": "inflation",
+   "page": "10_macro_economy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/stagflation": {
+   "ko": "스태그플레이션",
+   "en": "stagflation",
+   "page": "10_macro_economy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/aggregate-demand": {
+   "ko": "총수요와 총공급",
+   "en": "aggregate demand and supply",
+   "page": "11f_final_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/fiscal-policy": {
+   "ko": "재정정책",
+   "en": "fiscal policy",
+   "page": "11f_final_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/monetary-policy": {
+   "ko": "통화정책과 정책조합",
+   "en": "monetary policy and policy mix",
+   "page": "11f_final_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/11-duel-fly": {
+   "ko": "금리 1%p 인하 + 지출 1.2조",
+   "en": "duel choice A 11",
+   "page": "11_economic_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/11-duel-robo": {
+   "ko": "지출 4조 한 번에",
+   "en": "duel choice B 11",
+   "page": "11_economic_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/aggregate-supply": {
+   "ko": "총공급",
+   "en": "aggregate supply",
+   "page": "11_economic_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/output-gap": {
+   "ko": "GDP 갭",
+   "en": "output gap",
+   "page": "11_economic_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/multiplier": {
+   "ko": "승수효과",
+   "en": "multiplier effect",
+   "page": "11_economic_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/crowding-out": {
+   "ko": "구축효과",
+   "en": "crowding-out effect",
+   "page": "11_economic_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/policy-rate": {
+   "ko": "기준금리",
+   "en": "policy rate",
+   "page": "11_economic_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/policy-mix": {
+   "ko": "정책조합",
+   "en": "policy mix",
+   "page": "11_economic_policy",
+   "domain": [
+    "econ"
+   ]
+  }
+ }
+}
