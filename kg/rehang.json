@@ -1,0 +1,662 @@
+{
+ "version": "1.0",
+ "made": "2026-11-24",
+ "via": "rehang-2026-11-24",
+ "domains": [
+  "econ",
+  "math"
+ ],
+ "note": "분야 뼈대 주제에 다시 걸기(ai-lab-retrofit 15장). links는 자동 후보이며 틀린 줄은 지우면 된다. 빌드 스크립트가 있는 저장소는 빌드 끝에 rehang.apply_overlay()가 이 파일을 적용한다.",
+ "topics": {
+  "lab:topic/ad-as": {
+   "ko": "총수요·총공급",
+   "en": "Aggregate demand and supply",
+   "domain": [
+    "econ"
+   ],
+   "level": 3
+  },
+  "lab:topic/business-cycle": {
+   "ko": "경기 순환",
+   "en": "Business cycle",
+   "domain": [
+    "econ"
+   ],
+   "level": 3
+  },
+  "lab:topic/cost-curves": {
+   "ko": "비용곡선",
+   "en": "Cost curves",
+   "domain": [
+    "econ"
+   ],
+   "level": 2
+  },
+  "lab:topic/curve-shifts": {
+   "ko": "곡선의 이동",
+   "en": "Shifts of demand and supply",
+   "domain": [
+    "econ"
+   ],
+   "level": 1
+  },
+  "lab:topic/deadweight-loss": {
+   "ko": "사중손실",
+   "en": "Deadweight loss",
+   "domain": [
+    "econ"
+   ],
+   "level": 2
+  },
+  "lab:topic/demand-supply-curves": {
+   "ko": "수요·공급 곡선",
+   "en": "Demand and supply curves",
+   "domain": [
+    "econ"
+   ],
+   "level": 1
+  },
+  "lab:topic/economic-models-assumptions": {
+   "ko": "모형과 가정",
+   "en": "Economic models and assumptions",
+   "domain": [
+    "econ"
+   ],
+   "level": 1
+  },
+  "lab:topic/economic-surplus": {
+   "ko": "잉여",
+   "en": "Economic surplus",
+   "domain": [
+    "econ"
+   ],
+   "level": 2
+  },
+  "lab:topic/elasticity": {
+   "ko": "탄력성",
+   "en": "Elasticity",
+   "domain": [
+    "econ"
+   ],
+   "level": 1
+  },
+  "lab:topic/externality": {
+   "ko": "외부효과",
+   "en": "Externality",
+   "domain": [
+    "econ"
+   ],
+   "level": 2
+  },
+  "lab:topic/growth-accounting": {
+   "ko": "성장 회계",
+   "en": "Growth accounting",
+   "domain": [
+    "econ"
+   ],
+   "level": 3
+  },
+  "lab:topic/incentives": {
+   "ko": "유인",
+   "en": "Incentives",
+   "domain": [
+    "econ"
+   ],
+   "level": 1
+  },
+  "lab:topic/income-substitution-effects": {
+   "ko": "소득·대체 효과(슬러츠키)",
+   "en": "Income and substitution effects (Slutsky)",
+   "domain": [
+    "econ"
+   ],
+   "level": 2
+  },
+  "lab:topic/inflation": {
+   "ko": "인플레이션",
+   "en": "Inflation",
+   "domain": [
+    "econ"
+   ],
+   "level": 2
+  },
+  "lab:topic/marginal-thinking": {
+   "ko": "한계적 사고",
+   "en": "Marginal thinking",
+   "domain": [
+    "econ"
+   ],
+   "level": 1
+  },
+  "lab:topic/market-equilibrium": {
+   "ko": "시장 균형",
+   "en": "Market equilibrium",
+   "domain": [
+    "econ"
+   ],
+   "level": 1
+  },
+  "lab:topic/monopolistic-competition": {
+   "ko": "독점적 경쟁",
+   "en": "Monopolistic competition",
+   "domain": [
+    "econ"
+   ],
+   "level": 2
+  },
+  "lab:topic/monopoly": {
+   "ko": "독점",
+   "en": "Monopoly",
+   "domain": [
+    "econ"
+   ],
+   "level": 2
+  },
+  "lab:topic/multiplier": {
+   "ko": "승수",
+   "en": "Multiplier",
+   "domain": [
+    "econ"
+   ],
+   "level": 3
+  },
+  "lab:topic/opportunity-cost": {
+   "ko": "기회비용",
+   "en": "Opportunity cost",
+   "domain": [
+    "econ"
+   ],
+   "level": 1
+  },
+  "lab:topic/perfect-competition": {
+   "ko": "완전경쟁",
+   "en": "Perfect competition",
+   "domain": [
+    "econ"
+   ],
+   "level": 2
+  },
+  "lab:topic/policy-rate": {
+   "ko": "기준금리",
+   "en": "Policy rate",
+   "domain": [
+    "econ"
+   ],
+   "level": 3
+  },
+  "lab:topic/price-controls": {
+   "ko": "가격 통제",
+   "en": "Price controls",
+   "domain": [
+    "econ"
+   ],
+   "level": 1
+  },
+  "lab:topic/price-discrimination": {
+   "ko": "가격 차별",
+   "en": "Price discrimination",
+   "domain": [
+    "econ"
+   ],
+   "level": 2
+  },
+  "lab:topic/public-goods": {
+   "ko": "공공재",
+   "en": "Public goods",
+   "domain": [
+    "econ"
+   ],
+   "level": 2
+  },
+  "lab:topic/scarcity": {
+   "ko": "희소성",
+   "en": "Scarcity",
+   "domain": [
+    "econ"
+   ],
+   "level": 1
+  },
+  "lab:topic/taxation": {
+   "ko": "조세",
+   "en": "Taxation",
+   "domain": [
+    "econ"
+   ],
+   "level": 3
+  }
+ },
+ "links": {
+  "lab:concept/aggregate-demand": {
+   "topic": "lab:topic/ad-as",
+   "score": 3,
+   "why": "이름 같음",
+   "ko": "총수요와 총공급"
+  },
+  "lab:concept/business-cycle": {
+   "topic": "lab:topic/business-cycle",
+   "score": 3,
+   "why": "이름 같음",
+   "ko": "경기변동"
+  },
+  "lab:concept/consumer-surplus": {
+   "topic": "lab:topic/economic-surplus",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "소비자잉여"
+  },
+  "lab:concept/consumption-function": {
+   "topic": "lab:topic/multiplier",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "소비함수"
+  },
+  "lab:concept/cross-elasticity": {
+   "topic": "lab:topic/elasticity",
+   "score": 2,
+   "why": "주제 이름이 개념 이름에 들어 있음",
+   "ko": "교차탄력성"
+  },
+  "lab:concept/deadweight-loss": {
+   "topic": "lab:topic/deadweight-loss",
+   "score": 3,
+   "why": "이름 같음",
+   "ko": "사중손실"
+  },
+  "lab:concept/demand": {
+   "topic": "lab:topic/demand-supply-curves",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "수요"
+  },
+  "lab:concept/economic-growth": {
+   "topic": "lab:topic/growth-accounting",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "경제성장"
+  },
+  "lab:concept/economic-model": {
+   "topic": "lab:topic/economic-models-assumptions",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "경제모형"
+  },
+  "lab:concept/efficiency": {
+   "topic": "lab:topic/economic-surplus",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "효율성"
+  },
+  "lab:concept/elasticity-dwl": {
+   "topic": "lab:topic/deadweight-loss",
+   "score": 2,
+   "why": "주제 이름이 개념 이름에 들어 있음",
+   "ko": "탄력성과 사중손실"
+  },
+  "lab:concept/elasticity-revenue": {
+   "topic": "lab:topic/elasticity",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "탄력성과 총수입"
+  },
+  "lab:concept/externality": {
+   "topic": "lab:topic/externality",
+   "score": 3,
+   "why": "이름 같음",
+   "ko": "외부효과"
+  },
+  "lab:concept/incentive": {
+   "topic": "lab:topic/incentives",
+   "score": 3,
+   "why": "이름 같음",
+   "ko": "유인"
+  },
+  "lab:concept/income-cross-elasticity": {
+   "topic": "lab:topic/elasticity",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "소득·교차·공급 탄력성"
+  },
+  "lab:concept/income-elasticity": {
+   "topic": "lab:topic/elasticity",
+   "score": 2,
+   "why": "주제 이름이 개념 이름에 들어 있음",
+   "ko": "소득탄력성"
+  },
+  "lab:concept/inflation": {
+   "topic": "lab:topic/inflation",
+   "score": 3,
+   "why": "이름 같음",
+   "ko": "인플레이션"
+  },
+  "lab:concept/laffer-curve": {
+   "topic": "lab:topic/taxation",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "래퍼 곡선"
+  },
+  "lab:concept/marginal-benefit": {
+   "topic": "lab:topic/marginal-thinking",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "한계편익"
+  },
+  "lab:concept/marginal-cost": {
+   "topic": "lab:topic/cost-curves",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "한계비용"
+  },
+  "lab:concept/marginal-thinking": {
+   "topic": "lab:topic/marginal-thinking",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "한계적 판단"
+  },
+  "lab:concept/market-equilibrium": {
+   "topic": "lab:topic/market-equilibrium",
+   "score": 3,
+   "why": "이름 같음",
+   "ko": "시장균형"
+  },
+  "lab:concept/market-failure": {
+   "topic": "lab:topic/externality",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "시장실패"
+  },
+  "lab:concept/monopolistic-competition": {
+   "topic": "lab:topic/monopolistic-competition",
+   "score": 3,
+   "why": "이름 같음",
+   "ko": "독점적 경쟁"
+  },
+  "lab:concept/monopoly": {
+   "topic": "lab:topic/monopoly",
+   "score": 3,
+   "why": "이름 같음",
+   "ko": "독점"
+  },
+  "lab:concept/normative-economics": {
+   "topic": "lab:topic/economic-models-assumptions",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "규범경제학"
+  },
+  "lab:concept/opportunity-cost": {
+   "topic": "lab:topic/opportunity-cost",
+   "score": 3,
+   "why": "이름 같음",
+   "ko": "기회비용"
+  },
+  "lab:concept/perfect-competition": {
+   "topic": "lab:topic/perfect-competition",
+   "score": 3,
+   "why": "이름 같음",
+   "ko": "완전경쟁시장"
+  },
+  "lab:concept/positive-economics": {
+   "topic": "lab:topic/economic-models-assumptions",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "실증경제학"
+  },
+  "lab:concept/positive-normative": {
+   "topic": "lab:topic/economic-models-assumptions",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "실증경제학과 규범경제학"
+  },
+  "lab:concept/ppf": {
+   "topic": "lab:topic/opportunity-cost",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "생산가능곡선"
+  },
+  "lab:concept/price-ceiling": {
+   "topic": "lab:topic/price-controls",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "가격상한제"
+  },
+  "lab:concept/price-elasticity": {
+   "topic": "lab:topic/elasticity",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "수요의 가격탄력성"
+  },
+  "lab:concept/price-floor": {
+   "topic": "lab:topic/price-controls",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "가격하한제"
+  },
+  "lab:concept/producer-surplus": {
+   "topic": "lab:topic/economic-surplus",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "생산자잉여"
+  },
+  "lab:concept/public-good": {
+   "topic": "lab:topic/public-goods",
+   "score": 3,
+   "why": "이름 같음",
+   "ko": "공공재"
+  },
+  "lab:concept/scarcity": {
+   "topic": "lab:topic/scarcity",
+   "score": 3,
+   "why": "이름 같음",
+   "ko": "희소성"
+  },
+  "lab:concept/sunk-cost": {
+   "topic": "lab:topic/opportunity-cost",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "매몰비용"
+  },
+  "lab:concept/supply": {
+   "topic": "lab:topic/demand-supply-curves",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "공급"
+  },
+  "lab:concept/supply-elasticity": {
+   "topic": "lab:topic/elasticity",
+   "score": 2,
+   "why": "주제 이름이 개념 이름에 들어 있음",
+   "ko": "공급탄력성"
+  },
+  "lab:concept/tax-incidence": {
+   "topic": "lab:topic/taxation",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "조세의 귀착"
+  },
+  "lab:concept/total-revenue": {
+   "topic": "lab:topic/elasticity",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "총수입"
+  },
+  "lab:concept/total-surplus": {
+   "topic": "lab:topic/economic-surplus",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "총잉여와 효율성"
+  },
+  "lab:concept/trade-off": {
+   "topic": "lab:topic/opportunity-cost",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "상충관계"
+  },
+  "lab:concept/willingness-to-pay": {
+   "topic": "lab:topic/economic-surplus",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "지불용의"
+  },
+  "lab:concept/willingness-to-sell": {
+   "topic": "lab:topic/economic-surplus",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "공급용의"
+  },
+  "lab:term/arc-elasticity": {
+   "topic": "lab:topic/elasticity",
+   "score": 2,
+   "why": "주제 이름이 개념 이름에 들어 있음",
+   "ko": "호 탄력성"
+  },
+  "lab:term/assumption": {
+   "topic": "lab:topic/economic-models-assumptions",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "가정"
+  },
+  "lab:term/black-market": {
+   "topic": "lab:topic/price-controls",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "암시장"
+  },
+  "lab:term/complements": {
+   "topic": "lab:topic/curve-shifts",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "보완재"
+  },
+  "lab:term/economic-incidence": {
+   "topic": "lab:topic/taxation",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "경제적 귀착"
+  },
+  "lab:term/economic-profit": {
+   "topic": "lab:topic/opportunity-cost",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "경제적 이윤"
+  },
+  "lab:term/elastic": {
+   "topic": "lab:topic/elasticity",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "탄력적"
+  },
+  "lab:term/excess-demand": {
+   "topic": "lab:topic/market-equilibrium",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "초과수요"
+  },
+  "lab:term/excess-supply": {
+   "topic": "lab:topic/market-equilibrium",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "초과공급"
+  },
+  "lab:term/explicit-cost": {
+   "topic": "lab:topic/opportunity-cost",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "명시적 비용"
+  },
+  "lab:term/implicit-cost": {
+   "topic": "lab:topic/opportunity-cost",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "암묵적 비용"
+  },
+  "lab:term/increasing-opportunity-cost": {
+   "topic": "lab:topic/opportunity-cost",
+   "score": 2,
+   "why": "주제 이름이 개념 이름에 들어 있음",
+   "ko": "기회비용 체증"
+  },
+  "lab:term/inelastic": {
+   "topic": "lab:topic/elasticity",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "비탄력적"
+  },
+  "lab:term/inferior-good": {
+   "topic": "lab:topic/income-substitution-effects",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "열등재"
+  },
+  "lab:term/minimum-wage": {
+   "topic": "lab:topic/price-controls",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "최저임금"
+  },
+  "lab:term/mpc": {
+   "topic": "lab:topic/multiplier",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "한계소비성향"
+  },
+  "lab:term/normal-good": {
+   "topic": "lab:topic/income-substitution-effects",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "정상재"
+  },
+  "lab:term/policy-rate": {
+   "topic": "lab:topic/policy-rate",
+   "score": 3,
+   "why": "이름 같음",
+   "ko": "기준금리"
+  },
+  "lab:term/price-discrimination": {
+   "topic": "lab:topic/price-discrimination",
+   "score": 3,
+   "why": "이름 같음",
+   "ko": "가격차별"
+  },
+  "lab:term/quantity-demanded": {
+   "topic": "lab:topic/demand-supply-curves",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "수요량"
+  },
+  "lab:term/quantity-supplied": {
+   "topic": "lab:topic/demand-supply-curves",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "공급량"
+  },
+  "lab:term/rationing": {
+   "topic": "lab:topic/price-controls",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "할당"
+  },
+  "lab:term/statutory-incidence": {
+   "topic": "lab:topic/taxation",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "법적 귀착"
+  },
+  "lab:term/substitutes": {
+   "topic": "lab:topic/curve-shifts",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "대체재"
+  },
+  "lab:term/tax-shifting": {
+   "topic": "lab:topic/taxation",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "조세의 전가"
+  },
+  "lab:term/unit-elastic": {
+   "topic": "lab:topic/elasticity",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "단위탄력적"
+  }
+ }
+}
