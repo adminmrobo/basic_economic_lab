@@ -56,10 +56,13 @@ KG_00_registry.json                시리즈 지식 그래프 등록부
 assets/og/cover_*.jpg              공유 미리보기(대체 이미지)
 docs/AUDIT_REPORT.md               감사보고서
 docs/IMG_PROMPTS_all.md            표지 그림 지시문 (Genspark용)
+docs/genspark/                     Genspark 요청문(대화별)·저장 이름 체크리스트
 src/pages/*.py                     페이지 데이터
 src/build/                         빌드 도구 (sims_econ.js 실험 33개, dash_econ.js 대시보드 11개, practice.py 실전 연습장, tower.* 3D 건물)
 ```
 
 다시 빌드하기: `python3 src/build/build.py . && python3 src/build/practice.py . && python3 src/build/make_docs.py`
+
+표지 반영: Genspark 그림을 `src/build/covers_in/cover_<키>.png`로 넣고 `python3 src/build/import_covers.py` 실행 후 다시 빌드. 요청 꾸러미 다시 만들기: `python3 src/build/make_genspark_pack.py <fruitfly-lab-expressions 경로>`
 
 캐릭터 이름·설정·그림의 저작권은 안상선(개인)에게 있으며 허락 없이 쓸 수 없습니다. 캐릭터 그림: [fruitfly-lab-expressions](https://github.com/adminmrobo/fruitfly-lab-expressions).
