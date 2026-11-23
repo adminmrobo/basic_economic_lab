@@ -2,3 +2,4 @@ __pycache__/
 src/build/thumbs/
 *_shot.png
 docs/genspark_pack.zip
+src/build/covers_in/*.png
