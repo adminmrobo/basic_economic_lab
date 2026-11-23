@@ -82,16 +82,21 @@ var IMG=__IMG__;
 function $(s,r){return (r||document).querySelector(s)}function $$(s,r){return [].slice.call((r||document).querySelectorAll(s))}
 function f(v,d){return Number(v).toLocaleString('ko-KR',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})}
 function svg(w,h,body){return '<svg viewBox="0 0 '+w+' '+h+'" role="img">'+body+'</svg>'}
-function chart(o){var W=460,H=280,L=46,R=12,T=30,Bt=34,pw=W-L-R,ph=H-T-Bt;function X(v){return L+(v-o.x0)/(o.x1-o.x0)*pw}function Y(v){return T+ph-(v-o.y0)/(o.y1-o.y0)*ph}
- var s='<text x="'+L+'" y="18" font-size="13" font-weight="700" fill="#1d2030">'+o.title+'</text>';
+function tw(t,z){var w=0;String(t).split('').forEach(function(ch){w+=/[\u3131-\uD79D]/.test(ch)?z*0.98:/[A-Z0-9%$]/.test(ch)?z*0.62:z*0.5});return w}
+function chart(o){var W=460,H=280,L=46,R=12,T=30,Bt=34,pw=W-L-R,ph=H-T-Bt,BX=[];function hit(b){return BX.some(function(a){return b.x<a.x+a.w&&b.x+b.w>a.x&&b.y<a.y+a.h&&b.y+b.h>a.y})}function X(v){return L+(v-o.x0)/(o.x1-o.x0)*pw}function Y(v){return T+ph-(v-o.y0)/(o.y1-o.y0)*ph}
+ var s='<text x="'+L+'" y="18" font-size="13" font-weight="700" fill="#1d2030">'+o.title+'</text>';BX.push({x:L,y:5,w:tw(o.title,13),h:16});if(o.key)BX.push({x:L+pw-tw(o.key,11),y:7,w:tw(o.key,11),h:14});
  for(var i=0;i<=4;i++){var yv=o.y0+(o.y1-o.y0)*i/4,y=Y(yv);s+='<line x1="'+L+'" x2="'+(L+pw)+'" y1="'+y+'" y2="'+y+'" stroke="#eceef4"/><text x="'+(L-6)+'" y="'+(y+4)+'" font-size="10" text-anchor="end" fill="#545a6e">'+f(yv,o.yd||0)+'</text>'}
- for(var i=0;i<=4;i++){var xv=o.x0+(o.x1-o.x0)*i/4,x=X(xv);s+='<text x="'+x+'" y="'+(T+ph+14)+'" font-size="10" text-anchor="middle" fill="#545a6e">'+f(xv,o.xd||0)+'</text>'}
+ for(var i=0;i<=4;i++){var xv=o.x0+(o.x1-o.x0)*i/4,x=X(xv);s+='<text x="'+(i?x:x+2)+'" y="'+(T+ph+14)+'" font-size="10" text-anchor="'+(i?'middle':'start')+'" fill="#545a6e">'+f(xv,o.xd||0)+'</text>'}
  s+='<line x1="'+L+'" x2="'+L+'" y1="'+T+'" y2="'+(T+ph)+'" stroke="#999"/><line x1="'+L+'" x2="'+(L+pw)+'" y1="'+(T+ph)+'" y2="'+(T+ph)+'" stroke="#999"/>';
  s+='<text x="'+(L+pw)+'" y="'+(H-4)+'" font-size="10" text-anchor="end" fill="#545a6e">'+o.xl+'</text>';
  (o.lines||[]).forEach(function(l){var p=[],n=80;for(var i=0;i<=n;i++){var x=o.x0+(o.x1-o.x0)*i/n,y=l.f(x);if(isFinite(y)&&y>=o.y0-1e-9&&y<=o.y1+1e-9)p.push(X(x).toFixed(1)+','+Y(y).toFixed(1));else if(p.length&&p[p.length-1]!=='M')p.push('M')}var d='',st=true;p.forEach(function(q){if(q==='M'){st=true;return}d+=(st?'M':'L')+q+' ';st=false});s+='<path d="'+d+'" fill="none" stroke="'+l.c+'" stroke-width="'+(l.w||2.4)+'"'+(l.dash?' stroke-dasharray="5 4"':'')+'/>'});
  (o.vlines||[]).forEach(function(v){s+='<line x1="'+X(v.x)+'" x2="'+X(v.x)+'" y1="'+T+'" y2="'+(T+ph)+'" stroke="'+v.c+'" stroke-width="'+(v.w||2.4)+'"'+(v.dash?' stroke-dasharray="4 3"':'')+'/>'});
- (o.hlines||[]).forEach(function(v){s+='<line x1="'+L+'" x2="'+(L+pw)+'" y1="'+Y(v.y)+'" y2="'+Y(v.y)+'" stroke="'+v.c+'" stroke-width="1.6" stroke-dasharray="5 4"/>'+(v.l?'<text x="'+(L+pw-2)+'" y="'+(Y(v.y)-4)+'" font-size="10" text-anchor="end" fill="'+v.c+'">'+v.l+'</text>':'')});
- (o.dots||[]).forEach(function(d){var x=X(Math.max(o.x0,Math.min(o.x1,d.x))),y=Y(Math.max(o.y0,Math.min(o.y1,d.y)));s+='<circle cx="'+x+'" cy="'+y+'" r="5.5" fill="'+d.c+'" stroke="#fff" stroke-width="1.5"/><text x="'+(x+(d.dx||8))+'" y="'+(y-8)+'" font-size="11" font-weight="700" fill="'+d.c+'"'+((d.dx||8)<0?' text-anchor="end"':'')+'>'+d.l+'</text>'});
+ (o.hlines||[]).forEach(function(v){s+='<line x1="'+L+'" x2="'+(L+pw)+'" y1="'+Y(v.y)+'" y2="'+Y(v.y)+'" stroke="'+v.c+'" stroke-width="1.6" stroke-dasharray="5 4"/>'+(v.l?(function(){var yy=Y(v.y)-4<T+10?Y(v.y)+12:Y(v.y)-4;BX.push({x:L+pw-2-tw(v.l,10),y:yy-9,w:tw(v.l,10),h:12});return '<text x="'+(L+pw-2)+'" y="'+yy+'" font-size="10" text-anchor="end" fill="'+v.c+'">'+v.l+'</text>'})():'')});
+ var DP=(o.dots||[]).map(function(d){var x=X(Math.max(o.x0,Math.min(o.x1,d.x))),y=Y(Math.max(o.y0,Math.min(o.y1,d.y)));BX.push({x:x-6,y:y-6,w:12,h:12});s+='<circle cx="'+x+'" cy="'+y+'" r="5.5" fill="'+d.c+'" stroke="#fff" stroke-width="1.5"/>';return {d:d,x:x,y:y}});
+ DP.forEach(function(q){var d=q.d,w=tw(d.l,11),pref=(d.dx||8)<0?-1:1,C=[];[-8,10,-20,22,-32,34].forEach(function(dy){C.push([pref,dy]);C.push([-pref,dy])});var pick=null;
+  for(var k=0;k<C.length;k++){var lx=C[k][0]>0?q.x+8:q.x-8-w,ly=q.y+C[k][1];if(lx<2||lx+w>W-2||ly-10<2||ly+2>H-2)continue;var b={x:lx,y:ly-10,w:w,h:13};if(!hit(b)){pick=[lx,ly,b];break}}
+  if(!pick){var lx=Math.max(2,Math.min(W-2-w,q.x+8)),ly=Math.max(12,Math.min(H-4,q.y-8));pick=[lx,ly,{x:lx,y:ly-10,w:w,h:13}]}
+  BX.push(pick[2]);s+='<text x="'+pick[0]+'" y="'+pick[1]+'" font-size="11" font-weight="700" fill="'+d.c+'">'+d.l+'</text>'});
  if(o.key)s+='<text x="'+(L+pw)+'" y="18" font-size="11" text-anchor="end" fill="#545a6e">'+o.key+'</text>';
  return svg(W,H,s)}
 function say(who,mood,name,t){return '<div class="say"><img src="'+IMG[who+'_'+mood]+'" alt=""><div><b>'+name+'</b><p>'+t+'</p></div></div>'}
@@ -163,7 +168,7 @@ def page():
 <body>
 <header class="top"><a class="brand" href="../index.html">경제학 원론 연구실</a><nav><a href="../index.html">목차</a><a href="../11f_final_review.html">기말 정리</a><a href="../tower.html">건물 보기</a><a href="#wrap">정리</a></nav></header>
 <main>
-<p class="eyebrow">마지막 장 · 실전 연습장 · 옥상 경기장</p>
+<p class="eyebrow">마지막 장 · 실전 연습장 · 골목 끝 광장 경기장</p>
 <h1>매표소·용품점·시청·중앙은행을<br>직접 운영해 보세요</h1>
 <p class="lead">열한 강의에서 배운 수요와 공급, 탄력성, 외부효과와 세금, 경제정책을 네 곳에서 연습합니다. 슬라이더를 움직이면 성적표와 그래프, 강의실 식구들의 말이 바로 바뀌어요.</p>
 <div class="cast">{cast}</div>

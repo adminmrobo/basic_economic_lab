@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-"""목차(index) 첫 화면 = 미시경제학 해설 + 건물 보기 썸네일.
+"""목차(index) 첫 화면 = 경제학 원론 해설 + 시장 보기 썸네일.
 
-- index.html : 표지 → 머리말(미시경제학 설명) → 미시경제학이란 → 목차 카드 → 건물로 둘러보기(썸네일) → …
-- tower.html : C&C 마켓 타워 3D(건물 전체 · 층별 안내판)를 따로 보는 쪽
+- index.html : 표지 → 머리말(미시경제학 설명) → 미시경제학이란 → 목차 카드 → 시장으로 둘러보기(썸네일) → …
+- tower.html : 생활경제 시장 3D(시장 전체 · 가게 안내판)를 따로 보는 쪽
 build_extra.index() 와 patch_home.py(이미 빌드된 index.html 고치기)가 함께 쓴다.
 """
 import base64, html, re, json
@@ -26,51 +26,46 @@ def byline():
             f' · {DATE} 처음 공개</p>'
             f'<p class="basis">{BASIS}</p>')
 
-# ---------- 건물 썸네일 (픽셀풍 SVG) ----------
+# ---------- 시장 썸네일 (픽셀풍 SVG) ----------
 def tower_svg(w=192, h=108):
-    """16비트 RPG 픽셀아트 느낌의 스타디움 타워 그림. 층 색은 tower.FLOORS 와 같다."""
+    """16비트 RPG 픽셀아트 느낌의 생활경제 시장 그림. 가게 차양 색은 tower.FLOORS 와 같다."""
     r = []
     R = lambda x, y, ww, hh, c: r.append(f'<rect x="{x}" y="{y}" width="{ww}" height="{hh}" fill="{c}"/>')
-    # 하늘(흰 바탕에 가까운 옅은 파랑) · 구름 · 땅
-    R(0, 0, 192, 108, '#f3f7fd'); R(0, 60, 192, 40, '#e8f0fb')
-    for cx, cy in ((22, 18), (150, 12), (168, 34)):
+    R(0, 0, 192, 108, '#f3f7fd'); R(0, 56, 192, 44, '#e8f0fb')
+    for cx, cy in ((22, 12), (150, 8), (110, 18)):
         R(cx, cy, 14, 3, '#ffffff'); R(cx + 3, cy - 2, 7, 2, '#ffffff')
-    # 뒤쪽 낮은 건물들
-    for x, hh, c in ((10, 26, '#d6deec'), (28, 18, '#cdd7e8'), (140, 22, '#d6deec'), (160, 30, '#cdd7e8'), (178, 16, '#d6deec')):
-        R(x, 100 - hh, 16, hh, c)
-        for wy in range(100 - hh + 3, 98, 5):
-            R(x + 3, wy, 2, 2, '#f3f7fd'); R(x + 8, wy, 2, 2, '#f3f7fd')
-    R(0, 100, 192, 8, '#a9c48a'); R(0, 100, 192, 1, '#8fb070'); R(0, 104, 192, 1, '#9cba7d')
-    # 타워 본체: 아래(로비)에서 위(옥상)로
-    X, W = 72, 48
-    hgt = {'lobby': 8, '05m': 3, '11f': 4, 'roof': 3}
-    y = 100; base = max(2, min(5, 80 // len(tower.FLOORS)))
-    for f in tower.FLOORS:
-        fh = hgt.get(f['key'], base)
-        y -= fh
-        R(X, y, W, fh, f['color'])
-        R(X, y, W, 1, '#00000022')
-        if f['key'] == 'lobby':
-            R(X + 20, y + 3, 8, 5, '#2b3550'); R(X + 23, y + 3, 2, 5, '#f3c969')  # 정문
-            for wx in (X + 4, X + 11, X + 32, X + 39): R(wx, y + 3, 5, 3, '#eaf2ff')
-        elif fh >= 5:
-            for wx in range(X + 3, X + W - 3, 5): R(wx, y + 2, 3, 2, '#eaf2ff')
-        else:
-            R(X + 2, y + 1, W - 4, 1, '#ffffffaa')
-    top = y
-    R(X - 2, top - 2, W + 4, 2, '#5d6278')                  # 옥상 난간
-    R(X + 22, top - 12, 2, 10, '#5d6278'); R(X + 21, top - 14, 4, 2, '#d23f2c')  # 안테나
-    R(X + 6, top - 9, 14, 7, '#ffffff'); R(X + 6, top - 9, 14, 1, '#3f5fa8')
-    r.append(f'<text x="{X + 13}" y="{top - 3.6}" font-size="5" font-family="monospace" font-weight="700" text-anchor="middle" fill="#3f5fa8">{e(tower.COMPANY.get("svg", "C&C"))}</text>')
-    # 오른쪽 그림자 기둥(입체감)
-    R(X + W, top, 3, 100 - top, '#00000018')
+    R(0, 100, 192, 8, '#a9c48a'); R(0, 100, 192, 1, '#8fb070')
+    # 아케이드 지붕(반원 느낌 계단형)
+    for i, (dy, ww) in enumerate(((0, 128), (2, 132), (4, 136))):
+        R(16 - i * 2, 30 + dy, ww, 2, '#c9d8ec')
+    R(14, 36, 136, 2, '#9aa8be')
+    for x in range(18, 150, 18): R(x, 30, 1, 8, '#9aa8be')
+    # 가게 일곱 곳이 늘어선 앞줄(북쪽 줄) — 차양 줄무늬 + 간판 + 진열대
+    north = [f for f in tower.FLOORS if f['key'] in ('lobby', '01', '02', '03', '04', '05', '05m')]
+    sx, sw = 16, 19
+    for i, f in enumerate(north):
+        x = sx + i * sw
+        R(x, 40, sw - 1, 58, '#f4ecdc')                    # 가게 몸체
+        R(x + 2, 42, sw - 5, 6, f['color']); R(x + 3, 44, sw - 7, 2, '#ffffff')   # 간판
+        for k in range(0, sw - 1, 4):                       # 줄무늬 차양
+            R(x + k, 50, 2, 6, f['color']); R(x + k + 2, 50, 2, 6, '#ffffff')
+        R(x, 56, sw - 1, 1, '#00000022')
+        R(x + 3, 84, sw - 7, 10, '#d9c7a6'); R(x + 3, 84, sw - 7, 1, '#b8a382')  # 진열대
+        for k, c in enumerate(('#d23f2c', '#f3c969', '#6fae84')): R(x + 4 + k * 4, 81, 3, 3, c)
+    # 시장 문(왼쪽)
+    R(6, 34, 3, 66, '#8f5f00'); R(6, 26, 30, 6, '#8f5f00'); R(8, 27, 26, 4, '#f3c969')
+    r.append('<text x="21" y="30.4" font-size="4.2" font-family="monospace" font-weight="700" text-anchor="middle" fill="#8f5f00">MARKET</text>')
+    # 골목 끝 광장 경기장(오른쪽)
+    R(156, 72, 34, 4, '#dfe5ee'); R(154, 76, 38, 20, '#dfe5ee'); R(158, 78, 30, 14, '#8fcf9f'); R(172, 78, 1, 14, '#ffffff')
+    R(156, 96, 34, 4, '#c9d1de'); R(164, 62, 18, 7, '#138a52')
+    r.append('<text x="173" y="67.4" font-size="4.2" font-family="monospace" font-weight="700" text-anchor="middle" fill="#ffffff">PLAZA</text>')
     # 나무 · 사람
-    for tx in (50, 60, 130, 140):
-        R(tx + 2, 96, 2, 4, '#7a5530'); R(tx, 90, 6, 6, '#3f8f4e'); R(tx + 1, 89, 4, 1, '#56a865')
-    for px, c in ((40, '#d0457f'), (152, '#3f5fa8')):
+    for tx in (146, 186):
+        R(tx + 2, 96, 2, 4, '#7a5530'); R(tx, 90, 6, 6, '#3f8f4e')
+    for px, c in ((40, '#d0457f'), (92, '#3f5fa8'), (120, '#138a52')):
         R(px, 95, 2, 2, '#f1c9a5'); R(px, 97, 2, 3, c)
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 108" width="{w}" height="{h}" shape-rendering="crispEdges" '
-            f'role="img" aria-label="픽셀 그림: 로비부터 옥상까지 {len(tower.FLOORS)}개 층이 층마다 다른 색으로 쌓인 {e(tower.COMPANY["ko"])} 건물">' + ''.join(r) + '</svg>')
+            f'role="img" aria-label="픽셀 그림: 시장 문으로 들어가 줄무늬 차양 가게들이 늘어선 골목 끝에 광장 경기장이 있는 {e(tower.COMPANY["ko"])}">' + ''.join(r) + '</svg>')
 
 def tower_svg_uri():
     return 'data:image/svg+xml;base64,' + base64.b64encode(tower_svg().encode('utf-8')).decode()
@@ -153,7 +148,7 @@ def micro_section(say):
 <div><span class="en">③ MARKET · 시장과 정부</span><b>어디서 멈출까</b><p>사려는 양과 팔려는 양이 같아지는 곳에서 가격이 멈춰요(균형). 시장이 실패하거나 경기가 흔들리면 정부가 세금·지출·금리로 개입해요.</p></div>
 </div>
 <div class="byfx" aria-label="경제학을 말로 쓴 식"><span class="p">희소성</span><i>→</i><span class="l">선택(기회비용)</span><i>→</i><span class="q">시장 균형</span><i>→</i><span class="p">정책과 나라 경제</span></div>
-<details class="more"><summary>수식으로 보면 (펼쳐 보기)</summary><p style="margin:10px 0 0">시장균형: 수요량 Q<sub>d</sub>(P) = 공급량 Q<sub>s</sub>(P)를 만족하는 가격 P*. 예) Q<sub>d</sub> = 150 − P, Q<sub>s</sub> = 20 + 8P → 9P = 130, P* ≈ 14.4, Q* ≈ 135.6. 나라 경제: 총수요 AD = C + I + G + NX. 자세한 풀이는 <a href="03_supply_demand.html">CH03 수요와 공급</a>과 <a href="11_economic_policy.html">CH11 정부의 경제정책</a>에 있어요.</p></details>
+<details open class="more"><summary>수식으로 보면</summary><p style="margin:10px 0 0">시장균형: 수요량 Q<sub>d</sub>(P) = 공급량 Q<sub>s</sub>(P)를 만족하는 가격 P*. 예) Q<sub>d</sub> = 150 − P, Q<sub>s</sub> = 20 + 8P → 9P = 130, P* ≈ 14.4, Q* ≈ 135.6. 나라 경제: 총수요 AD = C + I + G + NX. 자세한 풀이는 <a href="03_supply_demand.html">CH03 수요와 공급</a>과 <a href="11_economic_policy.html">CH11 정부의 경제정책</a>에 있어요.</p></details>
 <div class="talk">{talk}</div>
 <div class="dash panel" data-dash="mk" id="mclab" aria-label="직접 해 보기: 수요·원가·세금을 바꿔 시장 균형 보기 대시보드"></div>
 <h3>미시경제학과 거시경제학</h3>
@@ -181,7 +176,7 @@ def toc_section(L):
     p3 = rv('prac', 'practice/index.html', '마지막 장 · 실전 연습장', ['경기장 매표소 — 수요·공급·가격상한', '스포츠용품점 — 탄력성·매출', '시청 정책실 — 세금·외부효과', '중앙은행 상황실 — 경기와 정책'], '시뮬레이터')
     steps = ('<div class="steps"><div><b>이런 분께</b><p>뉴스에서 "기준금리·실업률·최저임금·세금"을 듣지만, 그것이 내 생활과 어떻게 이어지는지 숫자로 보고 싶은 분. 수식을 몰라도 됩니다.</p></div>'
              '<div><b>읽는 순서</b><p>CH01 → CH11 순서가 기본이에요. 앞 장의 한계가 다음 장의 이유가 되도록 이어 두었어요. 시험 대비라면 중간·기말 정리 쪽부터 봐도 됩니다.</p></div>'
-             '<div><b>건물로 둘러보기</b><p>장마다 가상의 생활경제 스타디움 타워의 한 층(강의실)이 됩니다. 아래 <a href="#building">건물 보기</a>에서 3D 건물과 층별 안내판으로 장을 골라도 돼요.</p></div></div>')
+             '<div><b>시장으로 둘러보기</b><p>장마다 가상의 「생활경제 시장」의 가게 하나(강의실)가 됩니다. 아래 <a href="#building">시장 보기</a>에서 3D 시장과 가게 안내판으로 장을 골라도 돼요.</p></div></div>')
     return (f'<section class="level" id="map"><div class="wrap stack"><div class="lvhead"><h2>목차</h2><p class="lead">11장과 요약·퀴즈 두 쪽, 그리고 마지막 장 실전 연습장입니다. 카드마다 그 장에서 다루는 세 가지 주제와 조교 대결 질문을 적어 두었어요.</p></div>'
             f'<h3>1부 · 생활 속의 경제학 — 선택의 원리에서 정부정책까지 (CH01~CH05, 중간고사 범위)</h3><div class="chapx">{p1}</div>'
             f'<h3>2부 · 경제학의 이해 — 시장의 효율성에서 경제정책까지 (CH06~CH11, 기말고사 범위)</h3><div class="chapx">{p2}</div>'
@@ -189,25 +184,25 @@ def toc_section(L):
 
 def building_section():
     return f"""<section class="level" id="building"><div class="wrap stack">
-<div class="lvhead"><h2>건물로 둘러보기 — 생활경제 스타디움 타워</h2><p class="lead">같은 열네 쪽을 건물로도 볼 수 있어요. 가상의 강의 건물 「생활경제 스타디움 타워」에서 장 하나가 강의실 하나, 강의실 하나가 한 층입니다.</p></div>
-<a class="bldcard" href="tower.html"><div class="pic">{tower_svg(384, 216)}</div><div><h3>건물 보기 — 3D 스타디움 타워</h3><p class="muted" style="margin:0">로비부터 옥상 실전 연습장까지 15개 층</p><ul><li>건물을 드래그로 돌려 보고, 층을 누르면 강의실(장) 안내 카드가 열려요.</li><li>층별 안내판에서 바로 그 층으로 올라갈 수 있어요.</li><li>각 장 쪽 맨 위에서는 그 층을 꺼내 층 평면과 둘러보는 순서를 보여 줘요.</li></ul><span class="go">건물 보기 →</span></div></a>
+<div class="lvhead"><h2>시장으로 둘러보기 — 생활경제 시장</h2><p class="lead">같은 열네 쪽을 시장 골목으로도 볼 수 있어요. 가상의 강의 시장 「생활경제 시장」에서 장 하나가 강의실 하나, 강의실 하나가 가게 하나입니다. 수요와 공급이 만나는 곳이 시장이니까요.</p></div>
+<a class="bldcard" href="tower.html"><div class="pic">{tower_svg(384, 216)}</div><div><h3>시장 보기 — 3D 생활경제 시장</h3><p class="muted" style="margin:0">시장 문 안내소부터 골목 끝 광장 실전 연습장까지 15곳</p><ul><li>시장을 드래그로 돌려 보고, 가게를 누르면 강의실(장) 안내 카드가 열려요.</li><li>가게 안내판에서 바로 그 가게로 들어갈 수 있어요.</li><li>각 장 쪽 맨 위에서는 그 가게의 지붕을 걷어 가게 평면과 둘러보는 순서를 보여 줘요.</li></ul><span class="go">건물 보기 →</span></div></a>
 </div></section>"""
 
 def mosaic_tile():
-    return '<a class="mt th-tower bld" href="tower.html" title="건물 보기 · 스타디움 타워"><span>건물</span><i class="sr">건물 보기 · 생활경제 스타디움 타워 3D</i></a>'
+    return '<a class="mt th-tower bld" href="tower.html" title="시장 보기 · 생활경제 시장"><span>시장</span><i class="sr">시장 보기 · 생활경제 시장 3D</i></a>'
 
 def practice_tile():
     return '<a class="mt th-prac" href="practice/index.html" title="마지막 장 · 실전 연습장"><span>실전</span><i class="sr">마지막 장 · 실전 연습장</i></a>'
 
 THUMB_KEYS = CHS + ['05m', '11f', 'idx', 'prac']
 
-NAV = [('micro', '경제학 원론이란'), ('map', '목차'), ('building', '건물 보기'), ('keys', '한 줄 핵심'), ('dash', '종합 대시보드'), ('path', '개념 흐름'), ('how', '식구·사용법'), ('about', '자료와 원칙')]
+NAV = [('micro', '경제학 원론이란'), ('map', '목차'), ('building', '시장 보기'), ('keys', '한 줄 핵심'), ('dash', '종합 대시보드'), ('path', '개념 흐름'), ('how', '식구·사용법'), ('about', '자료와 원칙')]
 
 def nav_html(label):
     a = ''.join(f'<a href="{"tower.html" if i == "building" else "#" + i}">{e(t)}</a>' for i, t in NAV)
     return f'<nav class="top" aria-label="섹션 바로가기"><div class="wrap"><a class="logo" href="index.html"><i></i>{e(label)}</a><div class="links">{a}</div></div></nav>\n'
 
-# ---------- 건물 보기 쪽(tower.html) ----------
+# ---------- 시장 보기 쪽(tower.html) ----------
 def tower_page(base_css, site):
     blk = tower.tower_html('lobby', standalone=True)
     return f"""<!doctype html>
@@ -215,9 +210,9 @@ def tower_page(base_css, site):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>건물 보기 — 생활경제 스타디움 타워 · 경제학 원론 연구실</title>
-<meta name="description" content="경제학 원론 연구실 열네 쪽과 실전 연습장을 가상의 강의 건물 생활경제 스타디움 타워 15개 층으로 둘러보는 3D 건물 안내.">
-<meta property="og:title" content="건물 보기 — 생활경제 스타디움 타워">
+<title>시장 보기 — 생활경제 시장 · 경제학 원론 연구실</title>
+<meta name="description" content="경제학 원론 연구실 열네 쪽과 실전 연습장을 가상의 강의 시장 「생활경제 시장」의 가게 15곳으로 둘러보는 3D 시장 안내.">
+<meta property="og:title" content="시장 보기 — 생활경제 시장">
 <meta property="og:image" content="{site}assets/og/cover_idx.jpg">
 <meta property="og:url" content="{site}tower.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 0l7 4v8l-7 4-7-4V4z' fill='%239ab0d0'/%3E%3C/svg%3E">
@@ -230,7 +225,7 @@ def tower_page(base_css, site):
 <nav class="top" aria-label="바로가기"><div class="wrap"><a class="logo" href="index.html"><i></i>경제학 원론 연구실</a><div class="links"><a href="index.html">← 목차</a><a href="index.html#map">장 목록</a><a href="01_ten_principles.html">CH01부터</a></div></div></nav>
 {blk}
 <section class="level"><div class="wrap stack">
-<div class="lvhead"><h2>이 건물은</h2><p class="lead">{e(tower.COMPANY["motto"])}. 「경제학 원론 연구실」 11장이 11개 강의실로, 5층 위 라운지와 12층 라운지가 중간·기말 요약정리 및 퀴즈로, 옥상이 실전 연습장으로 들어 있어요. 본 강의는 한국체육대학교 교양과정 「경제학의 이해」, 「생활 속의 경제학」 강의노트를 기반으로 제작됐습니다. 층을 누르거나 오른쪽 안내판에서 골라 올라가세요.</p></div>
+<div class="lvhead"><h2>이 시장은</h2><p class="lead">{e(tower.COMPANY["motto"])}. 「경제학 원론 연구실」 11장이 11개 가게로, 쉼터A와 쉼터B가 중간·기말 요약정리 및 퀴즈로, 골목 끝 광장이 실전 연습장으로 들어 있어요. 본 강의는 한국체육대학교 교양과정 「경제학의 이해」, 「생활 속의 경제학」 강의노트를 기반으로 제작됐습니다. 층을 누르거나 오른쪽 안내판에서 골라 올라가세요.</p></div>
 <p class="muted" style="font-size:14px">{e(tower.COMPANY["note"])} 3D는 three.js(jsdelivr CDN)로 그립니다. 불러오지 못하면 안내판만으로 그대로 이동할 수 있어요.</p>
 <p><a href="index.html">← 목차로 돌아가기</a></p>
 </div></section>

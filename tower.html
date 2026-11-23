@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>건물 보기 — 생활경제 스타디움 타워 · 경제학 원론 연구실</title>
-<meta name="description" content="경제학 원론 연구실 열네 쪽과 실전 연습장을 가상의 강의 건물 생활경제 스타디움 타워 15개 층으로 둘러보는 3D 건물 안내.">
-<meta property="og:title" content="건물 보기 — 생활경제 스타디움 타워">
+<title>시장 보기 — 생활경제 시장 · 경제학 원론 연구실</title>
+<meta name="description" content="경제학 원론 연구실 열네 쪽과 실전 연습장을 가상의 강의 시장 「생활경제 시장」의 가게 15곳으로 둘러보는 3D 시장 안내.">
+<meta property="og:title" content="시장 보기 — 생활경제 시장">
 <meta property="og:image" content="https://adminmrobo.github.io/basic_economic_lab/assets/og/cover_idx.jpg">
 <meta property="og:url" content="https://adminmrobo.github.io/basic_economic_lab/tower.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 0l7 4v8l-7 4-7-4V4z' fill='%239ab0d0'/%3E%3C/svg%3E">
@@ -409,6 +409,21 @@ details.mathmore .mathbox{border:0;padding:4px 0 0;background:transparent}
 .pcard{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
 .pcard .phead{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .pcard pre{white-space:pre-wrap;word-break:keep-all;font-size:13.5px;line-height:1.55;background:#f6f8fb;border-radius:8px;padding:10px 12px;margin:0;max-height:300px;overflow:auto}
+/* 그림으로 먼저 보기 */
+.ill{margin:6px 0 4px;border:1px solid var(--rule);border-radius:14px;background:#fff;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
+.ill-pic{background:#f6f8fc;display:flex;align-items:center;justify-content:center;aspect-ratio:16/9}
+.ill-pic img{display:block;width:100%;height:100%;object-fit:cover;image-rendering:pixelated}
+.ill-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:16px;color:var(--muted);
+  background-color:#f6f8fc;background-image:linear-gradient(45deg,#eef2f8 25%,transparent 25%,transparent 75%,#eef2f8 75%),linear-gradient(45deg,#eef2f8 25%,transparent 25%,transparent 75%,#eef2f8 75%);background-size:16px 16px;background-position:0 0,8px 8px}
+.ill-ph b{font-size:15px;color:var(--text);background:#fff;padding:4px 10px;border:2px solid var(--rule);border-radius:4px}
+.ill-ph span{font-size:13px;background:#fff;padding:2px 8px;border-radius:4px}
+.ill figcaption{padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.ill-tag{font-size:12px;font-weight:700;color:#138a52;letter-spacing:.02em}
+.ill-t{font-size:16px;line-height:1.45}
+.ill ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.ill li{display:flex;gap:8px;font-size:14.5px;line-height:1.7}
+.ill li i{font-style:normal;font-weight:700;color:#2563c9;flex:none}
+@media (max-width:860px){.ill{grid-template-columns:1fr}}
 
 </style>
 </head>
@@ -495,30 +510,34 @@ details.mathmore .mathbox{border:0;padding:4px 0 0;background:transparent}
   .tw-tools button{font-size:12px;padding:5px 8px}
   .tw-clock i{font-size:13px}
 }
+/* 시장 전체 보기: 가게 표시는 짧게(호수만), 가리키거나 고르면 이름까지 */
+.tw-lb.fl:not(.on) span,.tw-lb.fl:not(.on) small{display:none}
+.tw-lb.fl:not(.on) b{margin-right:0}
+.tw-lb.fl.on{z-index:4}
 
 </style>
-<section class="tower tw-idx" id="tower" data-floor="lobby" aria-label="생활경제 연구원 스타디움 타워 — 건물 안내">
-<div class="tw-stage" role="img" aria-label="생활경제 연구원 스타디움 타워 3D 모형: 로비부터 옥상까지 15개 층, 층마다 한 강의실(장)">
+<section class="tower tw-idx" id="tower" data-floor="lobby" aria-label="생활경제 시장 — 시장 안내">
+<div class="tw-stage" role="img" aria-label="생활경제 시장 3D 모형: 시장 입구부터 골목 끝 광장까지 가게 15곳, 가게마다 한 강의실(장)">
 <div class="tw-cv" aria-hidden="true"></div><div class="tw-labels" aria-hidden="true"></div>
-<div class="tw-tools"><button type="button" data-v="b" class="on">건물 전체</button><button type="button" data-v="spin" aria-pressed="true">자동 회전</button></div>
-<p class="tw-hint">드래그로 돌려 보고 층을 누르면 안내 카드가 열려요</p>
+<div class="tw-tools"><button type="button" data-v="b" class="on">시장 전체</button><button type="button" data-v="spin" aria-pressed="true">자동 회전</button></div>
+<p class="tw-hint">드래그로 돌려 보고 가게를 누르면 안내 카드가 열려요</p>
 <div class="tw-card" hidden></div>
-<div class="tw-err" hidden>3D 건물을 불러오지 못했습니다(인터넷 연결 · WebGL 확인). 오른쪽 안내판으로 그대로 이동할 수 있어요.</div>
-<div class="tw-load">건물을 짓는 중…</div>
+<div class="tw-err" hidden>3D 시장을 불러오지 못했습니다(인터넷 연결 · WebGL 확인). 오른쪽 안내판으로 그대로 이동할 수 있어요.</div>
+<div class="tw-load">시장을 여는 중…</div>
 </div>
-<aside class="tw-panel" aria-label="층별 안내판">
-<p class="tw-co"><b>생활경제 연구원</b> 스타디움 타워 · <span>Everyday Economics Institute</span></p>
-<h2>층별 안내판</h2>
-<p class="tw-biz">경기장처럼 규칙과 기록으로 경제를 읽는 강의 건물. 열한 강의실이 한 층씩 쓰고, 5층 위 라운지와 12층 라운지에서 요약정리와 퀴즈를, 옥상에서 실전 연습장을 봅니다. 건물의 층을 누르거나 아래 안내판에서 골라 올라가세요.</p>
-<div class="tw-clock" aria-label="세계 지사 시각"><span data-tz="Asia/Seoul"><b>서울</b><i>--:--</i></span><span data-tz="Europe/London"><b>런던</b><i>--:--</i></span><span data-tz="America/New_York"><b>뉴욕</b><i>--:--</i></span><span data-tz="Asia/Singapore"><b>싱가포르</b><i>--:--</i></span></div>
-<ol class="tw-dir"><li data-k="roof"><a href="practice/index.html"><span class="tw-badge" style="--c:#138a52">R</span><b>옥상 실전 연습장</b><span>실전 연습장 · 마지막 장 · 실전 연습장 — 매표소·용품점·시청·중앙은행</span></a></li><li data-k="11f"><a href="11f_final_review.html"><span class="tw-badge" style="--c:#138a52">12F</span><b>기말 점검 라운지</b><span>기말 점검 · 기말 요약정리 및 퀴즈 — CH06~CH11</span></a></li><li data-k="11"><a href="11_economic_policy.html"><span class="tw-badge" style="--c:#2563c9">11F</span><b>경제정책 강의실</b><span>CH11 · CH11 정부의 경제정책</span></a></li><li data-k="10"><a href="10_macro_economy.html"><span class="tw-badge" style="--c:#d23f2c">10F</span><b>국민경제 강의실</b><span>CH10 · CH10 국민경제와 경기변동</span></a></li><li data-k="09"><a href="09_market_failure.html"><span class="tw-badge" style="--c:#138a52">9F</span><b>공공경제 강의실</b><span>CH09 · CH09 시장실패와 정부의 역할</span></a></li><li data-k="08"><a href="08_market_structure.html"><span class="tw-badge" style="--c:#3f5fa8">8F</span><b>시장구조 강의실</b><span>CH08 · CH08 시장구조 — 경쟁·독점·과점</span></a></li><li data-k="07"><a href="07_cost_of_taxation.html"><span class="tw-badge" style="--c:#7a45d6">7F</span><b>조세 강의실</b><span>CH07 · CH07 조세의 경제적 비용</span></a></li><li data-k="06"><a href="06_market_efficiency.html"><span class="tw-badge" style="--c:#14899a">6F</span><b>잉여 강의실</b><span>CH06 · CH06 소비자·생산자·시장의 효율성</span></a></li><li data-k="05m"><a href="05m_midterm_review.html"><span class="tw-badge" style="--c:#138a52">5M</span><b>중간 점검 라운지</b><span>중간 점검 · 중간 요약정리 및 퀴즈 — CH01~CH05</span></a></li><li data-k="05"><a href="05_government_policy.html"><span class="tw-badge" style="--c:#a8329f">5F</span><b>정책 강의실</b><span>CH05 · CH05 수요·공급과 정부정책</span></a></li><li data-k="04"><a href="04_elasticity.html"><span class="tw-badge" style="--c:#2563c9">4F</span><b>탄력성 강의실</b><span>CH04 · CH04 탄력성과 그 응용</span></a></li><li data-k="03"><a href="03_supply_demand.html"><span class="tw-badge" style="--c:#d23f2c">3F</span><b>시장 강의실</b><span>CH03 · CH03 수요와 공급</span></a></li><li data-k="02"><a href="02_think_like_economist.html"><span class="tw-badge" style="--c:#138a52">2F</span><b>모형 강의실</b><span>CH02 · CH02 경제학자처럼 생각하기</span></a></li><li data-k="01"><a href="01_ten_principles.html"><span class="tw-badge" style="--c:#3f5fa8">1F</span><b>선택 강의실</b><span>CH01 · CH01 경제학의 10대 원리</span></a></li><li data-k="00" class="here"><a href="index.html"><span class="tw-badge" style="--c:#5d6278">L</span><b>로비 · 안내 데스크</b><span>목차 · 경제학 원론 해설 쪽으로</span></a></li></ol>
-<p class="tw-note">가상의 강의 건물입니다. 층마다 강의실이 하나 있고, 강의실마다 박사가 그 장을 강의합니다.</p>
+<aside class="tw-panel" aria-label="가게 안내판">
+<p class="tw-co"><b>생활경제 시장</b> 골목 강의 시장 · <span>Everyday Economics Market</span></p>
+<h2>가게 안내판</h2>
+<p class="tw-biz">골목을 따라 가게를 한 곳씩 들르며 경제를 읽는 강의 시장. 열한 강의실이 가게 하나씩을 쓰고, 북쪽 줄 끝 쉼터A와 남쪽 줄 끝 쉼터B에서 요약정리와 퀴즈를, 골목 끝 광장에서 실전 연습장을 봅니다. 시장의 가게를 누르거나 아래 안내판에서 골라 들어가세요.</p>
+<div class="tw-clock" aria-label="세계 주요 시장 시각"><span data-tz="Asia/Seoul"><b>서울</b><i>--:--</i></span><span data-tz="Europe/London"><b>런던</b><i>--:--</i></span><span data-tz="America/New_York"><b>뉴욕</b><i>--:--</i></span><span data-tz="Asia/Singapore"><b>싱가포르</b><i>--:--</i></span></div>
+<ol class="tw-dir"><li data-k="00" class="here"><a href="index.html"><span class="tw-badge" style="--c:#5d6278">입구</span><b>시장 입구 · 안내소</b><span>목차 · 경제학 원론 해설 쪽으로</span></a></li><li data-k="01"><a href="01_ten_principles.html"><span class="tw-badge" style="--c:#3f5fa8">1호</span><b>선택 강의실</b><span>CH01 · CH01 경제학의 10대 원리</span></a></li><li data-k="02"><a href="02_think_like_economist.html"><span class="tw-badge" style="--c:#138a52">2호</span><b>모형 강의실</b><span>CH02 · CH02 경제학자처럼 생각하기</span></a></li><li data-k="03"><a href="03_supply_demand.html"><span class="tw-badge" style="--c:#d23f2c">3호</span><b>시장 강의실</b><span>CH03 · CH03 수요와 공급</span></a></li><li data-k="04"><a href="04_elasticity.html"><span class="tw-badge" style="--c:#2563c9">4호</span><b>탄력성 강의실</b><span>CH04 · CH04 탄력성과 그 응용</span></a></li><li data-k="05"><a href="05_government_policy.html"><span class="tw-badge" style="--c:#a8329f">5호</span><b>정책 강의실</b><span>CH05 · CH05 수요·공급과 정부정책</span></a></li><li data-k="05m"><a href="05m_midterm_review.html"><span class="tw-badge" style="--c:#138a52">쉼터A</span><b>중간 점검 쉼터</b><span>중간 점검 · 중간 요약정리 및 퀴즈 — CH01~CH05</span></a></li><li data-k="06"><a href="06_market_efficiency.html"><span class="tw-badge" style="--c:#14899a">6호</span><b>잉여 강의실</b><span>CH06 · CH06 소비자·생산자·시장의 효율성</span></a></li><li data-k="07"><a href="07_cost_of_taxation.html"><span class="tw-badge" style="--c:#7a45d6">7호</span><b>조세 강의실</b><span>CH07 · CH07 조세의 경제적 비용</span></a></li><li data-k="08"><a href="08_market_structure.html"><span class="tw-badge" style="--c:#3f5fa8">8호</span><b>시장구조 강의실</b><span>CH08 · CH08 시장구조 — 경쟁·독점·과점</span></a></li><li data-k="09"><a href="09_market_failure.html"><span class="tw-badge" style="--c:#138a52">9호</span><b>공공경제 강의실</b><span>CH09 · CH09 시장실패와 정부의 역할</span></a></li><li data-k="10"><a href="10_macro_economy.html"><span class="tw-badge" style="--c:#d23f2c">10호</span><b>국민경제 강의실</b><span>CH10 · CH10 국민경제와 경기변동</span></a></li><li data-k="11"><a href="11_economic_policy.html"><span class="tw-badge" style="--c:#2563c9">11호</span><b>경제정책 강의실</b><span>CH11 · CH11 정부의 경제정책</span></a></li><li data-k="11f"><a href="11f_final_review.html"><span class="tw-badge" style="--c:#138a52">쉼터B</span><b>기말 점검 쉼터</b><span>기말 점검 · 기말 요약정리 및 퀴즈 — CH06~CH11</span></a></li><li data-k="roof"><a href="practice/index.html"><span class="tw-badge" style="--c:#138a52">광장</span><b>광장 실전 연습장</b><span>실전 연습장 · 마지막 장 · 실전 연습장 — 매표소·용품점·시청·중앙은행</span></a></li></ol>
+<p class="tw-note">가상의 강의 시장입니다. 가게마다 강의실이 하나 있고, 가게마다 박사가 그 장을 강의합니다.</p>
 </aside>
 </section>
-<script type="application/json" id="towerData">{"cur": "lobby", "home": "index.html", "company": {"ko": "생활경제 연구원", "en": "Everyday Economics Institute", "hq": "스타디움 타워", "motto": "경기장처럼 규칙과 기록으로 경제를 읽는 강의 건물", "sign": ["ECON STADIUM", "Everyday Economics"], "plate": "생활경제 스타디움 타워  ·  서울", "svg": "ECON", "note": "가상의 강의 건물입니다. 층마다 강의실이 하나 있고, 강의실마다 박사가 그 장을 강의합니다."}, "floors": [{"key": "lobby", "label": "L", "dept": "로비 · 안내 데스크", "en": "Lobby & Directory", "branch": "생활경제 스타디움", "title": "목차 — 경제학 원론 연구실", "ep": "목차", "file": "index.html", "biz": "스타디움 타워의 로비입니다. 층별 안내판에서 강의실(장)을 고르면 그 층으로 올라갑니다.", "color": "#5d6278", "rooms": [{"id": "micro", "name": "안내 데스크", "sec": "경제학 원론이란"}, {"id": "map", "name": "층별 안내판", "sec": "목차"}, {"id": "keys", "name": "한 줄 핵심 게시판", "sec": "한 줄 핵심 모음"}, {"id": "dash", "name": "종합 전광판", "sec": "종합 대시보드"}, {"id": "path", "name": "개념 계단", "sec": "개념 흐름"}, {"id": "how", "name": "식구 라운지", "sec": "식구 · 사용법"}, {"id": "about", "name": "자료 보관실", "sec": "자료와 원칙"}]}, {"key": "01", "label": "1F", "dept": "선택 강의실", "en": "Choice Room", "branch": "생활경제 스타디움", "title": "CH01 경제학의 10대 원리", "ep": "CH01", "file": "01_ten_principles.html", "biz": "희소성, 기회비용, 한계적 판단을 다루는 첫 강의실이에요.", "color": "#3f5fa8", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "희소성 진열대", "sec": "단계 ① 희소성과 경제문제"}, {"id": "lv2", "name": "기회비용 계산대", "sec": "단계 ② 기회비용과 매몰비용"}, {"id": "lv3", "name": "한계 판단 트랙", "sec": "단계 ③ 한계적 판단과 유인"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "02", "label": "2F", "dept": "모형 강의실", "en": "Model Room", "branch": "생활경제 스타디움", "title": "CH02 경제학자처럼 생각하기", "ep": "CH02", "file": "02_think_like_economist.html", "biz": "현실을 단순하게 만든 모형으로 생각하는 법을 배우는 강의실이에요.", "color": "#138a52", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "모형 작업대", "sec": "단계 ① 가정과 모형"}, {"id": "lv2", "name": "생산가능곡선 코트", "sec": "단계 ② 생산가능곡선"}, {"id": "lv3", "name": "토론 테이블", "sec": "단계 ③ 미시·거시와 실증·규범"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "03", "label": "3F", "dept": "시장 강의실", "en": "Market Room", "branch": "생활경제 스타디움", "title": "CH03 수요와 공급", "ep": "CH03", "file": "03_supply_demand.html", "biz": "사려는 힘과 팔려는 힘이 만나 가격이 정해지는 과정을 다뤄요.", "color": "#d23f2c", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "수요 관람석", "sec": "단계 ① 수요"}, {"id": "lv2", "name": "공급 관람석", "sec": "단계 ② 공급"}, {"id": "lv3", "name": "균형 센터서클", "sec": "단계 ③ 시장균형과 이동"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "04", "label": "4F", "dept": "탄력성 강의실", "en": "Elasticity Room", "branch": "생활경제 스타디움", "title": "CH04 탄력성과 그 응용", "ep": "CH04", "file": "04_elasticity.html", "biz": "가격이 1% 바뀔 때 몇 % 반응하는지 재고, 매출 결정에 쓰는 강의실이에요.", "color": "#2563c9", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "반응 측정실", "sec": "단계 ① 가격탄력성"}, {"id": "lv2", "name": "매출 계산대", "sec": "단계 ② 탄력성과 매출"}, {"id": "lv3", "name": "탄력성 지도", "sec": "단계 ③ 소득·교차·공급 탄력성"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "05", "label": "5F", "dept": "정책 강의실", "en": "Policy Room", "branch": "생활경제 스타디움", "title": "CH05 수요·공급과 정부정책", "ep": "CH05", "file": "05_government_policy.html", "biz": "가격상한·하한과 세금이 시장을 어떻게 바꾸는지 계산해요.", "color": "#a8329f", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "상한선 계단", "sec": "단계 ① 가격상한제"}, {"id": "lv2", "name": "하한선 계단", "sec": "단계 ② 가격하한제"}, {"id": "lv3", "name": "세금 귀착실", "sec": "단계 ③ 조세의 귀착"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "05m", "label": "5M", "dept": "중간 점검 라운지", "en": "Mid-term Review Lounge", "branch": "생활경제 스타디움", "title": "중간 요약정리 및 퀴즈 — CH01~CH05", "ep": "중간 점검", "file": "05m_midterm_review.html", "biz": "1~5층 강의를 돌아보며 요약을 보고, 원자료 문제와 생활 계산으로 점검하는 라운지예요.", "color": "#138a52", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "summary", "name": "요약 게시판", "sec": "1부 요약"}, {"id": "orig", "name": "시험장", "sec": "2부 원자료 문제"}, {"id": "calc", "name": "계산 연습실", "sec": "3부 생활 계산"}, {"id": "score", "name": "점수판", "sec": "장별 점수"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "06", "label": "6F", "dept": "잉여 강의실", "en": "Surplus Room", "branch": "생활경제 스타디움", "title": "CH06 소비자·생산자·시장의 효율성", "ep": "CH06", "file": "06_market_efficiency.html", "biz": "지불용의와 공급용의로 잉여를 재고, 시장이 효율적인 이유를 봐요.", "color": "#14899a", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "경매 테이블", "sec": "단계 ① 소비자잉여"}, {"id": "lv2", "name": "견적 테이블", "sec": "단계 ② 생산자잉여"}, {"id": "lv3", "name": "총잉여 전광판", "sec": "단계 ③ 총잉여와 효율성"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "07", "label": "7F", "dept": "조세 강의실", "en": "Taxation Room", "branch": "생활경제 스타디움", "title": "CH07 조세의 경제적 비용", "ep": "CH07", "file": "07_cost_of_taxation.html", "biz": "세금이 만드는 사중손실과 세수의 한계를 계산하는 강의실이에요.", "color": "#7a45d6", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "잉여 계산대", "sec": "단계 ① 세금과 잉여"}, {"id": "lv2", "name": "탄력성 저울", "sec": "단계 ② 탄력성과 사중손실"}, {"id": "lv3", "name": "래퍼 곡선 언덕", "sec": "단계 ③ 세금 크기와 세수"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "08", "label": "8F", "dept": "시장구조 강의실", "en": "Market Structure Room", "branch": "생활경제 스타디움", "title": "CH08 시장구조 — 경쟁·독점·과점", "ep": "CH08", "file": "08_market_structure.html", "biz": "기업 수와 제품 차이로 시장을 나누고, 각 시장의 가격과 효율을 비교해요.", "color": "#3f5fa8", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "완전경쟁 광장", "sec": "단계 ① 완전경쟁"}, {"id": "lv2", "name": "독점 매표소", "sec": "단계 ② 독점"}, {"id": "lv3", "name": "과점 협상실", "sec": "단계 ③ 과점과 독점적 경쟁"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "09", "label": "9F", "dept": "공공경제 강의실", "en": "Public Economics Room", "branch": "생활경제 스타디움", "title": "CH09 시장실패와 정부의 역할", "ep": "CH09", "file": "09_market_failure.html", "biz": "외부효과·공공재·소득분배처럼 시장이 혼자 풀지 못하는 문제를 다뤄요(재정학).", "color": "#138a52", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "외부효과 측정실", "sec": "단계 ① 외부효과"}, {"id": "lv2", "name": "공공재 공원", "sec": "단계 ② 공공재"}, {"id": "lv3", "name": "분배 저울", "sec": "단계 ③ 소득분배와 지니계수"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "10", "label": "10F", "dept": "국민경제 강의실", "en": "Macro Room", "branch": "생활경제 스타디움", "title": "CH10 국민경제와 경기변동", "ep": "CH10", "file": "10_macro_economy.html", "biz": "GDP·실업·인플레이션으로 나라 경제 전체를 읽는 거시 강의실이에요.", "color": "#d23f2c", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "GDP 계기판", "sec": "단계 ① GDP"}, {"id": "lv2", "name": "고용 통계실", "sec": "단계 ② 실업"}, {"id": "lv3", "name": "물가 관측실", "sec": "단계 ③ 인플레이션과 필립스 곡선"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "11", "label": "11F", "dept": "경제정책 강의실", "en": "Policy Mix Room", "branch": "생활경제 스타디움", "title": "CH11 정부의 경제정책", "ep": "CH11", "file": "11_economic_policy.html", "biz": "재정정책과 통화정책으로 경기를 조절하는 방법을 다뤄요.", "color": "#2563c9", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "총수요 작업대", "sec": "단계 ① 총수요와 총공급"}, {"id": "lv2", "name": "재정 계산실", "sec": "단계 ② 재정정책"}, {"id": "lv3", "name": "금리 조종실", "sec": "단계 ③ 통화정책과 정책조합"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "11f", "label": "12F", "dept": "기말 점검 라운지", "en": "Final Review Lounge", "branch": "생활경제 스타디움", "title": "기말 요약정리 및 퀴즈 — CH06~CH11", "ep": "기말 점검", "file": "11f_final_review.html", "biz": "6~11층 강의를 요약하고 퀴즈로 마무리하는 라운지예요. 옥상 실전 연습장으로 올라가기 전에 들러요.", "color": "#138a52", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "summary", "name": "요약 게시판", "sec": "1부 요약"}, {"id": "orig", "name": "시험장", "sec": "2부 원자료 문제"}, {"id": "calc", "name": "계산 연습실", "sec": "3부 생활 계산"}, {"id": "score", "name": "점수판", "sec": "장별 점수"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "roof", "label": "R", "dept": "옥상 실전 연습장", "en": "Rooftop Practice Arena", "branch": "생활경제 스타디움", "title": "마지막 장 · 실전 연습장 — 매표소·용품점·시청·중앙은행", "ep": "실전 연습장", "file": "practice/index.html", "biz": "옥상 경기장이에요. 매표소·용품점·시청·중앙은행을 직접 운영하며 열한 장의 원리를 적용합니다.", "color": "#138a52", "rooms": [{"id": "ticket", "name": "경기장 매표소", "sec": "매표소 — 수요·공급·가격상한"}, {"id": "shop", "name": "스포츠용품점", "sec": "용품점 — 탄력성·매출"}, {"id": "city", "name": "시청 정책실", "sec": "시청 — 세금·외부효과"}, {"id": "bank", "name": "중앙은행 상황실", "sec": "중앙은행 — 경기와 정책"}]}]}</script>
+<script type="application/json" id="towerData">{"cur": "lobby", "home": "index.html", "company": {"ko": "생활경제 시장", "en": "Everyday Economics Market", "hq": "골목 강의 시장", "motto": "골목을 따라 가게를 한 곳씩 들르며 경제를 읽는 강의 시장", "sign": ["ECON MARKET", "생활경제 시장"], "plate": "생활경제 시장  ·  서울", "svg": "ECON", "note": "가상의 강의 시장입니다. 가게마다 강의실이 하나 있고, 가게마다 박사가 그 장을 강의합니다."}, "floors": [{"key": "lobby", "label": "입구", "dept": "시장 입구 · 안내소", "en": "Market Gate & Directory", "branch": "생활경제 시장", "title": "목차 — 경제학 원론 연구실", "ep": "목차", "file": "index.html", "biz": "생활경제 시장의 입구 안내소입니다. 가게 안내판에서 강의실(장)을 고르면 그 가게로 걸어갑니다.", "color": "#5d6278", "rooms": [{"id": "micro", "name": "안내 데스크", "sec": "경제학 원론이란"}, {"id": "map", "name": "가게 안내판", "sec": "목차"}, {"id": "keys", "name": "한 줄 핵심 게시판", "sec": "한 줄 핵심 모음"}, {"id": "dash", "name": "종합 전광판", "sec": "종합 대시보드"}, {"id": "path", "name": "개념 계단", "sec": "개념 흐름"}, {"id": "how", "name": "식구 라운지", "sec": "식구 · 사용법"}, {"id": "about", "name": "자료 보관실", "sec": "자료와 원칙"}]}, {"key": "01", "label": "1호", "dept": "선택 강의실", "en": "Choice Room", "branch": "생활경제 시장", "title": "CH01 경제학의 10대 원리", "ep": "CH01", "file": "01_ten_principles.html", "biz": "희소성, 기회비용, 한계적 판단을 다루는 첫 강의실이에요.", "color": "#3f5fa8", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "희소성 진열대", "sec": "단계 ① 희소성과 경제문제"}, {"id": "lv2", "name": "기회비용 계산대", "sec": "단계 ② 기회비용과 매몰비용"}, {"id": "lv3", "name": "한계 판단 트랙", "sec": "단계 ③ 한계적 판단과 유인"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "02", "label": "2호", "dept": "모형 강의실", "en": "Model Room", "branch": "생활경제 시장", "title": "CH02 경제학자처럼 생각하기", "ep": "CH02", "file": "02_think_like_economist.html", "biz": "현실을 단순하게 만든 모형으로 생각하는 법을 배우는 강의실이에요.", "color": "#138a52", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "모형 작업대", "sec": "단계 ① 가정과 모형"}, {"id": "lv2", "name": "생산가능곡선 코트", "sec": "단계 ② 생산가능곡선"}, {"id": "lv3", "name": "토론 테이블", "sec": "단계 ③ 미시·거시와 실증·규범"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "03", "label": "3호", "dept": "시장 강의실", "en": "Market Room", "branch": "생활경제 시장", "title": "CH03 수요와 공급", "ep": "CH03", "file": "03_supply_demand.html", "biz": "사려는 힘과 팔려는 힘이 만나 가격이 정해지는 과정을 다뤄요.", "color": "#d23f2c", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "수요 관람석", "sec": "단계 ① 수요"}, {"id": "lv2", "name": "공급 관람석", "sec": "단계 ② 공급"}, {"id": "lv3", "name": "균형 센터서클", "sec": "단계 ③ 시장균형과 이동"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "04", "label": "4호", "dept": "탄력성 강의실", "en": "Elasticity Room", "branch": "생활경제 시장", "title": "CH04 탄력성과 그 응용", "ep": "CH04", "file": "04_elasticity.html", "biz": "가격이 1% 바뀔 때 몇 % 반응하는지 재고, 매출 결정에 쓰는 강의실이에요.", "color": "#2563c9", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "반응 측정실", "sec": "단계 ① 가격탄력성"}, {"id": "lv2", "name": "매출 계산대", "sec": "단계 ② 탄력성과 매출"}, {"id": "lv3", "name": "탄력성 지도", "sec": "단계 ③ 소득·교차·공급 탄력성"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "05", "label": "5호", "dept": "정책 강의실", "en": "Policy Room", "branch": "생활경제 시장", "title": "CH05 수요·공급과 정부정책", "ep": "CH05", "file": "05_government_policy.html", "biz": "가격상한·하한과 세금이 시장을 어떻게 바꾸는지 계산해요.", "color": "#a8329f", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "상한선 계단", "sec": "단계 ① 가격상한제"}, {"id": "lv2", "name": "하한선 계단", "sec": "단계 ② 가격하한제"}, {"id": "lv3", "name": "세금 귀착실", "sec": "단계 ③ 조세의 귀착"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "05m", "label": "쉼터A", "dept": "중간 점검 쉼터", "en": "Mid-term Review Rest Area", "branch": "생활경제 시장", "title": "중간 요약정리 및 퀴즈 — CH01~CH05", "ep": "중간 점검", "file": "05m_midterm_review.html", "biz": "1~5호 가게 강의를 돌아보며 요약을 보고, 원자료 문제와 생활 계산으로 점검하는 쉼터예요.", "color": "#138a52", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "summary", "name": "요약 게시판", "sec": "1부 요약"}, {"id": "orig", "name": "시험장", "sec": "2부 원자료 문제"}, {"id": "calc", "name": "계산 연습실", "sec": "3부 생활 계산"}, {"id": "score", "name": "점수판", "sec": "장별 점수"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "06", "label": "6호", "dept": "잉여 강의실", "en": "Surplus Room", "branch": "생활경제 시장", "title": "CH06 소비자·생산자·시장의 효율성", "ep": "CH06", "file": "06_market_efficiency.html", "biz": "지불용의와 공급용의로 잉여를 재고, 시장이 효율적인 이유를 봐요.", "color": "#14899a", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "경매 테이블", "sec": "단계 ① 소비자잉여"}, {"id": "lv2", "name": "견적 테이블", "sec": "단계 ② 생산자잉여"}, {"id": "lv3", "name": "총잉여 전광판", "sec": "단계 ③ 총잉여와 효율성"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "07", "label": "7호", "dept": "조세 강의실", "en": "Taxation Room", "branch": "생활경제 시장", "title": "CH07 조세의 경제적 비용", "ep": "CH07", "file": "07_cost_of_taxation.html", "biz": "세금이 만드는 사중손실과 세수의 한계를 계산하는 강의실이에요.", "color": "#7a45d6", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "잉여 계산대", "sec": "단계 ① 세금과 잉여"}, {"id": "lv2", "name": "탄력성 저울", "sec": "단계 ② 탄력성과 사중손실"}, {"id": "lv3", "name": "래퍼 곡선 언덕", "sec": "단계 ③ 세금 크기와 세수"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "08", "label": "8호", "dept": "시장구조 강의실", "en": "Market Structure Room", "branch": "생활경제 시장", "title": "CH08 시장구조 — 경쟁·독점·과점", "ep": "CH08", "file": "08_market_structure.html", "biz": "기업 수와 제품 차이로 시장을 나누고, 각 시장의 가격과 효율을 비교해요.", "color": "#3f5fa8", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "완전경쟁 광장", "sec": "단계 ① 완전경쟁"}, {"id": "lv2", "name": "독점 매표소", "sec": "단계 ② 독점"}, {"id": "lv3", "name": "과점 협상실", "sec": "단계 ③ 과점과 독점적 경쟁"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "09", "label": "9호", "dept": "공공경제 강의실", "en": "Public Economics Room", "branch": "생활경제 시장", "title": "CH09 시장실패와 정부의 역할", "ep": "CH09", "file": "09_market_failure.html", "biz": "외부효과·공공재·소득분배처럼 시장이 혼자 풀지 못하는 문제를 다뤄요(재정학).", "color": "#138a52", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "외부효과 측정실", "sec": "단계 ① 외부효과"}, {"id": "lv2", "name": "공공재 공원", "sec": "단계 ② 공공재"}, {"id": "lv3", "name": "분배 저울", "sec": "단계 ③ 소득분배와 지니계수"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "10", "label": "10호", "dept": "국민경제 강의실", "en": "Macro Room", "branch": "생활경제 시장", "title": "CH10 국민경제와 경기변동", "ep": "CH10", "file": "10_macro_economy.html", "biz": "GDP·실업·인플레이션으로 나라 경제 전체를 읽는 거시 강의실이에요.", "color": "#d23f2c", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "GDP 계기판", "sec": "단계 ① GDP"}, {"id": "lv2", "name": "고용 통계실", "sec": "단계 ② 실업"}, {"id": "lv3", "name": "물가 관측실", "sec": "단계 ③ 인플레이션과 필립스 곡선"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "11", "label": "11호", "dept": "경제정책 강의실", "en": "Policy Mix Room", "branch": "생활경제 시장", "title": "CH11 정부의 경제정책", "ep": "CH11", "file": "11_economic_policy.html", "biz": "재정정책과 통화정책으로 경기를 조절하는 방법을 다뤄요.", "color": "#2563c9", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "lv1", "name": "총수요 작업대", "sec": "단계 ① 총수요와 총공급"}, {"id": "lv2", "name": "재정 계산실", "sec": "단계 ② 재정정책"}, {"id": "lv3", "name": "금리 조종실", "sec": "단계 ③ 통화정책과 정책조합"}, {"id": "dash", "name": "전광판", "sec": "한눈에 보는 대시보드"}, {"id": "duel", "name": "토론 코트", "sec": "조교 대결"}, {"id": "sum", "name": "정리 칠판", "sec": "정리"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "11f", "label": "쉼터B", "dept": "기말 점검 쉼터", "en": "Final Review Rest Area", "branch": "생활경제 시장", "title": "기말 요약정리 및 퀴즈 — CH06~CH11", "ep": "기말 점검", "file": "11f_final_review.html", "biz": "6~11호 가게 강의를 요약하고 퀴즈로 마무리하는 쉼터예요. 골목 끝 광장의 실전 연습장으로 가기 전에 들러요.", "color": "#138a52", "rooms": [{"id": "three", "name": "안내 데스크", "sec": "3줄 요약"}, {"id": "cast", "name": "강의실 입구", "sec": "강의실 식구"}, {"id": "summary", "name": "요약 게시판", "sec": "1부 요약"}, {"id": "orig", "name": "시험장", "sec": "2부 원자료 문제"}, {"id": "calc", "name": "계산 연습실", "sec": "3부 생활 계산"}, {"id": "score", "name": "점수판", "sec": "장별 점수"}, {"id": "kg", "name": "자료실", "sec": "지식 색인 · 꾸러미"}]}, {"key": "roof", "label": "광장", "dept": "광장 실전 연습장", "en": "Plaza Practice Arena", "branch": "생활경제 시장", "title": "마지막 장 · 실전 연습장 — 매표소·용품점·시청·중앙은행", "ep": "실전 연습장", "file": "practice/index.html", "biz": "골목 끝 광장의 경기장이에요. 매표소·용품점·시청·중앙은행을 직접 운영하며 열한 장의 원리를 적용합니다.", "color": "#138a52", "rooms": [{"id": "ticket", "name": "경기장 매표소", "sec": "매표소 — 수요·공급·가격상한"}, {"id": "shop", "name": "스포츠용품점", "sec": "용품점 — 탄력성·매출"}, {"id": "city", "name": "시청 정책실", "sec": "시청 — 세금·외부효과"}, {"id": "bank", "name": "중앙은행 상황실", "sec": "중앙은행 — 경기와 정책"}]}]}</script>
 <script type="importmap">{"imports": {"three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
 <script type="module">
-// 생활경제 스타디움 타워 — 3D 첫 화면 (three.js). 목차: 건물 전체, 장 쪽: 그 층을 꺼내 평면으로 안내
+// 생활경제 시장 — 3D 첫 화면 (three.js). 목차: 시장 전체, 장 쪽: 그 가게의 평면으로 안내
 const TW = document.getElementById('tower');
 const TD = JSON.parse(document.getElementById('towerData').textContent);
 const $t = s => TW.querySelector(s);
@@ -543,11 +562,19 @@ $t('.tw-load').hidden = true;
 async function build() {
   const THREE = await import('three');
   const { OrbitControls } = await import('three/addons/controls/OrbitControls.js');
-  const W = 8, DP = 5, PULL = DP + 2.6;
+  const W = 8, DP = 5, PULL = 0, HS = 2.2, AISLE = 4.2, SW = W + 0.7;
   const FL = TD.floors;
-  const FH = k => k === 'lobby' ? 1.7 : k === '05m' ? 0.8 : k === 'roof' ? 0.55 : 1.15;
-  let y = 0; FL.forEach(f => { f.y = y; f.h = FH(f.key); y += f.h; });
-  const TOP = y;
+  // 시장 배치: 북쪽 줄(입구 안내소 → 1~5호 → 중간 쉼터), 남쪽 줄(6~11호 → 기말 쉼터), 골목 끝 광장 = 실전 연습장
+  const NORTH = ['lobby', '01', '02', '03', '04', '05', '05m'], SOUTH = ['06', '07', '08', '09', '10', '11', '11f'];
+  const PLAZA_R = 5.2, PLAZA_X = 3.5 * SW + PLAZA_R + 1.6;
+  FL.forEach(f => {
+    f.y = 0; f.h = HS;
+    let i = NORTH.indexOf(f.key);
+    if (i >= 0) { f.x = (i - 3) * SW; f.z = -(AISLE / 2 + DP / 2); f.rot = 0; }
+    else if ((i = SOUTH.indexOf(f.key)) >= 0) { f.x = (i - 3) * SW; f.z = AISLE / 2 + DP / 2; f.rot = Math.PI; }
+    else { f.x = PLAZA_X; f.z = 0; f.rot = 0; }
+  });
+  const TOP = HS + 1.2, X0 = -3.5 * SW - 3, X1 = PLAZA_X + PLAZA_R + 1, CX = (X0 + X1) / 2, SPAN = X1 - X0;
   const cur = FL.find(f => f.key === TD.cur);
 
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -555,12 +582,12 @@ async function build() {
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   cvBox.appendChild(renderer.domElement);
   const scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0xf4f7fc, 60, 140);
+  scene.fog = new THREE.Fog(0xf4f7fc, 150, 320);
   const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 400);
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true; controls.dampingFactor = 0.08; controls.enablePan = false;
   controls.minPolarAngle = 0.15; controls.maxPolarAngle = Math.PI / 2 - 0.04;
-  controls.minDistance = 6; controls.maxDistance = 120;
+  controls.minDistance = 6; controls.maxDistance = 220;
   controls.autoRotateSpeed = 0.55;
 
   scene.add(new THREE.HemisphereLight(0xffffff, 0xc9d3e3, 1.6));
@@ -570,21 +597,17 @@ async function build() {
   const M = (c, o = {}) => new THREE.MeshStandardMaterial(Object.assign({ color: c, roughness: 0.75, metalness: 0.05 }, o));
   const box = (w, h, d, mat) => new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat);
 
-  // 땅 · 광장 · 나무
-  const ground = new THREE.Mesh(new THREE.CircleGeometry(48, 64), M(0xe9edf4, { roughness: 1 }));
-  ground.rotation.x = -Math.PI / 2; ground.position.y = -0.02; scene.add(ground);
-  const plaza = box(W + 7, 0.04, DP + PULL + 5, M(0xf5f6f9, { roughness: 1 })); plaza.position.set(0, 0, (PULL) / 2); scene.add(plaza);
-  const road = box(60, 0.03, 3, M(0xd5dbe6, { roughness: 1 })); road.position.set(0, 0, DP / 2 + PULL + 4.5); scene.add(road);
+  // 땅 · 골목 · 나무
+  const ground = new THREE.Mesh(new THREE.CircleGeometry(110, 64), M(0xe9edf4, { roughness: 1 }));
+  ground.rotation.x = -Math.PI / 2; ground.position.set(CX, -0.02, 0); scene.add(ground);
+  const lane = box(7 * SW + 2, 0.04, AISLE, M(0xefe6d4, { roughness: 1 })); lane.position.set(0, 0, 0); scene.add(lane);
+  const laneE = box(PLAZA_X - 3.5 * SW, 0.04, AISLE, M(0xefe6d4, { roughness: 1 })); laneE.position.set(3.5 * SW + (PLAZA_X - 3.5 * SW) / 2, 0, 0); scene.add(laneE);
+  const road = box(SPAN + 20, 0.03, 3, M(0xd5dbe6, { roughness: 1 })); road.position.set(CX, 0, AISLE / 2 + DP + 4.5); scene.add(road);
   const treeG = new THREE.ConeGeometry(0.55, 1.6, 10), trunkG = new THREE.CylinderGeometry(0.08, 0.08, 0.5, 6);
   const treeM = M(0x6fae84), trunkM = M(0x9b7b5c);
-  [[-6.5, 2], [-6.5, 5], [-6.5, 8], [6.5, 2], [6.5, 5], [6.5, 8], [-7.5, -3], [7.5, -3]].forEach(([x, z]) => {
+  [[X0 - 2, -6], [X0 - 2, 6], [X0 + 4, -10.5], [X0 + 16, -10.5], [X0 + 30, -10.5], [X0 + 44, -10.5], [X0 + 4, 10.5], [X0 + 16, 10.5], [X0 + 30, 10.5], [PLAZA_X - 2, -7.5], [PLAZA_X + 3, 7.5]].forEach(([x, z]) => {
     const t = new THREE.Mesh(treeG, treeM); t.position.set(x, 1.05, z); scene.add(t);
     const k = new THREE.Mesh(trunkG, trunkM); k.position.set(x, 0.25, z); scene.add(k);
-  });
-  // 낮은 별관 두 동(다국적 기업 캠퍼스 느낌)
-  [[-13, -4, 5, 3.2, 4], [13, -2, 4, 2.4, 5]].forEach(([x, z, w, h, d]) => {
-    const a = box(w, h, d, M(0xdfe5ef)); a.position.set(x, h / 2, z); scene.add(a);
-    const g = box(w + 0.02, h * 0.55, d + 0.02, M(0xa9bfdc, { transparent: true, opacity: 0.55, roughness: 0.2 })); g.position.set(x, h * 0.55, z); scene.add(g);
   });
 
   // 글자 판(캔버스)
@@ -596,57 +619,73 @@ async function build() {
     const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; return t;
   }
 
-  // 코어(엘리베이터 샤프트)
-  const core = box(1.6, TOP + 0.9, 1.0, M(0xcfd6e3)); core.position.set(0, (TOP + 0.9) / 2, -DP / 2 - 0.45); scene.add(core);
+  // 아케이드 지붕(골목 위 반투명 반원 지붕) · 시장 문
+  const arcM = M(0xd9e6f5, { transparent: true, opacity: 0.32, roughness: 0.2, side: THREE.DoubleSide, depthWrite: false });
+  const arc = new THREE.Mesh(new THREE.CylinderGeometry(AISLE / 2 + 0.35, AISLE / 2 + 0.35, 7 * SW, 24, 1, true, 0, Math.PI), arcM);
+  arc.rotation.z = Math.PI / 2; arc.rotation.y = 0; arc.position.set(0, HS + 0.15, 0); scene.add(arc);
+  const ribM = M(0x9aa8be);
+  for (let k = 0; k <= 7; k++) { const rib = new THREE.Mesh(new THREE.TorusGeometry(AISLE / 2 + 0.36, 0.05, 6, 20, Math.PI), ribM); rib.rotation.y = Math.PI / 2; rib.position.set((k - 3.5) * SW, HS + 0.15, 0); scene.add(rib); }
+  const gateM = M(0x8f5f00);
+  const gx = -3.5 * SW - 1.2;
+  [-AISLE / 2 - 0.3, AISLE / 2 + 0.3].forEach(z => { const p = box(0.35, HS + 2.2, 0.35, gateM); p.position.set(gx, (HS + 2.2) / 2, z); scene.add(p); });
+  const beam = box(0.4, 0.35, AISLE + 1.4, gateM); beam.position.set(gx, HS + 2.1, 0); scene.add(beam);
+  const gsign = new THREE.Mesh(new THREE.PlaneGeometry(AISLE + 0.6, 0.95), new THREE.MeshBasicMaterial({ map: signTex(TD.company.sign || ['ECON MARKET'], 1024, 220, '#8f5f00'), side: THREE.DoubleSide }));
+  gsign.rotation.y = -Math.PI / 2; gsign.position.set(gx - 0.22, HS + 1.45, 0); scene.add(gsign);
 
   const tower = new THREE.Group(); scene.add(tower);
   const hits = [], floorObj = {};
-  const glassM = M(0x9cb7da, { transparent: true, opacity: 0.38, roughness: 0.15, metalness: 0.2, depthWrite: false });
-  const glassG = M(0xa7d4bb, { transparent: true, opacity: 0.42, roughness: 0.2, depthWrite: false });
+  const glassM = M(0xf4ecdc, { transparent: true, opacity: 0.55, roughness: 0.6, depthWrite: false });
+  const glassG = M(0xa7d4bb, { transparent: true, opacity: 0.6, roughness: 0.4, depthWrite: false });
   const slabM = M(0xe3e7ef), mullM = new THREE.LineBasicMaterial({ color: 0x8796ae, transparent: true, opacity: 0.55 });
+  const postM = M(0xb8a382), benchM = M(0xc9a56f);
 
   FL.forEach(f => {
-    const g = new THREE.Group(); g.position.y = f.y; tower.add(g);
+    const g = new THREE.Group(); g.position.set(f.x, 0, f.z); g.rotation.y = f.rot; tower.add(g);
     const col = new THREE.Color(f.color);
     const bandM = M(col, { emissive: col.clone(), emissiveIntensity: 0.0 });
+    const o = { f, g, bandM, glass: null, mats: [], deco: [] };
+    if (f.key === 'roof') {
+      // 골목 끝 광장: 작은 경기장(관람석 고리 · 잔디 · 간판)
+      const band = new THREE.Mesh(new THREE.CylinderGeometry(PLAZA_R + 0.25, PLAZA_R + 0.25, 0.1, 40), bandM); band.position.y = 0.05; g.add(band);
+      const field = new THREE.Mesh(new THREE.CylinderGeometry(PLAZA_R - 1.4, PLAZA_R - 1.4, 0.06, 40), M(0x8fcf9f)); field.position.y = 0.12; g.add(field);
+      const lineM = new THREE.MeshBasicMaterial({ color: 0xffffff });
+      const cc = new THREE.Mesh(new THREE.TorusGeometry(1.0, 0.04, 6, 32), lineM); cc.rotation.x = Math.PI / 2; cc.position.y = 0.16; g.add(cc);
+      const hl = box(0.06, 0.01, (PLAZA_R - 1.4) * 2, lineM); hl.position.y = 0.16; g.add(hl);
+      const stand = new THREE.Mesh(new THREE.CylinderGeometry(PLAZA_R, PLAZA_R - 0.9, 1.2, 40, 1, true), M(0xdfe5ee, { side: THREE.DoubleSide, transparent: true, opacity: 0.85 }));
+      stand.position.y = 0.7; g.add(stand); o.glass = stand;
+      const sign = new THREE.Mesh(new THREE.PlaneGeometry(4.6, 1.05), new THREE.MeshBasicMaterial({ map: signTex(['실전 연습장', '골목 끝 광장 경기장'], 1024, 240, '#138a52'), side: THREE.DoubleSide }));
+      sign.rotation.y = -Math.PI / 2; sign.position.set(-PLAZA_R - 0.2, 2.2, 0); g.add(sign); o.deco.push(sign);
+      [-1.9, 1.9].forEach(z => { const p = box(0.12, 1.8, 0.12, postM); p.position.set(-PLAZA_R - 0.25, 0.9, z); g.add(p); o.deco.push(p); });
+      o.anchor = new THREE.Vector3(f.x, 2.6, f.z + PLAZA_R * 0.2);
+      const hit = new THREE.Mesh(new THREE.CylinderGeometry(PLAZA_R + 0.4, PLAZA_R + 0.4, 2.4, 20), new THREE.MeshBasicMaterial({ visible: false }));
+      hit.position.y = 1.2; hit.userData.key = f.key; g.add(hit); hits.push(hit);
+      floorObj[f.key] = o; return;
+    }
     const band = box(W + 0.3, 0.1, DP + 0.3, bandM); band.position.y = 0.06; g.add(band);
     const slab = box(W + 0.2, 0.04, DP + 0.2, slabM); slab.position.y = 0.12; g.add(slab);
-    const o = { f, g, bandM, glass: null, mats: [] };
-    if (f.key === 'roof') {
-      // 옥상: 난간 · 지구본 · 간판
-      const pm = M(0xdfe5ee);
-      [[W + 0.2, 0.4, 0.12, 0, DP / 2 + 0.04], [W + 0.2, 0.4, 0.12, 0, -DP / 2 - 0.04], [0.12, 0.4, DP + 0.2, W / 2 + 0.04, 0], [0.12, 0.4, DP + 0.2, -W / 2 - 0.04, 0]]
-        .forEach(([w, h, d, x, z]) => { const p = box(w, h, d, pm); p.position.set(x, 0.3, z); g.add(p); });
-      const deck = box(W - 0.4, 0.02, DP - 0.4, M(0xcfe7d8)); deck.position.y = 0.11; g.add(deck);
-      const globe = new THREE.Mesh(new THREE.IcosahedronGeometry(0.9, 2), new THREE.MeshBasicMaterial({ color: 0x3f5fa8, wireframe: true, transparent: true, opacity: 0.7 }));
-      globe.position.set(2.4, 1.35, -0.6); g.add(globe); o.globe = globe; o.deco = [globe];
-      const stand = box(0.12, 0.6, 0.12, pm); stand.position.set(2.4, 0.4, -0.6); g.add(stand); o.deco.push(stand);
-      const sign = new THREE.Mesh(new THREE.PlaneGeometry(4.2, 1.05), new THREE.MeshBasicMaterial({ map: signTex(TD.company.sign || ['ECON STADIUM', 'Everyday Economics']), side: THREE.DoubleSide }));
-      sign.position.set(-1.4, 1.25, -DP / 2 + 0.25); g.add(sign); o.deco.push(sign);
-      const sl = box(0.08, 0.7, 0.08, pm); sl.position.set(-2.8, 0.45, -DP / 2 + 0.25); g.add(sl);
-      const sr = sl.clone(); sr.position.x = 0; g.add(sr); o.deco.push(sl, sr);
+    const lounge = f.key === '05m' || f.key === '11f';
+    if (lounge) {
+      // 쉼터: 기둥 넷 · 초록 지붕 · 긴 의자 · 화분
+      [[-W / 2 + 0.4, -DP / 2 + 0.4], [W / 2 - 0.4, -DP / 2 + 0.4], [-W / 2 + 0.4, DP / 2 - 0.4], [W / 2 - 0.4, DP / 2 - 0.4]].forEach(([x, z]) => { const p = box(0.18, HS, 0.18, postM); p.position.set(x, HS / 2 + 0.12, z); g.add(p); o.deco.push(p); });
+      const roofM = glassG.clone();
+      const rf = new THREE.Mesh(new THREE.ConeGeometry(Math.hypot(W, DP) / 2 + 0.4, 1.1, 4, 1), roofM); rf.rotation.y = Math.PI / 4; rf.scale.set(1, 1, DP / W); rf.position.y = HS + 0.68; g.add(rf); o.glass = rf;
+      [[-2, 0.6], [2, 0.6], [0, -1.2]].forEach(([x, z]) => { const bn = box(1.6, 0.35, 0.45, benchM); bn.position.set(x, 0.3, z); g.add(bn); o.deco.push(bn); });
+      [[-3.4, 1.8], [3.4, 1.8], [-3.4, -1.8], [3.4, -1.8]].forEach(([x, z]) => { const t = new THREE.Mesh(new THREE.SphereGeometry(0.3, 10, 8), treeM); t.position.set(x, 0.45, z); g.add(t); o.deco.push(t); });
     } else {
-      const inset = f.key === '05m' ? 0.7 : 0;
-      const gh = f.h - 0.12;
-      const glass = box(W - inset, gh, DP - inset, f.key === '05m' ? glassG.clone() : glassM.clone());
-      glass.position.y = 0.12 + gh / 2; g.add(glass); o.glass = glass;
-      const edges = new THREE.LineSegments(new THREE.EdgesGeometry(glass.geometry), mullM); edges.position.copy(glass.position); g.add(edges);
-      // 세로 창살
-      const pts = []; const hw = (W - inset) / 2, hd = (DP - inset) / 2;
-      for (let x = -hw + 1; x < hw - 0.01; x += 1) { pts.push(x, 0.12, hd + 0.001, x, 0.12 + gh, hd + 0.001, x, 0.12, -hd - 0.001, x, 0.12 + gh, -hd - 0.001); }
-      for (let z = -hd + 1; z < hd - 0.01; z += 1) { pts.push(hw + 0.001, 0.12, z, hw + 0.001, 0.12 + gh, z, -hw - 0.001, 0.12, z, -hw - 0.001, 0.12 + gh, z); }
-      const mg = new THREE.BufferGeometry(); mg.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
-      g.add(new THREE.LineSegments(mg, mullM));
-      if (f.key === '05m') { [[-3.6, 2.2], [3.6, 2.2], [-3.6, -2.2], [3.6, -2.2]].forEach(([x, z]) => { const t = new THREE.Mesh(new THREE.SphereGeometry(0.28, 10, 8), treeM); t.position.set(x, 0.42, z); g.add(t); }); }
-      if (f.key === 'lobby') {
-        const can = box(3.6, 0.1, 1.6, M(0xdfe5ee)); can.position.set(0, 1.25, DP / 2 + 0.8); g.add(can);
-        [-1.6, 1.6].forEach(x => { const p = box(0.1, 1.2, 0.1, M(0xb8c2d3)); p.position.set(x, 0.62, DP / 2 + 1.5); g.add(p); });
-        const sign = new THREE.Mesh(new THREE.PlaneGeometry(3.4, 0.42), new THREE.MeshBasicMaterial({ map: signTex([TD.company.plate || '생활경제 스타디움 타워'], 1024, 128) }));
-        sign.position.set(0, 1.45, DP / 2 + 1.61); g.add(sign);
-      }
+      // 가게: 반투명 가게 몸체 · 줄무늬 차양 · 간판 · 판매대
+      const gh = HS - 0.12;
+      const body = box(W - 0.3, gh, DP - 0.6, glassM.clone()); body.position.set(0, 0.12 + gh / 2, -0.3); g.add(body); o.glass = body;
+      const edges = new THREE.LineSegments(new THREE.EdgesGeometry(body.geometry), mullM); edges.position.copy(body.position); g.add(edges); o.deco.push(edges);
+      const aw = new THREE.Group(); aw.position.set(0, HS - 0.05, DP / 2 - 0.55); aw.rotation.x = 0.38; g.add(aw); o.deco.push(aw);
+      const stripes = 10, sw = (W - 0.1) / stripes, wM = M(0xffffff), cM = M(col);
+      for (let k = 0; k < stripes; k++) { const st = box(sw, 0.05, 1.45, k % 2 ? wM : cM); st.position.set(-W / 2 + 0.05 + sw * (k + 0.5), 0, 0.72); aw.add(st); }
+      const cnt = box(W * 0.62, 0.55, 0.45, M(0xd9c7a6)); cnt.position.set(0, 0.4, DP / 2 - 0.55); g.add(cnt); o.deco.push(cnt);
+      const sign = new THREE.Mesh(new THREE.PlaneGeometry(W - 1.2, 0.72), new THREE.MeshBasicMaterial({ map: signTex([f.key === 'lobby' ? '안내소' : f.label + ' ' + f.dept], 1024, 128, f.color) }));
+      sign.position.set(0, HS + 0.5, -0.3 + (DP - 0.6) / 2 + 0.02); g.add(sign); o.deco.push(sign);
     }
-    const hit = new THREE.Mesh(new THREE.BoxGeometry(W + 0.4, Math.max(f.h, 0.6), DP + 0.4), new THREE.MeshBasicMaterial({ visible: false }));
-    hit.position.y = Math.max(f.h, 0.6) / 2; hit.userData.key = f.key; g.add(hit); hits.push(hit);
+    const anchor = new THREE.Vector3(0, HS + 1.0, 0); g.updateMatrixWorld(true); o.anchor = g.localToWorld(anchor.clone());
+    const hit = new THREE.Mesh(new THREE.BoxGeometry(W + 0.4, HS + 0.8, DP + 0.4), new THREE.MeshBasicMaterial({ visible: false }));
+    hit.position.y = (HS + 0.8) / 2; hit.userData.key = f.key; g.add(hit); hits.push(hit);
     floorObj[f.key] = o;
   });
 
@@ -660,7 +699,7 @@ async function build() {
     const corr = box(W - 1.6, 0.012, 0.9, M(0xe7ebf3, { roughness: 1 })); corr.position.set(0.7, PY + 0.016, 0); plan.add(corr);
     const hall0 = -W / 2, hall1 = -W / 2 + 1.5;
     const ev = box(1.0, 0.9, 1.3, M(0x5d6a85)); ev.position.set(hall0 + 0.65, PY + 0.45, -1.55); plan.add(ev);
-    const evs = new THREE.Mesh(new THREE.PlaneGeometry(0.8, 0.3), new THREE.MeshBasicMaterial({ map: signTex(['EV  ▲▼'], 512, 192, '#5d6a85') }));
+    const evs = new THREE.Mesh(new THREE.PlaneGeometry(0.8, 0.3), new THREE.MeshBasicMaterial({ map: signTex(['입구'], 512, 192, '#5d6a85') }));
     evs.position.set(hall0 + 0.65, PY + 0.7, -0.89); plan.add(evs);
     const rs = cur.rooms;
     // 안내 데스크(rooms[0])
@@ -718,12 +757,12 @@ async function build() {
     lbBox.appendChild(el); return el;
   }
   FL.forEach(f => {
-    const short = f.key === 'lobby' ? '로비' : f.dept;
+    const short = f.key === 'lobby' ? '시장 입구' : f.dept;
     const el = mkLabel('fl' + (f.key === TD.cur ? ' cur' : ''), `<b>${esc(f.label)}</b><span>${esc(short)}</span><small>${esc(f.ep)}</small>`, f.color, () => openCard(f.key));
     labels.push({ el, kind: 'fl', key: f.key, f });
   });
   rooms.forEach((rm, i) => {
-    const el = mkLabel('rm', `<b>${i === 0 ? 'EV' : i}</b><span>${esc(rm.r.name)}</span><small>${esc(rm.r.sec)}</small>`, rm.i === 0 ? cur.color : (rm.fm ? '#' + rm.fm.color.getHexString() : cur.color), () => goSec(rm.r.id));
+    const el = mkLabel('rm', `<b>${i === 0 ? '입구' : i}</b><span>${esc(rm.r.name)}</span><small>${esc(rm.r.sec)}</small>`, rm.i === 0 ? cur.color : (rm.fm ? '#' + rm.fm.color.getHexString() : cur.color), () => goSec(rm.r.id));
     labels.push({ el, kind: 'rm', rm, i });
   });
 
@@ -732,17 +771,17 @@ async function build() {
   function viewBuilding() {
     const a = Math.max(camera.aspect, 0.45), t = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
     const narrow = camera.aspect < 0.9;
-    const d = Math.max((TOP + 4) / 2 / t, (W * 2.1) / 2 / (t * a)) * (narrow ? 1.12 : 1.04);
-    const dir = new THREE.Vector3(0.78, 0.36, 1).normalize();
-    const tg = new THREE.Vector3(0, TOP / 2 + (narrow ? 0.6 : -0.2), 1.0);
+    const d = Math.max((TOP + 10) / 2 / t, (SPAN * 1.08) / 2 / (t * a)) * (narrow ? 0.9 : 1.0);
+    const dir = new THREE.Vector3(0.0, 0.72, 1).normalize();
+    const tg = new THREE.Vector3(CX, 0, narrow ? 1.5 : 1.0);
     return { pos: tg.clone().addScaledVector(dir, d), tg };
   }
   function viewPlan() {
     const a = Math.max(camera.aspect, 0.45), t = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
     const narrow = camera.aspect < 0.9;
     const d = Math.max(4.2 / t, (W + 1.0) / 2 / (t * a)) * (narrow ? 1.0 : 1.12);
-    const dir = (narrow ? new THREE.Vector3(0.05, 1.5, 0.75) : new THREE.Vector3(0.18, 0.95, 0.85)).normalize();
-    const tg = new THREE.Vector3(0.2, cur.y + 0.2, PULL + (narrow ? 0.3 : 0.55));
+    const dir = (narrow ? new THREE.Vector3(0.05, 1.5, 0.75) : new THREE.Vector3(0.18, 0.95, 0.85)).normalize().applyAxisAngle(new THREE.Vector3(0, 1, 0), cur.rot || 0);
+    const tg = new THREE.Vector3(cur.x, 0.2, cur.z);
     return { pos: tg.clone().addScaledVector(dir, d), tg };
   }
   let tween = null;
@@ -758,7 +797,7 @@ async function build() {
     TW.querySelectorAll('.tw-tools button[data-v=b],.tw-tools button[data-v=p]').forEach(b => b.classList.toggle('on', b.dataset.v === m));
     if (!IDX) pullTo = m === 'p' ? 1 : 0;
     if (m === 'p') { controls.autoRotate = false; closeCard(); }
-    $t('.tw-hint').textContent = m === 'p' ? '방을 누르면 그 단계로 내려갑니다 · 드래그로 돌려 보기' : (IDX ? '드래그로 돌려 보고 층을 누르면 안내 카드가 열려요' : '층을 누르면 안내 카드가 열려요 · 「이 층 평면」으로 돌아가기');
+    $t('.tw-hint').textContent = m === 'p' ? '방을 누르면 그 단계로 내려갑니다 · 드래그로 돌려 보기' : (IDX ? '드래그로 돌려 보고 가게를 누르면 안내 카드가 열려요' : '가게를 누르면 안내 카드가 열려요 · 「이 가게 평면」으로 돌아가기');
     if (fly) flyTo(m === 'p' ? viewPlan() : viewBuilding(), m === 'p' ? 1700 : 1300);
   }
 
@@ -769,9 +808,9 @@ async function build() {
     if (!IDX && mode === 'p') return;
     cardKey = key; card.style.setProperty('--c', f.color);
     const here = key === TD.cur;
-    const go = here ? (IDX ? `<a class="go" href="${esc(TD.home || '')}#map">장 목록 보기 ${TD.home ? '→' : '↓'}</a>` : `<a class="go" href="#" data-plan>이 층 평면 보기</a>`)
-      : `<a class="go" href="${esc(f.file)}">${esc(f.label)} ${key === 'lobby' ? '로비(목차)' : '이 층으로 올라가기'} →</a>`;
-    card.innerHTML = `<button class="x" type="button" aria-label="닫기">×</button><span class="k">${esc(f.label)} · ${esc(f.en)} · ${esc(f.branch)}</span><h4>${esc(f.dept)}</h4><p><b>${esc(f.ep)}</b> ${esc(f.title)}</p><p>${esc(f.biz)}</p>${here && !IDX ? '<p class="k">지금 계신 층입니다.</p>' : ''}${go}`;
+    const go = here ? (IDX ? `<a class="go" href="${esc(TD.home || '')}#map">장 목록 보기 ${TD.home ? '→' : '↓'}</a>` : `<a class="go" href="#" data-plan>이 가게 평면 보기</a>`)
+      : `<a class="go" href="${esc(f.file)}">${esc(f.label)} ${key === 'lobby' ? '시장 입구(목차)' : '이 가게로 가기'} →</a>`;
+    card.innerHTML = `<button class="x" type="button" aria-label="닫기">×</button><span class="k">${esc(f.label)} · ${esc(f.en)} · ${esc(f.branch)}</span><h4>${esc(f.dept)}</h4><p><b>${esc(f.ep)}</b> ${esc(f.title)}</p><p>${esc(f.biz)}</p>${here && !IDX ? '<p class="k">지금 계신 가게입니다.</p>' : ''}${go}`;
     card.hidden = false;
     card.querySelector('.x').onclick = closeCard;
     const pl = card.querySelector('[data-plan]'); if (pl) pl.onclick = ev => { ev.preventDefault(); setMode('p'); };
@@ -866,11 +905,11 @@ async function build() {
     if (!IDX) {
       pull += (pullTo - pull) * Math.min(1, dt * (REDUCED ? 60 : 3.2));
       if (Math.abs(pullTo - pull) < 0.001) pull = pullTo;
-      const o = floorObj[cur.key]; o.g.position.z = PULL * pull; o.g.position.x = 0;
+      const o = floorObj[cur.key]; arc.visible = pull < 0.35;
       plan.visible = pull > 0.55;
       if (o.glass) { o.glass.visible = pull < 0.35; }
       if (o.deco) o.deco.forEach(m => { m.visible = pull < 0.35; });
-      FL.forEach(f => { const g = floorObj[f.key].glass; if (g && f.key !== cur.key) g.material.opacity = (f.key === '05m' ? 0.42 : 0.38) * (1 - 0.45 * pull); });
+      
     }
     // 강조
     FL.forEach(f => {
@@ -905,8 +944,7 @@ async function build() {
       if (L.kind === 'fl') {
         show = IDX || mode === 'b' || L.key === TD.cur;
         if (!IDX && mode === 'p' && L.key === TD.cur) show = false;
-        const f = L.f, o = floorObj[f.key];
-        tmp.set(0, f.y + Math.max(f.h, 0.6) / 2, o.g.position.z).addScaledVector(right, W * 0.62 + 0.35);
+        tmp.copy(floorObj[L.f.key].anchor);
       } else {
         show = mode === 'p' && plan.visible;
         tmp.copy(L.rm.pos); plan.localToWorld(tmp);
@@ -914,7 +952,7 @@ async function build() {
       tmp.project(camera);
       const vis = show && tmp.z < 1 && tmp.x > -1.2 && tmp.x < 1.2 && tmp.y > -1.2 && tmp.y < 1.2;
       L.el.classList.toggle('hide', !vis);
-      if (vis) L.el.style.transform = `translate(${((tmp.x + 1) / 2 * cw).toFixed(1)}px,${((1 - tmp.y) / 2 * ch).toFixed(1)}px) ${L.kind === 'fl' ? 'translate(0,-50%)' : 'translate(-50%,-100%)'}`;
+      if (vis) L.el.style.transform = `translate(${((tmp.x + 1) / 2 * cw).toFixed(1)}px,${((1 - tmp.y) / 2 * ch).toFixed(1)}px) ${L.kind === 'fl' ? 'translate(-50%,-100%)' : 'translate(-50%,-100%)'}`;
       const on = L.kind === 'fl' ? (L.key === hoverKey || L.key === cardKey) : (L.i === hoverRoom || L.i === nowRoom);
       L.el.classList.toggle('on', on);
     });
@@ -928,8 +966,8 @@ async function build() {
 <!--tower:end-->
 
 <section class="level"><div class="wrap stack">
-<div class="lvhead"><h2>이 건물은</h2><p class="lead">경기장처럼 규칙과 기록으로 경제를 읽는 강의 건물. 「경제학 원론 연구실」 11장이 11개 강의실로, 5층 위 라운지와 12층 라운지가 중간·기말 요약정리 및 퀴즈로, 옥상이 실전 연습장으로 들어 있어요. 본 강의는 한국체육대학교 교양과정 「경제학의 이해」, 「생활 속의 경제학」 강의노트를 기반으로 제작됐습니다. 층을 누르거나 오른쪽 안내판에서 골라 올라가세요.</p></div>
-<p class="muted" style="font-size:14px">가상의 강의 건물입니다. 층마다 강의실이 하나 있고, 강의실마다 박사가 그 장을 강의합니다. 3D는 three.js(jsdelivr CDN)로 그립니다. 불러오지 못하면 안내판만으로 그대로 이동할 수 있어요.</p>
+<div class="lvhead"><h2>이 시장은</h2><p class="lead">골목을 따라 가게를 한 곳씩 들르며 경제를 읽는 강의 시장. 「경제학 원론 연구실」 11장이 11개 가게로, 쉼터A와 쉼터B가 중간·기말 요약정리 및 퀴즈로, 골목 끝 광장이 실전 연습장으로 들어 있어요. 본 강의는 한국체육대학교 교양과정 「경제학의 이해」, 「생활 속의 경제학」 강의노트를 기반으로 제작됐습니다. 층을 누르거나 오른쪽 안내판에서 골라 올라가세요.</p></div>
+<p class="muted" style="font-size:14px">가상의 강의 시장입니다. 가게마다 강의실이 하나 있고, 가게마다 박사가 그 장을 강의합니다. 3D는 three.js(jsdelivr CDN)로 그립니다. 불러오지 못하면 안내판만으로 그대로 이동할 수 있어요.</p>
 <p><a href="index.html">← 목차로 돌아가기</a></p>
 </div></section>
 <footer id="footer"><div class="wrap stack"><p>글 · 안상선 ((주)M-Robo 대표) · <a href="https://adminmrobo.github.io/who_am_i/who_am_i.html" target="_blank" rel="noopener">저자 소개</a> · <a href="https://github.com/adminmrobo/basic_economic_lab" target="_blank" rel="noopener">GitHub 저장소</a><br>캐릭터 이름·설정·그림의 저작권은 안상선(개인)에게 있으며 허락 없이 쓸 수 없습니다.</p></div></footer>

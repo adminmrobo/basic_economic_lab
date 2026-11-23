@@ -14,7 +14,7 @@ AUTHOR = '안상선'; AFFIL = '(주)M-Robo 대표'; WHO = 'https://www.ahnboat.x
 TODAY = '2026-11-23'; VER = '1.0'
 sys.path.insert(0, B)
 sys.path.insert(0, B)
-import tower  # 3D 생활경제 스타디움 타워 첫 화면 (tower.py · tower.js · tower.css)
+import tower  # 3D 생활경제 시장 첫 화면 (tower.py · tower.js · tower.css)
 import home as home_mod
 sys.modules['tower'] = tower; sys.modules['home'] = home_mod
 SP = json.load(open(os.path.join(B, 'sprites.json'), encoding='utf-8'))
@@ -113,7 +113,7 @@ def head(P, title, desc, fname):
 '''
 
 def nav(links, label):
-    a = '<a href="#tower">건물 안내</a>' + ''.join(f'<a href="#{i}">{e(t)}</a>' for i, t in links)
+    a = '<a href="#tower">시장 안내</a>' + ''.join(f'<a href="#{i}">{e(t)}</a>' for i, t in links)
     return f'<nav class="top" aria-label="섹션 바로가기"><div class="wrap"><a class="logo" href="index.html"><i></i>{e(label)}</a><div class="links">{a}</div></div></nav>\n'
 
 def footer(P, extra=''):
@@ -248,6 +248,26 @@ def export_sec(M):
 '''
 
 # ---------- 장 페이지 ----------
+# ---------- 그림으로 먼저 보기 (장마다 2장: A = 핵심 그래프, B = 대시보드) ----------
+try:
+    from _ill import ILL
+except Exception:
+    ILL = {}
+def ill_fig(key):
+    if key not in ILL: return ''
+    lv, title, who, scene, cap = ILL[key]
+    lis = ''.join(f'<li><i>{"①②③"[k]}</i><span>{c}</span></li>' for k, c in enumerate(cap))
+    rel = f'ill/ill_{key}.webp'
+    if os.path.exists(os.path.join(OUT, rel)):
+        pic = f'<img src="{rel}" alt="그림 해설: {e(title)} — {e(" ".join(cap))}" width="1920" height="1080" loading="lazy" decoding="async">'
+    else:
+        pic = f'<div class="ill-ph" role="img" aria-label="그림 준비 중: {e(title)}"><b>그림 준비 중</b><span>①②③ 설명을 먼저 읽고 {"대시보드로" if lv == "dash" else "실험으로"} 넘어가세요.</span></div>'
+    return (f'<figure class="ill" id="ill-{key}"><div class="ill-pic">{pic}</div><figcaption><span class="ill-tag">그림으로 먼저 보기</span>'
+            f'<b class="ill-t">{title}</b><ol>{lis}</ol></figcaption></figure>')
+def ill_for(P, where):
+    n = P.get('num', '')
+    return ''.join(ill_fig(k) for k, v in ILL.items() if k[:-1] == n and v[0] == where)
+
 def level_html(l, i, M, P):
     w = l.get('why'); m = l.get('math'); o = []
     tags = ''.join(f'<span class="lvtag{" g" if k == 0 else ""}">{t}</span>' for k, t in enumerate(l['tags']))
@@ -261,25 +281,26 @@ def level_html(l, i, M, P):
         if m:
             parts = ''.join(f'<tr><td>{a}</td><td>{b}</td></tr>' for a, b in m['parts'])
             tr = ''.join(f'<span>{x}</span>' for x in m['try'])
-            o.append(f'<details class="more mathmore"><summary>수식이 궁금하면 펼쳐 보기 — 수식을 어려워하는 하루가 대신 물어봅니다</summary><div class="mathbox"><div class="who">{img("asst","shock",M)}<p>{m["q"]}</p></div><p class="school"><b>학교 수학으로 보면</b> {m["school"]}</p><div class="fx">{m["fx"]}</div><table>{parts}</table><div class="try"><b>숫자로 한 번 해 보기</b>{tr}</div><div class="who">{img("asst","spark",M)}<p>{m["comment"]}</p></div></div></details>')
+            o.append(f'<details open class="more mathmore"><summary>수식 풀이 — 수식을 어려워하는 하루가 대신 물어봅니다</summary><div class="mathbox"><div class="who">{img("asst","shock",M)}<p>{m["q"]}</p></div><p class="school"><b>학교 수학으로 보면</b> {m["school"]}</p><div class="fx">{m["fx"]}</div><table>{parts}</table><div class="try"><b>숫자로 한 번 해 보기</b>{tr}</div><div class="who">{img("asst","spark",M)}<p>{m["comment"]}</p></div></div></details>')
         o.append('</div>')
     if l.get('verify'):
         v = l['verify']
         o.append(f'<section class="panel verify" aria-label="그래프로 검증: {e(v["title"])}"><h3>그래프로 검증 — {v["title"]}</h3><p class="muted" style="margin:0 0 6px">{v.get("lead", "위 수식 풀이에서 구한 답을 그래프에서 직접 찾아 같은지 확인해요. 조절기를 바꾸면 수식 답과 그래프 답이 함께 다시 계산됩니다.")}</p><div class="sim" data-sim="verify" data-cfg="{e(json.dumps(v, ensure_ascii=False))}"></div></section>')
     pr = l['pair']
     o.append(f'<div class="pair"><div><div class="tag fly">일상으로 치면</div><p>{pr["left"]}</p></div><div><div class="tag nn">경제학으로는</div><p>{pr["right"]}</p></div></div>')
+    o.append(ill_for(P, l['id']))
     o.append('<div class="talk">' + ''.join(say(w_, m_, t_, M) for w_, m_, t_ in l['talk']) + '</div>')
     o.append(f'<section class="panel" aria-label="{e(l["sim_title"])}"><h3>실험 — {l["sim_title"]}</h3><div class="sim" data-sim="{l["sim"][0]}" data-cfg="{e(json.dumps(l["sim"][1], ensure_ascii=False))}"></div></section>')
     if l.get('sim2'):
         o.append(f'<section class="panel" aria-label="{e(l["sim2_title"])}"><h3>실험 2 — {l["sim2_title"]}</h3><div class="sim" data-sim="{l["sim2"][0]}" data-cfg="{e(json.dumps(l["sim2"][1], ensure_ascii=False))}"></div></section>')
     ex = l['explain']; steps = ''.join(f'<li>{s}</li>' for s in ex['steps'])
-    o.append(f'<div class="explain"><details class="more"><summary>자세한 {ex["title"]} (펼쳐 보기)</summary><ol>{steps}</ol></details><p class="limit"><b>이 단계의 한계</b> · {ex["limit"]}</p></div>')
+    o.append(f'<div class="explain"><details open class="more"><summary>자세한 {ex["title"]}</summary><ol>{steps}</ol></details><p class="limit"><b>이 단계의 한계</b> · {ex["limit"]}</p></div>')
     if l.get('bridge'):
-        b = l['bridge']; o.append('<details class="more"><summary>업무에 쓸 때 알아 둘 것 (펼쳐 보기)</summary><div class="bridges">' + (f'<div class="bridge gen"><h4>뉴스·정책으로 읽으면</h4><p>{b["gen"]}</p><p class="lim">{b.get("gen_lim","")}</p></div>' if b.get('gen') else '') + (f'<div class="bridge field"><h4>현장에 옮기면</h4><p>{b["field"]}</p><p class="lim">{b.get("field_lim","")}</p></div>' if b.get('field') else '') + '</div></details>')
+        b = l['bridge']; o.append('<details open class="more"><summary>업무에 쓸 때 알아 둘 것</summary><div class="bridges">' + (f'<div class="bridge gen"><h4>뉴스·정책으로 읽으면</h4><p>{b["gen"]}</p><p class="lim">{b.get("gen_lim","")}</p></div>' if b.get('gen') else '') + (f'<div class="bridge field"><h4>현장에 옮기면</h4><p>{b["field"]}</p><p class="lim">{b.get("field_lim","")}</p></div>' if b.get('field') else '') + '</div></details>')
     if l.get('code'):
         rows = ''.join(f'<tr><td><code>{e(c)}</code></td><td>{t}</td></tr>' for c, t in l['code'])
         ct = {'orig': '노트의 코드로 보면 (몰라도 됩니다)', 'example': '같은 방법을 보여 주는 예시 코드 (몰라도 됩니다)', 'mixed': '노트의 코드와 예시 코드 (몰라도 됩니다)'}[l.get('code_src', 'orig')]
-        o.append(f'<details class="code"><summary>{ct}</summary><table>{rows}</table></details>')
+        o.append(f'<details open class="code"><summary>{ct}</summary><table>{rows}</table></details>')
     if l.get('say'):
         o.append(say(*l['say'], M))
     o.append(f'<div class="quiz" data-quiz="{l["id"]}"></div>\n</div></section>')
@@ -361,15 +382,15 @@ def page(P):
     hero_talk = ''.join(say(*t, M) for t in P['hero_talk'])
     o.append(f'''<header class="hero" id="hero"><div class="wrap hero-grid"><div class="hero-text"><span class="eyebrow">{e(P["eyebrow"])}</span><h1>{P["title"]}</h1><p class="q">{P["question"]}</p><p>{P["intro"]}</p><section class="kpis k4">{kp}</section></div><div class="dialog">{hero_talk}</div></div></header>''')
     T = P['three']; ab = ''.join(f'<dt>{e(a)}</dt><dd>{b}</dd>' for a, b in P.get('abbr', []))
-    o.append(f'''<section class="level" id="three"><div class="wrap"><div class="three"><h2>처음 오신 분께 — 이 페이지를 3줄로</h2><ol><li><b>무엇을</b><span>{T["what"]}</span></li><li><b>왜 중요한가</b><span>{T["why"]}</span></li><li><b>업무에서는</b><span>{T["work"]}</span></li></ol><div class="route"><p><b>처음이라면 이렇게 읽으세요.</b> 단계마다 ① <b>가져갈 한 가지</b> → ② <b>일상으로 치면</b> → ③ <b>실험</b>만 봐도 충분해요. 수식, 자세한 풀이, 업무 팁, 코드는 접어 두었어요(몰라도 됩니다).</p><button class="bt" type="button" id="openAll" aria-pressed="false">접어 둔 내용 모두 펼치기</button></div>{"<details class='abbr'><summary>영어 약어 풀이</summary><dl>"+ab+"</dl></details>" if ab else ""}</div></div></section>''')
+    o.append(f'''<section class="level" id="three"><div class="wrap"><div class="three"><h2>처음 오신 분께 — 이 페이지를 3줄로</h2><ol><li><b>무엇을</b><span>{T["what"]}</span></li><li><b>왜 중요한가</b><span>{T["why"]}</span></li><li><b>업무에서는</b><span>{T["work"]}</span></li></ol><div class="route"><p><b>처음이라면 이렇게 읽으세요.</b> 단계마다 ① <b>가져갈 한 가지</b> → ② <b>일상으로 치면</b> → ③ <b>실험</b>만 봐도 충분해요. 수식, 자세한 풀이, 업무 팁, 코드도 모두 펼쳐 두었어요. 한꺼번에 보기 버거우면 아래 버튼으로 접을 수 있어요(몰라도 됩니다).</p><button class="bt" type="button" id="openAll" aria-pressed="true">펼친 내용 모두 접기</button></div>{"<details class='abbr'><summary>영어 약어 풀이</summary><dl>"+ab+"</dl></details>" if ab else ""}</div></div></section>''')
     cast = crew_html(M)
     prevtxt = f'앞 장: <a href="{P["prev"][0]}">{e(P["prev"][1])}</a>' if P.get('prev') else '시리즈의 첫 장입니다.'
     o.append(f'''<section class="level" id="cast"><div class="wrap stack"><div class="lvhead"><h2>강의실 식구와 이 페이지 사용법</h2></div>{cast}<p class="muted">노란 점선 밑줄을 누르거나 손가락으로 대면 뜻이 나옵니다. 오른쪽 아래 도우미에서 밑줄을 핵심 → 전체 → 끄기로 바꿀 수 있어요. 모든 실험의 숫자는 가상 단위의 설명용 모형입니다. {prevtxt}</p></div></section>''')
     W = P['why_steps']; Bg = P['big']
     o.append('<section class="level" id="why"><div class="wrap stack"><div class="lvhead"><h2>왜 이 주제인가</h2></div><div class="steps">' + ''.join(f'<div><b>{a}</b><p>{b}</p></div>' for a, b in W) + '</div>'
-             + '<details class="more"><summary>큰 그림 — 이 장이 흘러가는 4단계 (펼쳐 보기)</summary>' + (f'<p class="lead">{P["big_lead"]}</p>' if P.get('big_lead') else '') + '<div class="steps four">' + ''.join(f'<div><b>{a}</b><p>{b}</p></div>' for a, b in Bg) + '</div></details></div></section>')
+             + '<details open class="more"><summary>큰 그림 — 이 장이 흘러가는 4단계</summary>' + (f'<p class="lead">{P["big_lead"]}</p>' if P.get('big_lead') else '') + '<div class="steps four">' + ''.join(f'<div><b>{a}</b><p>{b}</p></div>' for a, b in Bg) + '</div></details></div></section>')
     for i, l in enumerate(L): o.append(level_html(l, i, M, P))
-    DASHSEC = f'<section class="level" id="dash"><div class="wrap stack"><div class="lvhead"><h2>한눈에 보는 대시보드</h2><p class="lead">단계 ①②③에서 본 것을 한 화면에 모았어요. ▶ 재생을 누르면 숫자 카드와 그림이 함께 바뀝니다. 처음 값은 본문 예시와 같아요.</p></div><div class="dash panel" data-dash="{num}"></div></div></section>'
+    DASHSEC = f'<section class="level" id="dash"><div class="wrap stack"><div class="lvhead"><h2>한눈에 보는 대시보드</h2><p class="lead">단계 ①②③에서 본 것을 한 화면에 모았어요. ▶ 재생을 누르면 숫자 카드와 그림이 함께 바뀝니다. 처음 값은 본문 예시와 같아요.</p></div>{ill_for(P, "dash")}<div class="dash panel" data-dash="{num}"></div></div></section>'
     if not V2: o.append(DASHSEC)
     o.append(duel_html(P, M))
     S = P['summary']

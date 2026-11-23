@@ -3,12 +3,18 @@
 var DASHES={};
 function niceTicks(lo,hi,n){var span=hi-lo||1,step=Math.pow(10,Math.floor(Math.log10(span/n))),e=span/n/step;step*=e>=5?10:e>=2?5:e>=1?2:1;var t=[],s=Math.ceil(lo/step)*step;for(var v=s;v<=hi+step*1e-6;v+=step)t.push(+v.toFixed(10));return t}
 function dChart(c,spec,H){var W=fit(c,H),ctx=c.getContext('2d');ctx.clearRect(0,0,W,H);
-  var L=52,R=14,T=30,B=40,pw=W-L-R,ph=H-T-B;txt(ctx,spec.title,L,18,COL.text,13,'left',true);
-  if(spec.t==='fn'){spec.draw(c,H);return}
-  if(spec.t==='bar'){var n=spec.vals.length,vmax=Math.max.apply(null,spec.vals.concat([0])),vmin=Math.min.apply(null,spec.vals.concat([0])),mx=spec.ymax||(vmax>0?vmax*1.18:0),mn=vmin<0?vmin*1.18:0;if(mx-mn<1e-9)mx=1;var rng=mx-mn,bw=pw/n,Y=function(v){return T+ph-(v-mn)/rng*ph},y0=Y(0);
+  var L=52,R=14,T=30,B=40;c.__bx=[];
+  if(spec.t==='fn'){txt(ctx,spec.title,L,18,COL.text,13,'left',true);spec.draw(c,H);return}
+  /* 머리줄: 제목(넘치면 줄바꿈) + 범례(한 줄에 안 들어가면 다음 줄) */
+  var KEY=[];if(spec.t==='line'||!spec.t)(spec.ys||[]).forEach(function(s){if(s.n&&spec.ys.length>1)KEY.push({t:'● '+s.n,c:s.c})});if(spec.hline!=null&&spec.hlabel)KEY.push({t:'┄ '+spec.hlabel,c:COL.a});
+  var TL=wrapT(ctx,spec.title||'',W-L-R,13,true),y=18;TL.forEach(function(t,i){txt(ctx,t,L,y+i*16,COL.text,13,'left',true)});y+=(TL.length-1)*16;
+  var lastW=tw_(ctx,TL[TL.length-1]||'',13,true),kw=KEY.reduce(function(a,k){return a+tw_(ctx,k.t,11,true)+12},0);
+  if(KEY.length){if(L+lastW+16+kw<=W-R){var kx=W-R-kw;KEY.forEach(function(k){txt(ctx,k.t,kx,y,k.c,11,'left',true);kx+=tw_(ctx,k.t,11,true)+12})}else{y+=16;var kx2=L;KEY.forEach(function(k){var w=tw_(ctx,k.t,11,true);if(kx2+w>W-R&&kx2>L){kx2=L;y+=14}txt(ctx,k.t,kx2,y,k.c,11,'left',true);kx2+=w+12})}}
+  T=y+14;var pw=W-L-R,ph=H-T-B;
+  if(spec.t==='bar'){var n=spec.vals.length,vmax=Math.max.apply(null,spec.vals.concat([0])),vmin=Math.min.apply(null,spec.vals.concat([0])),mn=vmin<0?vmin*1.18:0,mx=spec.ymax||(vmax>0?vmax*1.18:(-mn*.18||1));if(mx-mn<1e-9)mx=1;var rng=mx-mn,bw=pw/n,Y=function(v){return T+ph-(v-mn)/rng*ph},y0=Y(0);
     ctx.strokeStyle=COL.rule;ctx.beginPath();ctx.moveTo(L,y0+.5);ctx.lineTo(L+pw,y0+.5);ctx.stroke();
-    if(spec.hline!=null){var hy=Y(spec.hline);ctx.save();ctx.setLineDash([5,4]);ctx.strokeStyle=COL.a;ctx.beginPath();ctx.moveTo(L,hy);ctx.lineTo(L+pw,hy);ctx.stroke();ctx.restore();txt(ctx,spec.hlabel||'',L+2,hy-5,COL.a,11,'left',true)}
-    spec.vals.forEach(function(v,i){var yv=Y(v),top=Math.min(yv,y0),bh=Math.abs(yv-y0),x=L+i*bw+bw*.2;ctx.fillStyle=(spec.cols&&spec.cols[i])||COL.s;ctx.fillRect(x,top,bw*.6,Math.max(bh,1));txt(ctx,(spec.fy||String)(v),x+bw*.3,v>=0?yv-6:yv+14,COL.text,bw<44?10:12,'center',true);txt(ctx,spec.labels[i],x+(spec.pair?bw*.8:bw*.3),T+ph+16,COL.muted,11,'center')});return}
+    if(spec.hline!=null){var hy=Y(spec.hline);ctx.save();ctx.setLineDash([5,4]);ctx.strokeStyle=COL.a;ctx.beginPath();ctx.moveTo(L,hy);ctx.lineTo(L+pw,hy);ctx.stroke();ctx.restore()}
+    spec.vals.forEach(function(v,i){var yv=Y(v),top=Math.min(yv,y0),bh=Math.abs(yv-y0),x=L+i*bw+bw*.2;ctx.fillStyle=(spec.cols&&spec.cols[i])||COL.s;ctx.fillRect(x,top,bw*.6,Math.max(bh,1));var vs=(spec.fy||String)(v),fs=bw<44?10:12,vy=v>=0?yv-6:yv+14,vc=COL.text;if(v>=0&&vy<T+4&&bh>18){vy=yv+15;vc='#fff'}if(v<0&&vy>T+ph-2&&bh>18){vy=yv-5;vc='#fff'}txt(ctx,vs,x+bw*.3,vy,vc,fs,'center',true);fitLab(ctx,spec.labels[i],x+(spec.pair?bw*.8:bw*.3),T+ph+16,(spec.pair?bw*.9:bw)-4,COL.muted,11)});return}
   if(spec.t==='hist'){var bins=spec.bins||30,cnt=new Array(bins).fill(0),lo=spec.lo,hi=spec.hi;spec.vals.forEach(function(v){var k=Math.floor((v-lo)/(hi-lo)*bins);if(k>=0&&k<bins)cnt[k]++});var m=Math.max.apply(null,cnt)||1;
     ctx.fillStyle=spec.c||'rgba(63,95,168,.55)';cnt.forEach(function(k,i){var bh=k/m*ph;ctx.fillRect(L+i*pw/bins+1,T+ph-bh,pw/bins-2,bh)});
     ctx.strokeStyle=COL.rule;ctx.beginPath();ctx.moveTo(L,T+ph+.5);ctx.lineTo(L+pw,T+ph+.5);ctx.stroke();niceTicks(lo,hi,5).forEach(function(t){var x=L+(t-lo)/(hi-lo)*pw;txt(ctx,(spec.fx||String)(t),x,T+ph+16,COL.muted,11,'center')});
@@ -20,9 +26,9 @@ function dChart(c,spec,H){var W=fit(c,H),ctx=c.getContext('2d');ctx.clearRect(0,
   ctx.strokeStyle=COL.rule;ctx.lineWidth=1;niceTicks(ylo,yhi,4).forEach(function(t){var y=Y(t);ctx.beginPath();ctx.moveTo(L,y+.5);ctx.lineTo(L+pw,y+.5);ctx.stroke();txt(ctx,(spec.fy||String)(t),L-6,y+4,COL.muted,11,'right')});
   var xt=spec.logx?[1,3,10,30,100,300,1000,3000,10000,30000,100000].filter(function(v){return v>=x0&&v<=x1}):niceTicks(x0,x1,5);xt.forEach(function(t){txt(ctx,(spec.fx||String)(t),X(t),T+ph+16,COL.muted,11,'center')});
   if(spec.band){ctx.fillStyle='rgba(19,138,82,.08)';var b=spec.band,b0=clamp(X(b[0]),L,L+pw),b1=clamp(X(b[1]),L,L+pw);if(b1>b0)ctx.fillRect(b0,T,b1-b0,ph)}
-  if(spec.hline!=null){ctx.save();ctx.setLineDash([5,4]);ctx.strokeStyle=COL.a;ctx.beginPath();ctx.moveTo(L,Y(spec.hline));ctx.lineTo(L+pw,Y(spec.hline));ctx.stroke();ctx.restore();txt(ctx,spec.hlabel||'',L+pw-2,Y(spec.hline)<T+16?Y(spec.hline)+14:Y(spec.hline)-5,COL.a,11,'right',true)}
+  if(spec.hline!=null){ctx.save();ctx.setLineDash([5,4]);ctx.strokeStyle=COL.a;ctx.beginPath();ctx.moveTo(L,Y(spec.hline));ctx.lineTo(L+pw,Y(spec.hline));ctx.stroke();ctx.restore()}
   var lx=L+pw;spec.ys.forEach(function(s,si){ctx.save();ctx.strokeStyle=s.c;ctx.lineWidth=s.w||2.2;if(s.dash)ctx.setLineDash(s.dash);ctx.beginPath();var st=false;s.d.forEach(function(v,i){if(!isFinite(v)){st=false;return}var px=X(xs[i]),py=Y(clamp(v,ylo,yhi));if(!st){ctx.moveTo(px,py);st=true}else ctx.lineTo(px,py)});ctx.stroke();if(s.fill){ctx.lineTo(X(x1),Y(ylo));ctx.lineTo(X(x0),Y(ylo));ctx.closePath();ctx.globalAlpha=.12;ctx.fillStyle=s.c;ctx.fill()}ctx.restore();
-    if(s.n&&spec.ys.length>1){ctx.save();ctx.font='700 11px "IBM Plex Sans KR",system-ui,sans-serif';var tw=ctx.measureText('● '+s.n).width;ctx.restore();lx-=tw+12;txt(ctx,'● '+s.n,lx+12,18,s.c,11,'left',true)}});
+    });
   if(spec.mark&&X(spec.mark.x)>=L-1&&X(spec.mark.x)<=L+pw+1){var mx_=X(spec.mark.x);ctx.save();ctx.strokeStyle=COL.r;ctx.setLineDash([4,3]);ctx.beginPath();ctx.moveTo(mx_,T);ctx.lineTo(mx_,T+ph);ctx.stroke();ctx.restore();if(spec.mark.y!=null){ctx.fillStyle=COL.r;ctx.beginPath();ctx.arc(mx_,Y(clamp(spec.mark.y,ylo,yhi)),5,0,7);ctx.fill()}if(spec.mark.l)txt(ctx,spec.mark.l,mx_+(mx_>L+pw*.7?-6:6),T+ph-8,COL.r,11,mx_>L+pw*.7?'right':'left',true)}
   if(spec.xl)txt(ctx,spec.xl,L+pw,H-4,COL.muted,11,'right');if(spec.yl)txt(ctx,spec.yl,4,T-10+0,COL.muted,11,'left')}
 

@@ -18,7 +18,7 @@
 | 수강생 | 하루 · 시아 · 모아 | 하루는 수식을 대신 질문, 시아·모아는 대결 심판 |
 | 뒷자리 수강생 | X1 · X2 · X3 | 아직 공개되지 않은 식구. 질문과 실험 거들기 |
 
-## 구성 (건물: 생활경제 스타디움 타워, 15개 층)
+## 구성 (건물: 생활경제 생활경제 시장, 15개 층)
 
 | 층 | 쪽 | 단계 ①②③ | 조교 대결 (결과) |
 |---|---|---|---|
@@ -62,6 +62,10 @@ src/build/                         빌드 도구 (sims_econ.js 실험 33개, das
 ```
 
 다시 빌드하기: `python3 src/build/build.py . && python3 src/build/practice.py . && python3 src/build/make_docs.py`
+
+그림으로 먼저 보기(장마다 2장): Genspark 요청문은 `docs/genspark_ill/요청문.md`. 받은 PNG를 `src/build/ill_in/`에 넣고 `python3 src/build/import_ill.py && python3 src/build/build.py .`
+
+그래프 글자 겹침 검사: `node src/build/check_text.js <html…>`(슬라이더 끝값은 `EXT=max`·`EXT=min`), 연습장은 `node src/build/check_practice.js practice/index.html`
 
 표지 반영: Genspark 그림을 `src/build/covers_in/cover_<키>.png`로 넣고 `python3 src/build/import_covers.py` 실행 후 다시 빌드. 요청 꾸러미 다시 만들기: `python3 src/build/make_genspark_pack.py <fruitfly-lab-expressions 경로>`
 

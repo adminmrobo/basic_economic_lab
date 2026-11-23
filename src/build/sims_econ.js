@@ -9,8 +9,8 @@ SIMS.scarce=function(el,cfg){var c=S0(el,cfg,250,'원하는 양과 있는 양으
   var G=[{n:'공기',have:1000,want:300},{n:'생수',have:300,want:420},{n:'외발가재',have:20,want:10},{n:'양발가재',have:200,want:600}],k=1;
   buttons(row,'재화',G.map(function(g,i){return [i,g.n]}),k,function(v){k=v;sh.set(G[k].have);sw.set(G[k].want)});
   var sh=S(row,'있는 양(존재량)',0,1000,10,G[k].have,null,function(v){G[k].have=v;draw()}),sw=S(row,'사람들이 원하는 양',0,1000,10,G[k].want,null,function(v){G[k].want=v;draw()});
-  function draw(){var it=[];G.forEach(function(g){it.push({v:g.have,c:COL.s,l:g.n+' 있음',t:g.have});it.push({v:g.want,c:COL.a,l:g.n+' 원함',t:g.want})});
-    barPlot(c,250,'재화별 있는 양(파랑)과 원하는 양(주황)',it,1100);var g=G[k],sc=g.want>g.have,ratio=g.want/Math.max(1,g.have);
+  function draw(){var it=[];G.forEach(function(g){it.push({v:g.have,c:COL.s,l:'',t:g.have});it.push({v:g.want,c:COL.a,l:'',t:g.want})});
+    barPlot(c,250,'재화별 있는 양(파랑)과 원하는 양(주황)',it,1100);(function(){var ctx=c.getContext('2d'),W=c.clientWidth,x0=24,w=W-48,gw=w/G.length;G.forEach(function(g,i){fitLab(ctx,g.n,x0+gw*i+gw/2,250-28+16,gw-6,COL.muted,11)})})();var g=G[k],sc=g.want>g.have,ratio=g.want/Math.max(1,g.have);
     K([[g.have,'있는 양','i'],[g.want,'원하는 양','a'],[sc?'희소함':'희소하지 않음','판정',sc?'r':'g'],[sc?'경제재(값을 치름)':'무료재(자유재)','분류','m']]);
     I([[sc?'r':'g',sc?'원하는 양이 있는 양보다 많아요. 값을 치러야 얻을 수 있는 경제재입니다.':'있는 양이 원하는 양보다 많아요. 값을 치르지 않아도 되는 무료재(자유재)예요.'],['i','희소성은 "드물다(희귀)"가 아니라 "원하는 것에 비해 모자라다"는 뜻이에요. 외발가재는 드물지만 원하는 사람이 적어 양발가재보다 싸게 팔릴 수 있어요. 원하는 양 ÷ 있는 양 = '+f1(ratio,2)+'.']])}
   addMod(c,function(dt){if(!dt)draw()});draw()};
