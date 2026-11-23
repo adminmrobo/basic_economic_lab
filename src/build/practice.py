@@ -185,4 +185,4 @@ def page():
 
 if __name__ == '__main__':
     d = os.path.join(OUT, 'practice'); os.makedirs(d, exist_ok=True)
-    p = os.path.join(d, 'index.html'); open(p, 'w', encoding='utf-8').write(page()); print(p, os.path.getsize(p) // 1024, 'KB')
+    p = os.path.join(d, 'index.html'); import pxfix; open(p, 'w', encoding='utf-8').write(pxfix.apply(page())); print(p, os.path.getsize(p) // 1024, 'KB')

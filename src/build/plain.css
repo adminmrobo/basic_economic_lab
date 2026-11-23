@@ -186,7 +186,7 @@ details.mathmore .mathbox{border:0;padding:4px 0 0;background:transparent}
 /* 그림으로 먼저 보기 */
 .ill{margin:6px 0 4px;border:1px solid var(--rule);border-radius:14px;background:#fff;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
 .ill-pic{background:#f6f8fc;display:flex;align-items:center;justify-content:center;aspect-ratio:16/9}
-.ill-pic img{display:block;width:100%;height:100%;object-fit:cover;image-rendering:pixelated}
+.ill-pic img{display:block;width:100%;height:100%;object-fit:cover}
 .ill-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:16px;color:var(--muted);
   background-color:#f6f8fc;background-image:linear-gradient(45deg,#eef2f8 25%,transparent 25%,transparent 75%,#eef2f8 75%),linear-gradient(45deg,#eef2f8 25%,transparent 25%,transparent 75%,#eef2f8 75%);background-size:16px 16px;background-position:0 0,8px 8px}
 .ill-ph b{font-size:15px;color:var(--text);background:#fff;padding:4px 10px;border:2px solid var(--rule);border-radius:4px}
