@@ -1,6 +1,11 @@
 {
  "version": "1.0",
  "date": "2026-11-23",
+ "vocabularies": {
+  "jel": "https://www.aeaweb.org/econlit/jelCodes.php",
+  "stw": "http://zbw.eu/stw/",
+  "wikidata": "http://www.wikidata.org/entity/"
+ },
  "ids": {
   "lab:concept/scarcity": {
    "ko": "희소성",
@@ -8,6 +13,10 @@
    "page": "05m_midterm_review",
    "domain": [
     "econ"
+   ],
+   "jel": [
+    "A10",
+    "D01"
    ]
   },
   "lab:concept/opportunity-cost": {
@@ -16,7 +25,20 @@
    "page": "05m_midterm_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D01"
+   ],
+   "stw": {
+    "id": "10052-3",
+    "uri": "http://zbw.eu/stw/descriptor/10052-3",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q185715",
+    "uri": "http://www.wikidata.org/entity/Q185715",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/marginal-thinking": {
    "ko": "한계적 판단",
@@ -24,7 +46,20 @@
    "page": "05m_midterm_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D01"
+   ],
+   "stw": {
+    "id": "19218-6",
+    "uri": "http://zbw.eu/stw/descriptor/19218-6",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q18460372",
+    "uri": "http://www.wikidata.org/entity/Q18460372",
+    "rel": "closeMatch"
+   }
   },
   "lab:method/01-duel-fly": {
    "ko": "모델 유지(연 3,600만 원)",
@@ -48,6 +83,9 @@
    "page": "01_ten_principles",
    "domain": [
     "econ"
+   ],
+   "jel": [
+    "D01"
    ]
   },
   "lab:term/free-good": {
@@ -56,6 +94,9 @@
    "page": "01_ten_principles",
    "domain": [
     "econ"
+   ],
+   "jel": [
+    "D01"
    ]
   },
   "lab:term/transfer-income": {
@@ -64,7 +105,20 @@
    "page": "01_ten_principles",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "H55"
+   ],
+   "stw": {
+    "id": "11569-3",
+    "uri": "http://zbw.eu/stw/descriptor/11569-3",
+    "rel": "relatedMatch"
+   },
+   "wikidata": {
+    "id": "Q59284985",
+    "uri": "http://www.wikidata.org/entity/Q59284985",
+    "rel": "relatedMatch"
+   }
   },
   "lab:term/explicit-cost": {
    "ko": "명시적 비용",
@@ -72,7 +126,20 @@
    "page": "01_ten_principles",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D24"
+   ],
+   "stw": {
+    "id": "10011-3",
+    "uri": "http://zbw.eu/stw/descriptor/10011-3",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q240673",
+    "uri": "http://www.wikidata.org/entity/Q240673",
+    "rel": "broadMatch"
+   }
   },
   "lab:term/implicit-cost": {
    "ko": "암묵적 비용",
@@ -80,7 +147,20 @@
    "page": "01_ten_principles",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D24"
+   ],
+   "stw": {
+    "id": "10052-3",
+    "uri": "http://zbw.eu/stw/descriptor/10052-3",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q185715",
+    "uri": "http://www.wikidata.org/entity/Q185715",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/sunk-cost": {
    "ko": "매몰비용",
@@ -88,7 +168,20 @@
    "page": "01_ten_principles",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D01"
+   ],
+   "stw": {
+    "id": "19432-4",
+    "uri": "http://zbw.eu/stw/descriptor/19432-4",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q958242",
+    "uri": "http://www.wikidata.org/entity/Q958242",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/economic-profit": {
    "ko": "경제적 이윤",
@@ -96,7 +189,20 @@
    "page": "01_ten_principles",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D21"
+   ],
+   "stw": {
+    "id": "12275-1",
+    "uri": "http://zbw.eu/stw/descriptor/12275-1",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q26911",
+    "uri": "http://www.wikidata.org/entity/Q26911",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/marginal-benefit": {
    "ko": "한계편익",
@@ -104,7 +210,20 @@
    "page": "01_ten_principles",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D01"
+   ],
+   "stw": {
+    "id": "19218-6",
+    "uri": "http://zbw.eu/stw/descriptor/19218-6",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q18460372",
+    "uri": "http://www.wikidata.org/entity/Q18460372",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/marginal-cost": {
    "ko": "한계비용",
@@ -112,7 +231,21 @@
    "page": "01_ten_principles",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D01",
+    "D24"
+   ],
+   "stw": {
+    "id": "20881-0",
+    "uri": "http://zbw.eu/stw/descriptor/20881-0",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q382444",
+    "uri": "http://www.wikidata.org/entity/Q382444",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/incentive": {
    "ko": "유인",
@@ -120,7 +253,20 @@
    "page": "01_ten_principles",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D01"
+   ],
+   "stw": {
+    "id": "19533-5",
+    "uri": "http://zbw.eu/stw/descriptor/19533-5",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q1414816",
+    "uri": "http://www.wikidata.org/entity/Q1414816",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/economic-model": {
    "ko": "경제모형",
@@ -128,7 +274,20 @@
    "page": "05m_midterm_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "B41"
+   ],
+   "stw": {
+    "id": "10065-1",
+    "uri": "http://zbw.eu/stw/descriptor/10065-1",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q2180497",
+    "uri": "http://www.wikidata.org/entity/Q2180497",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/ppf": {
    "ko": "생산가능곡선",
@@ -136,7 +295,20 @@
    "page": "05m_midterm_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D24"
+   ],
+   "stw": {
+    "id": "10328-2",
+    "uri": "http://zbw.eu/stw/descriptor/10328-2",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q376791",
+    "uri": "http://www.wikidata.org/entity/Q376791",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/positive-normative": {
    "ko": "실증경제학과 규범경제학",
@@ -144,7 +316,20 @@
    "page": "05m_midterm_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "B41"
+   ],
+   "stw": {
+    "id": "19989-4",
+    "uri": "http://zbw.eu/stw/descriptor/19989-4",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q26086",
+    "uri": "http://www.wikidata.org/entity/Q26086",
+    "rel": "closeMatch"
+   }
   },
   "lab:method/02-duel-fly": {
    "ko": "그 근처 곡선 기울기로 계산(≈19.6대)",
@@ -168,7 +353,20 @@
    "page": "02_think_like_economist",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "B41"
+   ],
+   "stw": {
+    "id": "10065-1",
+    "uri": "http://zbw.eu/stw/descriptor/10065-1",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q2180497",
+    "uri": "http://www.wikidata.org/entity/Q2180497",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/consumption-function": {
    "ko": "소비함수",
@@ -176,7 +374,20 @@
    "page": "02_think_like_economist",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E21"
+   ],
+   "stw": {
+    "id": "10181-6",
+    "uri": "http://zbw.eu/stw/descriptor/10181-6",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q1002494",
+    "uri": "http://www.wikidata.org/entity/Q1002494",
+    "rel": "broadMatch"
+   }
   },
   "lab:term/mpc": {
    "ko": "한계소비성향",
@@ -184,7 +395,20 @@
    "page": "02_think_like_economist",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E21"
+   ],
+   "stw": {
+    "id": "10181-6",
+    "uri": "http://zbw.eu/stw/descriptor/10181-6",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q1002494",
+    "uri": "http://www.wikidata.org/entity/Q1002494",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/trade-off": {
    "ko": "상충관계",
@@ -192,6 +416,9 @@
    "page": "02_think_like_economist",
    "domain": [
     "econ"
+   ],
+   "jel": [
+    "D01"
    ]
   },
   "lab:term/increasing-opportunity-cost": {
@@ -200,7 +427,20 @@
    "page": "02_think_like_economist",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D24"
+   ],
+   "stw": {
+    "id": "10052-3",
+    "uri": "http://zbw.eu/stw/descriptor/10052-3",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q185715",
+    "uri": "http://www.wikidata.org/entity/Q185715",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/economic-growth": {
    "ko": "경제성장",
@@ -208,7 +448,21 @@
    "page": "02_think_like_economist",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "O40",
+    "O47"
+   ],
+   "stw": {
+    "id": "10414-2",
+    "uri": "http://zbw.eu/stw/descriptor/10414-2",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q189833",
+    "uri": "http://www.wikidata.org/entity/Q189833",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/microeconomics": {
    "ko": "미시경제학",
@@ -216,7 +470,20 @@
    "page": "02_think_like_economist",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "A10"
+   ],
+   "stw": {
+    "id": "10144-5",
+    "uri": "http://zbw.eu/stw/descriptor/10144-5",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q39072",
+    "uri": "http://www.wikidata.org/entity/Q39072",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/macroeconomics": {
    "ko": "거시경제학",
@@ -224,7 +491,20 @@
    "page": "02_think_like_economist",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "A10"
+   ],
+   "stw": {
+    "id": "10249-5",
+    "uri": "http://zbw.eu/stw/descriptor/10249-5",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q39680",
+    "uri": "http://www.wikidata.org/entity/Q39680",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/positive-economics": {
    "ko": "실증경제학",
@@ -232,7 +512,20 @@
    "page": "02_think_like_economist",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "B41"
+   ],
+   "stw": {
+    "id": "20022-6",
+    "uri": "http://zbw.eu/stw/descriptor/20022-6",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q26110",
+    "uri": "http://www.wikidata.org/entity/Q26110",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/normative-economics": {
    "ko": "규범경제학",
@@ -240,7 +533,21 @@
    "page": "02_think_like_economist",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "B41",
+    "D63"
+   ],
+   "stw": {
+    "id": "19989-4",
+    "uri": "http://zbw.eu/stw/descriptor/19989-4",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q26086",
+    "uri": "http://www.wikidata.org/entity/Q26086",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/demand": {
    "ko": "수요",
@@ -248,7 +555,20 @@
    "page": "05m_midterm_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D11"
+   ],
+   "stw": {
+    "id": "10013-6",
+    "uri": "http://zbw.eu/stw/descriptor/10013-6",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q4402708",
+    "uri": "http://www.wikidata.org/entity/Q4402708",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/supply": {
    "ko": "공급",
@@ -256,7 +576,20 @@
    "page": "05m_midterm_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D21"
+   ],
+   "stw": {
+    "id": "10000-1",
+    "uri": "http://zbw.eu/stw/descriptor/10000-1",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q542869",
+    "uri": "http://www.wikidata.org/entity/Q542869",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/market-equilibrium": {
    "ko": "시장균형",
@@ -264,7 +597,15 @@
    "page": "05m_midterm_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D40"
+   ],
+   "stw": {
+    "id": "30553-4",
+    "uri": "http://zbw.eu/stw/descriptor/30553-4",
+    "rel": "closeMatch"
+   }
   },
   "lab:method/03-duel-fly": {
    "ko": "균형가격 2만 원",
@@ -288,7 +629,20 @@
    "page": "03_supply_demand",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D11"
+   ],
+   "stw": {
+    "id": "10013-6",
+    "uri": "http://zbw.eu/stw/descriptor/10013-6",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q4402708",
+    "uri": "http://www.wikidata.org/entity/Q4402708",
+    "rel": "broadMatch"
+   }
   },
   "lab:term/normal-good": {
    "ko": "정상재",
@@ -296,7 +650,20 @@
    "page": "03_supply_demand",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D11"
+   ],
+   "stw": {
+    "id": "10171-2",
+    "uri": "http://zbw.eu/stw/descriptor/10171-2",
+    "rel": "relatedMatch"
+   },
+   "wikidata": {
+    "id": "Q734113",
+    "uri": "http://www.wikidata.org/entity/Q734113",
+    "rel": "relatedMatch"
+   }
   },
   "lab:term/inferior-good": {
    "ko": "열등재",
@@ -304,7 +671,20 @@
    "page": "03_supply_demand",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D11"
+   ],
+   "stw": {
+    "id": "10178-2",
+    "uri": "http://zbw.eu/stw/descriptor/10178-2",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q588065",
+    "uri": "http://www.wikidata.org/entity/Q588065",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/substitutes": {
    "ko": "대체재",
@@ -312,7 +692,20 @@
    "page": "03_supply_demand",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D11"
+   ],
+   "stw": {
+    "id": "18129-3",
+    "uri": "http://zbw.eu/stw/descriptor/18129-3",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q312588",
+    "uri": "http://www.wikidata.org/entity/Q312588",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/complements": {
    "ko": "보완재",
@@ -320,7 +713,15 @@
    "page": "03_supply_demand",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D11"
+   ],
+   "stw": {
+    "id": "29965-5",
+    "uri": "http://zbw.eu/stw/descriptor/29965-5",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/quantity-supplied": {
    "ko": "공급량",
@@ -328,7 +729,20 @@
    "page": "03_supply_demand",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D21"
+   ],
+   "stw": {
+    "id": "10000-1",
+    "uri": "http://zbw.eu/stw/descriptor/10000-1",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q542869",
+    "uri": "http://www.wikidata.org/entity/Q542869",
+    "rel": "broadMatch"
+   }
   },
   "lab:term/excess-demand": {
    "ko": "초과수요",
@@ -336,7 +750,15 @@
    "page": "03_supply_demand",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D40"
+   ],
+   "stw": {
+    "id": "30553-4",
+    "uri": "http://zbw.eu/stw/descriptor/30553-4",
+    "rel": "broadMatch"
+   }
   },
   "lab:term/excess-supply": {
    "ko": "초과공급",
@@ -344,7 +766,15 @@
    "page": "03_supply_demand",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D40"
+   ],
+   "stw": {
+    "id": "30553-4",
+    "uri": "http://zbw.eu/stw/descriptor/30553-4",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/price-elasticity": {
    "ko": "수요의 가격탄력성",
@@ -352,7 +782,21 @@
    "page": "05m_midterm_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D11",
+    "D12"
+   ],
+   "stw": {
+    "id": "10055-4",
+    "uri": "http://zbw.eu/stw/descriptor/10055-4",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q3194154",
+    "uri": "http://www.wikidata.org/entity/Q3194154",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/elasticity-revenue": {
    "ko": "탄력성과 총수입",
@@ -360,7 +804,21 @@
    "page": "05m_midterm_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D11",
+    "D21"
+   ],
+   "stw": {
+    "id": "10036-1",
+    "uri": "http://zbw.eu/stw/descriptor/10036-1",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q223639",
+    "uri": "http://www.wikidata.org/entity/Q223639",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/income-cross-elasticity": {
    "ko": "소득·교차·공급 탄력성",
@@ -368,7 +826,21 @@
    "page": "05m_midterm_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D11",
+    "D12"
+   ],
+   "stw": {
+    "id": "10036-1",
+    "uri": "http://zbw.eu/stw/descriptor/10036-1",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q223639",
+    "uri": "http://www.wikidata.org/entity/Q223639",
+    "rel": "closeMatch"
+   }
   },
   "lab:method/04-duel-fly": {
    "ko": "10% 인하(63)",
@@ -392,7 +864,20 @@
    "page": "04_elasticity",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D11"
+   ],
+   "stw": {
+    "id": "10036-1",
+    "uri": "http://zbw.eu/stw/descriptor/10036-1",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q223639",
+    "uri": "http://www.wikidata.org/entity/Q223639",
+    "rel": "broadMatch"
+   }
   },
   "lab:term/inelastic": {
    "ko": "비탄력적",
@@ -400,7 +885,20 @@
    "page": "04_elasticity",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D11"
+   ],
+   "stw": {
+    "id": "10036-1",
+    "uri": "http://zbw.eu/stw/descriptor/10036-1",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q223639",
+    "uri": "http://www.wikidata.org/entity/Q223639",
+    "rel": "broadMatch"
+   }
   },
   "lab:term/arc-elasticity": {
    "ko": "호 탄력성",
@@ -408,7 +906,20 @@
    "page": "04_elasticity",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D11"
+   ],
+   "stw": {
+    "id": "10036-1",
+    "uri": "http://zbw.eu/stw/descriptor/10036-1",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q223639",
+    "uri": "http://www.wikidata.org/entity/Q223639",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/total-revenue": {
    "ko": "총수입",
@@ -416,7 +927,20 @@
    "page": "04_elasticity",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D21"
+   ],
+   "stw": {
+    "id": "12311-2",
+    "uri": "http://zbw.eu/stw/descriptor/12311-2",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q350205",
+    "uri": "http://www.wikidata.org/entity/Q350205",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/unit-elastic": {
    "ko": "단위탄력적",
@@ -424,7 +948,20 @@
    "page": "04_elasticity",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D11"
+   ],
+   "stw": {
+    "id": "10036-1",
+    "uri": "http://zbw.eu/stw/descriptor/10036-1",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q223639",
+    "uri": "http://www.wikidata.org/entity/Q223639",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/income-elasticity": {
    "ko": "소득탄력성",
@@ -432,7 +969,20 @@
    "page": "04_elasticity",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D12"
+   ],
+   "stw": {
+    "id": "10171-2",
+    "uri": "http://zbw.eu/stw/descriptor/10171-2",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q734113",
+    "uri": "http://www.wikidata.org/entity/Q734113",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/cross-elasticity": {
    "ko": "교차탄력성",
@@ -440,7 +990,20 @@
    "page": "04_elasticity",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D11"
+   ],
+   "stw": {
+    "id": "10036-1",
+    "uri": "http://zbw.eu/stw/descriptor/10036-1",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q223639",
+    "uri": "http://www.wikidata.org/entity/Q223639",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/supply-elasticity": {
    "ko": "공급탄력성",
@@ -448,7 +1011,20 @@
    "page": "04_elasticity",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D21"
+   ],
+   "stw": {
+    "id": "10036-1",
+    "uri": "http://zbw.eu/stw/descriptor/10036-1",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q223639",
+    "uri": "http://www.wikidata.org/entity/Q223639",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/price-ceiling": {
    "ko": "가격상한제",
@@ -456,7 +1032,20 @@
    "page": "05m_midterm_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D45"
+   ],
+   "stw": {
+    "id": "10978-5",
+    "uri": "http://zbw.eu/stw/descriptor/10978-5",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q9305568",
+    "uri": "http://www.wikidata.org/entity/Q9305568",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/price-floor": {
    "ko": "가격하한제",
@@ -464,7 +1053,20 @@
    "page": "05m_midterm_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "J38"
+   ],
+   "stw": {
+    "id": "10978-5",
+    "uri": "http://zbw.eu/stw/descriptor/10978-5",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q9305568",
+    "uri": "http://www.wikidata.org/entity/Q9305568",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/tax-incidence": {
    "ko": "조세의 귀착",
@@ -472,7 +1074,20 @@
    "page": "05m_midterm_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "H22"
+   ],
+   "stw": {
+    "id": "11692-4",
+    "uri": "http://zbw.eu/stw/descriptor/11692-4",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q2165871",
+    "uri": "http://www.wikidata.org/entity/Q2165871",
+    "rel": "closeMatch"
+   }
   },
   "lab:method/05-duel-fly": {
    "ko": "규제 없음(균형 2만 원)",
@@ -496,7 +1111,20 @@
    "page": "05_government_policy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D45"
+   ],
+   "stw": {
+    "id": "11034-0",
+    "uri": "http://zbw.eu/stw/descriptor/11034-0",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q843478",
+    "uri": "http://www.wikidata.org/entity/Q843478",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/black-market": {
    "ko": "암시장",
@@ -504,7 +1132,20 @@
    "page": "05_government_policy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D45"
+   ],
+   "stw": {
+    "id": "10845-3",
+    "uri": "http://zbw.eu/stw/descriptor/10845-3",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q57262007",
+    "uri": "http://www.wikidata.org/entity/Q57262007",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/minimum-wage": {
    "ko": "최저임금",
@@ -512,7 +1153,20 @@
    "page": "05_government_policy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "J38"
+   ],
+   "stw": {
+    "id": "11328-4",
+    "uri": "http://zbw.eu/stw/descriptor/11328-4",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q186228",
+    "uri": "http://www.wikidata.org/entity/Q186228",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/statutory-incidence": {
    "ko": "법적 귀착",
@@ -520,7 +1174,20 @@
    "page": "05_government_policy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "H22"
+   ],
+   "stw": {
+    "id": "11692-4",
+    "uri": "http://zbw.eu/stw/descriptor/11692-4",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q2165871",
+    "uri": "http://www.wikidata.org/entity/Q2165871",
+    "rel": "broadMatch"
+   }
   },
   "lab:term/economic-incidence": {
    "ko": "경제적 귀착",
@@ -528,7 +1195,20 @@
    "page": "05_government_policy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "H22"
+   ],
+   "stw": {
+    "id": "11692-4",
+    "uri": "http://zbw.eu/stw/descriptor/11692-4",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q2165871",
+    "uri": "http://www.wikidata.org/entity/Q2165871",
+    "rel": "broadMatch"
+   }
   },
   "lab:term/tax-shifting": {
    "ko": "조세의 전가",
@@ -536,7 +1216,20 @@
    "page": "05_government_policy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "H22"
+   ],
+   "stw": {
+    "id": "11692-4",
+    "uri": "http://zbw.eu/stw/descriptor/11692-4",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q2165871",
+    "uri": "http://www.wikidata.org/entity/Q2165871",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/consumer-surplus": {
    "ko": "소비자잉여",
@@ -544,7 +1237,20 @@
    "page": "11f_final_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D61"
+   ],
+   "stw": {
+    "id": "10180-1",
+    "uri": "http://zbw.eu/stw/descriptor/10180-1",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q361800",
+    "uri": "http://www.wikidata.org/entity/Q361800",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/producer-surplus": {
    "ko": "생산자잉여",
@@ -552,7 +1258,20 @@
    "page": "11f_final_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D61"
+   ],
+   "stw": {
+    "id": "10113-2",
+    "uri": "http://zbw.eu/stw/descriptor/10113-2",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q851147",
+    "uri": "http://www.wikidata.org/entity/Q851147",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/total-surplus": {
    "ko": "총잉여와 효율성",
@@ -560,7 +1279,20 @@
    "page": "11f_final_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D61"
+   ],
+   "stw": {
+    "id": "10113-2",
+    "uri": "http://zbw.eu/stw/descriptor/10113-2",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q851147",
+    "uri": "http://www.wikidata.org/entity/Q851147",
+    "rel": "broadMatch"
+   }
   },
   "lab:method/06-duel-fly": {
    "ko": "균형 거래량 40",
@@ -584,7 +1316,20 @@
    "page": "06_market_efficiency",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D11"
+   ],
+   "stw": {
+    "id": "19210-1",
+    "uri": "http://zbw.eu/stw/descriptor/19210-1",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q140813",
+    "uri": "http://www.wikidata.org/entity/Q140813",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/price-discrimination": {
    "ko": "가격차별",
@@ -592,7 +1337,20 @@
    "page": "06_market_efficiency",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D42"
+   ],
+   "stw": {
+    "id": "10215-1",
+    "uri": "http://zbw.eu/stw/descriptor/10215-1",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q835678",
+    "uri": "http://www.wikidata.org/entity/Q835678",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/willingness-to-sell": {
    "ko": "공급용의",
@@ -600,7 +1358,20 @@
    "page": "06_market_efficiency",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D21"
+   ],
+   "stw": {
+    "id": "19210-1",
+    "uri": "http://zbw.eu/stw/descriptor/19210-1",
+    "rel": "relatedMatch"
+   },
+   "wikidata": {
+    "id": "Q140813",
+    "uri": "http://www.wikidata.org/entity/Q140813",
+    "rel": "relatedMatch"
+   }
   },
   "lab:concept/efficiency": {
    "ko": "효율성",
@@ -608,7 +1379,20 @@
    "page": "06_market_efficiency",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D61"
+   ],
+   "stw": {
+    "id": "11039-4",
+    "uri": "http://zbw.eu/stw/descriptor/11039-4",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q1034411",
+    "uri": "http://www.wikidata.org/entity/Q1034411",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/equity": {
    "ko": "형평성",
@@ -616,7 +1400,20 @@
    "page": "06_market_efficiency",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D63"
+   ],
+   "stw": {
+    "id": "10110-1",
+    "uri": "http://zbw.eu/stw/descriptor/10110-1",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q552284",
+    "uri": "http://www.wikidata.org/entity/Q552284",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/market-failure": {
    "ko": "시장실패",
@@ -624,7 +1421,21 @@
    "page": "06_market_efficiency",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D61",
+    "D62"
+   ],
+   "stw": {
+    "id": "11054-1",
+    "uri": "http://zbw.eu/stw/descriptor/11054-1",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q622657",
+    "uri": "http://www.wikidata.org/entity/Q622657",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/deadweight-loss": {
    "ko": "사중손실",
@@ -632,7 +1443,20 @@
    "page": "11f_final_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "H21"
+   ],
+   "stw": {
+    "id": "11685-1",
+    "uri": "http://zbw.eu/stw/descriptor/11685-1",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q5419530",
+    "uri": "http://www.wikidata.org/entity/Q5419530",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/elasticity-dwl": {
    "ko": "탄력성과 사중손실",
@@ -640,7 +1464,20 @@
    "page": "11f_final_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "H21"
+   ],
+   "stw": {
+    "id": "11685-1",
+    "uri": "http://zbw.eu/stw/descriptor/11685-1",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q5419530",
+    "uri": "http://www.wikidata.org/entity/Q5419530",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/laffer-curve": {
    "ko": "래퍼 곡선",
@@ -648,7 +1485,20 @@
    "page": "11f_final_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "H21"
+   ],
+   "stw": {
+    "id": "19400-3",
+    "uri": "http://zbw.eu/stw/descriptor/19400-3",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q504749",
+    "uri": "http://www.wikidata.org/entity/Q504749",
+    "rel": "closeMatch"
+   }
   },
   "lab:method/07-duel-fly": {
    "ko": "세금 20",
@@ -672,7 +1522,20 @@
    "page": "07_cost_of_taxation",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "H21"
+   ],
+   "stw": {
+    "id": "11635-2",
+    "uri": "http://zbw.eu/stw/descriptor/11635-2",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q385503",
+    "uri": "http://www.wikidata.org/entity/Q385503",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/tax-wedge": {
    "ko": "쐐기",
@@ -680,7 +1543,20 @@
    "page": "07_cost_of_taxation",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "H21"
+   ],
+   "stw": {
+    "id": "11685-1",
+    "uri": "http://zbw.eu/stw/descriptor/11685-1",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q5419530",
+    "uri": "http://www.wikidata.org/entity/Q5419530",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/perfect-competition": {
    "ko": "완전경쟁시장",
@@ -688,7 +1564,20 @@
    "page": "11f_final_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D41"
+   ],
+   "stw": {
+    "id": "10227-1",
+    "uri": "http://zbw.eu/stw/descriptor/10227-1",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q183384",
+    "uri": "http://www.wikidata.org/entity/Q183384",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/monopoly": {
    "ko": "독점",
@@ -696,7 +1585,21 @@
    "page": "11f_final_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D42",
+    "L12"
+   ],
+   "stw": {
+    "id": "10205-4",
+    "uri": "http://zbw.eu/stw/descriptor/10205-4",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q43637",
+    "uri": "http://www.wikidata.org/entity/Q43637",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/oligopoly": {
    "ko": "과점과 용의자의 딜레마",
@@ -704,7 +1607,21 @@
    "page": "11f_final_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D43",
+    "L13"
+   ],
+   "stw": {
+    "id": "10209-3",
+    "uri": "http://zbw.eu/stw/descriptor/10209-3",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q103639",
+    "uri": "http://www.wikidata.org/entity/Q103639",
+    "rel": "closeMatch"
+   }
   },
   "lab:method/08-duel-fly": {
    "ko": "약속 지키기(30)",
@@ -728,7 +1645,20 @@
    "page": "08_market_structure",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D41"
+   ],
+   "stw": {
+    "id": "10227-1",
+    "uri": "http://zbw.eu/stw/descriptor/10227-1",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q183384",
+    "uri": "http://www.wikidata.org/entity/Q183384",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/market-structure": {
    "ko": "시장구조",
@@ -736,7 +1666,21 @@
    "page": "08_market_structure",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "L11",
+    "D40"
+   ],
+   "stw": {
+    "id": "10905-4",
+    "uri": "http://zbw.eu/stw/descriptor/10905-4",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q877707",
+    "uri": "http://www.wikidata.org/entity/Q877707",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/marginal-revenue": {
    "ko": "한계수입",
@@ -744,7 +1688,21 @@
    "page": "08_market_structure",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D21",
+    "D42"
+   ],
+   "stw": {
+    "id": "19218-6",
+    "uri": "http://zbw.eu/stw/descriptor/19218-6",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q18460372",
+    "uri": "http://www.wikidata.org/entity/Q18460372",
+    "rel": "broadMatch"
+   }
   },
   "lab:term/natural-monopoly": {
    "ko": "자연독점",
@@ -752,7 +1710,20 @@
    "page": "08_market_structure",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "L43"
+   ],
+   "stw": {
+    "id": "10208-5",
+    "uri": "http://zbw.eu/stw/descriptor/10208-5",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q648510",
+    "uri": "http://www.wikidata.org/entity/Q648510",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/collusion": {
    "ko": "담합",
@@ -760,7 +1731,21 @@
    "page": "08_market_structure",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "L41",
+    "L13"
+   ],
+   "stw": {
+    "id": "10923-2",
+    "uri": "http://zbw.eu/stw/descriptor/10923-2",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q179216",
+    "uri": "http://www.wikidata.org/entity/Q179216",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/prisoners-dilemma": {
    "ko": "용의자의 딜레마",
@@ -768,7 +1753,20 @@
    "page": "08_market_structure",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "C72"
+   ],
+   "stw": {
+    "id": "15458-6",
+    "uri": "http://zbw.eu/stw/descriptor/15458-6",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q44455",
+    "uri": "http://www.wikidata.org/entity/Q44455",
+    "rel": "broadMatch"
+   }
   },
   "lab:term/dominant-strategy": {
    "ko": "우월전략",
@@ -776,7 +1774,20 @@
    "page": "08_market_structure",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "C72"
+   ],
+   "stw": {
+    "id": "15458-6",
+    "uri": "http://zbw.eu/stw/descriptor/15458-6",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q44455",
+    "uri": "http://www.wikidata.org/entity/Q44455",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/monopolistic-competition": {
    "ko": "독점적 경쟁",
@@ -784,7 +1795,20 @@
    "page": "08_market_structure",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D43"
+   ],
+   "stw": {
+    "id": "19226-0",
+    "uri": "http://zbw.eu/stw/descriptor/19226-0",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q379579",
+    "uri": "http://www.wikidata.org/entity/Q379579",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/externality": {
    "ko": "외부효과",
@@ -792,7 +1816,21 @@
    "page": "11f_final_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D62",
+    "H23"
+   ],
+   "stw": {
+    "id": "10092-5",
+    "uri": "http://zbw.eu/stw/descriptor/10092-5",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q275372",
+    "uri": "http://www.wikidata.org/entity/Q275372",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/public-good": {
    "ko": "공공재",
@@ -800,7 +1838,20 @@
    "page": "11f_final_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "H41"
+   ],
+   "stw": {
+    "id": "11718-5",
+    "uri": "http://zbw.eu/stw/descriptor/11718-5",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q272458",
+    "uri": "http://www.wikidata.org/entity/Q272458",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/gini": {
    "ko": "소득분배와 지니계수",
@@ -808,7 +1859,21 @@
    "page": "11f_final_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D31",
+    "D63"
+   ],
+   "stw": {
+    "id": "11738-6",
+    "uri": "http://zbw.eu/stw/descriptor/11738-6",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q162455",
+    "uri": "http://www.wikidata.org/entity/Q162455",
+    "rel": "closeMatch"
+   }
   },
   "lab:method/09-duel-fly": {
    "ko": "피구세 20(30단위)",
@@ -832,7 +1897,20 @@
    "page": "09_market_failure",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D62"
+   ],
+   "stw": {
+    "id": "10092-5",
+    "uri": "http://zbw.eu/stw/descriptor/10092-5",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q275372",
+    "uri": "http://www.wikidata.org/entity/Q275372",
+    "rel": "broadMatch"
+   }
   },
   "lab:term/positive-externality": {
    "ko": "외부경제",
@@ -840,7 +1918,20 @@
    "page": "09_market_failure",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D62"
+   ],
+   "stw": {
+    "id": "10092-5",
+    "uri": "http://zbw.eu/stw/descriptor/10092-5",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q275372",
+    "uri": "http://www.wikidata.org/entity/Q275372",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/pigouvian-tax": {
    "ko": "피구세",
@@ -848,7 +1939,20 @@
    "page": "09_market_failure",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "H23"
+   ],
+   "stw": {
+    "id": "29667-6",
+    "uri": "http://zbw.eu/stw/descriptor/29667-6",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q931921",
+    "uri": "http://www.wikidata.org/entity/Q931921",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/coase-theorem": {
    "ko": "코즈의 정리",
@@ -856,7 +1960,20 @@
    "page": "09_market_failure",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D62"
+   ],
+   "stw": {
+    "id": "10091-0",
+    "uri": "http://zbw.eu/stw/descriptor/10091-0",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q1050037",
+    "uri": "http://www.wikidata.org/entity/Q1050037",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/non-rivalry": {
    "ko": "비경합성",
@@ -864,7 +1981,20 @@
    "page": "09_market_failure",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "H41"
+   ],
+   "stw": {
+    "id": "11718-5",
+    "uri": "http://zbw.eu/stw/descriptor/11718-5",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q272458",
+    "uri": "http://www.wikidata.org/entity/Q272458",
+    "rel": "broadMatch"
+   }
   },
   "lab:term/non-excludability": {
    "ko": "비배제성",
@@ -872,7 +2002,20 @@
    "page": "09_market_failure",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "H41"
+   ],
+   "stw": {
+    "id": "11718-5",
+    "uri": "http://zbw.eu/stw/descriptor/11718-5",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q272458",
+    "uri": "http://www.wikidata.org/entity/Q272458",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/free-riding": {
    "ko": "무임승차",
@@ -880,7 +2023,20 @@
    "page": "09_market_failure",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "H41"
+   ],
+   "stw": {
+    "id": "11723-5",
+    "uri": "http://zbw.eu/stw/descriptor/11723-5",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q499215",
+    "uri": "http://www.wikidata.org/entity/Q499215",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/lorenz-curve": {
    "ko": "로렌츠 곡선",
@@ -888,7 +2044,20 @@
    "page": "09_market_failure",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D31"
+   ],
+   "stw": {
+    "id": "11742-1",
+    "uri": "http://zbw.eu/stw/descriptor/11742-1",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q430378",
+    "uri": "http://www.wikidata.org/entity/Q430378",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/decile-ratio": {
    "ko": "10분위분배율",
@@ -896,7 +2065,20 @@
    "page": "09_market_failure",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "D31"
+   ],
+   "stw": {
+    "id": "11735-5",
+    "uri": "http://zbw.eu/stw/descriptor/11735-5",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q3915542",
+    "uri": "http://www.wikidata.org/entity/Q3915542",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/gdp": {
    "ko": "GDP와 실질 GDP",
@@ -904,7 +2086,20 @@
    "page": "11f_final_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E01"
+   ],
+   "stw": {
+    "id": "19231-0",
+    "uri": "http://zbw.eu/stw/descriptor/19231-0",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q12638",
+    "uri": "http://www.wikidata.org/entity/Q12638",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/unemployment-rate": {
    "ko": "실업률과 고용지표",
@@ -912,7 +2107,21 @@
    "page": "11f_final_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E24",
+    "J64"
+   ],
+   "stw": {
+    "id": "11264-4",
+    "uri": "http://zbw.eu/stw/descriptor/11264-4",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q1787954",
+    "uri": "http://www.wikidata.org/entity/Q1787954",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/phillips-curve": {
    "ko": "인플레이션과 필립스 곡선",
@@ -920,7 +2129,21 @@
    "page": "11f_final_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E31",
+    "E24"
+   ],
+   "stw": {
+    "id": "10255-3",
+    "uri": "http://zbw.eu/stw/descriptor/10255-3",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q220841",
+    "uri": "http://www.wikidata.org/entity/Q220841",
+    "rel": "closeMatch"
+   }
   },
   "lab:method/10-duel-fly": {
    "ko": "실질 GDP로 계산(12.2%)",
@@ -944,7 +2167,20 @@
    "page": "10_macro_economy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E01"
+   ],
+   "stw": {
+    "id": "10265-0",
+    "uri": "http://zbw.eu/stw/descriptor/10265-0",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q1057397",
+    "uri": "http://www.wikidata.org/entity/Q1057397",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/nominal-gdp": {
    "ko": "명목 GDP",
@@ -952,7 +2188,20 @@
    "page": "10_macro_economy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E01"
+   ],
+   "stw": {
+    "id": "19231-0",
+    "uri": "http://zbw.eu/stw/descriptor/19231-0",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q12638",
+    "uri": "http://www.wikidata.org/entity/Q12638",
+    "rel": "broadMatch"
+   }
   },
   "lab:term/real-gdp": {
    "ko": "실질 GDP",
@@ -960,7 +2209,20 @@
    "page": "10_macro_economy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E01"
+   ],
+   "stw": {
+    "id": "19231-0",
+    "uri": "http://zbw.eu/stw/descriptor/19231-0",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q12638",
+    "uri": "http://www.wikidata.org/entity/Q12638",
+    "rel": "broadMatch"
+   }
   },
   "lab:term/gdp-deflator": {
    "ko": "GDP 디플레이터",
@@ -968,7 +2230,21 @@
    "page": "10_macro_economy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E01",
+    "E31"
+   ],
+   "stw": {
+    "id": "15093-6",
+    "uri": "http://zbw.eu/stw/descriptor/15093-6",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q631360",
+    "uri": "http://www.wikidata.org/entity/Q631360",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/business-cycle": {
    "ko": "경기변동",
@@ -976,7 +2252,20 @@
    "page": "10_macro_economy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E32"
+   ],
+   "stw": {
+    "id": "10338-6",
+    "uri": "http://zbw.eu/stw/descriptor/10338-6",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q192311",
+    "uri": "http://www.wikidata.org/entity/Q192311",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/employment-rate": {
    "ko": "고용률",
@@ -984,7 +2273,20 @@
    "page": "10_macro_economy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "J21"
+   ],
+   "stw": {
+    "id": "11272-5",
+    "uri": "http://zbw.eu/stw/descriptor/11272-5",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q656365",
+    "uri": "http://www.wikidata.org/entity/Q656365",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/labor-force": {
    "ko": "경제활동인구",
@@ -992,7 +2294,20 @@
    "page": "10_macro_economy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "J21"
+   ],
+   "stw": {
+    "id": "11271-0",
+    "uri": "http://zbw.eu/stw/descriptor/11271-0",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q837543",
+    "uri": "http://www.wikidata.org/entity/Q837543",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/discouraged-worker": {
    "ko": "실망실업자",
@@ -1000,7 +2315,20 @@
    "page": "10_macro_economy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "J64"
+   ],
+   "stw": {
+    "id": "11271-0",
+    "uri": "http://zbw.eu/stw/descriptor/11271-0",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q837543",
+    "uri": "http://www.wikidata.org/entity/Q837543",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/inflation": {
    "ko": "인플레이션",
@@ -1008,7 +2336,20 @@
    "page": "10_macro_economy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E31"
+   ],
+   "stw": {
+    "id": "11506-6",
+    "uri": "http://zbw.eu/stw/descriptor/11506-6",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q35865",
+    "uri": "http://www.wikidata.org/entity/Q35865",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/stagflation": {
    "ko": "스태그플레이션",
@@ -1016,7 +2357,21 @@
    "page": "10_macro_economy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E31",
+    "E32"
+   ],
+   "stw": {
+    "id": "10412-6",
+    "uri": "http://zbw.eu/stw/descriptor/10412-6",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q185245",
+    "uri": "http://www.wikidata.org/entity/Q185245",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/aggregate-demand": {
    "ko": "총수요와 총공급",
@@ -1024,7 +2379,21 @@
    "page": "11f_final_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E32",
+    "E63"
+   ],
+   "stw": {
+    "id": "10237-5",
+    "uri": "http://zbw.eu/stw/descriptor/10237-5",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q1801078",
+    "uri": "http://www.wikidata.org/entity/Q1801078",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/fiscal-policy": {
    "ko": "재정정책",
@@ -1032,7 +2401,20 @@
    "page": "11f_final_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E62"
+   ],
+   "stw": {
+    "id": "11728-2",
+    "uri": "http://zbw.eu/stw/descriptor/11728-2",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q11821824",
+    "uri": "http://www.wikidata.org/entity/Q11821824",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/monetary-policy": {
    "ko": "통화정책과 정책조합",
@@ -1040,7 +2422,21 @@
    "page": "11f_final_review",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E52",
+    "E63"
+   ],
+   "stw": {
+    "id": "10382-3",
+    "uri": "http://zbw.eu/stw/descriptor/10382-3",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q178476",
+    "uri": "http://www.wikidata.org/entity/Q178476",
+    "rel": "closeMatch"
+   }
   },
   "lab:method/11-duel-fly": {
    "ko": "금리 1%p 인하 + 지출 1.2조",
@@ -1064,7 +2460,20 @@
    "page": "11_economic_policy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E23"
+   ],
+   "stw": {
+    "id": "10241-0",
+    "uri": "http://zbw.eu/stw/descriptor/10241-0",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q2474789",
+    "uri": "http://www.wikidata.org/entity/Q2474789",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/output-gap": {
    "ko": "GDP 갭",
@@ -1072,7 +2481,20 @@
    "page": "11_economic_policy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E32"
+   ],
+   "stw": {
+    "id": "10239-1",
+    "uri": "http://zbw.eu/stw/descriptor/10239-1",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q1452339",
+    "uri": "http://www.wikidata.org/entity/Q1452339",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/multiplier": {
    "ko": "승수효과",
@@ -1080,7 +2502,16 @@
    "page": "11_economic_policy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E12",
+    "E62"
+   ],
+   "stw": {
+    "id": "10251-4",
+    "uri": "http://zbw.eu/stw/descriptor/10251-4",
+    "rel": "closeMatch"
+   }
   },
   "lab:concept/crowding-out": {
    "ko": "구축효과",
@@ -1088,7 +2519,20 @@
    "page": "11_economic_policy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E62"
+   ],
+   "stw": {
+    "id": "11734-0",
+    "uri": "http://zbw.eu/stw/descriptor/11734-0",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q1071788",
+    "uri": "http://www.wikidata.org/entity/Q1071788",
+    "rel": "closeMatch"
+   }
   },
   "lab:term/policy-rate": {
    "ko": "기준금리",
@@ -1096,7 +2540,21 @@
    "page": "11_economic_policy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E52",
+    "E58"
+   ],
+   "stw": {
+    "id": "10382-3",
+    "uri": "http://zbw.eu/stw/descriptor/10382-3",
+    "rel": "broadMatch"
+   },
+   "wikidata": {
+    "id": "Q178476",
+    "uri": "http://www.wikidata.org/entity/Q178476",
+    "rel": "broadMatch"
+   }
   },
   "lab:concept/policy-mix": {
    "ko": "정책조합",
@@ -1104,7 +2562,20 @@
    "page": "11_economic_policy",
    "domain": [
     "econ"
-   ]
+   ],
+   "jel": [
+    "E63"
+   ],
+   "stw": {
+    "id": "10395-1",
+    "uri": "http://zbw.eu/stw/descriptor/10395-1",
+    "rel": "closeMatch"
+   },
+   "wikidata": {
+    "id": "Q1751420",
+    "uri": "http://www.wikidata.org/entity/Q1751420",
+    "rel": "closeMatch"
+   }
   }
  }
 }

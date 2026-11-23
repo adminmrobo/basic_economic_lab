@@ -191,6 +191,27 @@ def kg_build(P):
         if w: edge(fid, 'assertedIn', w, '#footer')
     return {'version': '1.0', 'page': page, 'nodes': nodes, 'edges': edges}
 
+# ---------- 경제학 표준 색인어(JEL·STW·Wikidata) ----------
+try:
+    from _econ_vocab import VOCAB, JEL_TITLE
+except Exception:
+    VOCAB, JEL_TITLE = {}, {}
+def vocab_apply(G):
+    for n in G['nodes']:
+        k = n['id'].replace('lab:concept/', '').replace('lab:', '') if n['id'].startswith(('lab:concept/', 'lab:term/')) else None
+        v = VOCAB.get(k) if k else None
+        if not v:
+            if n.get('match') and not any(m.get('id') for m in n['match']): n.pop('match')
+            continue
+        m = []
+        if v.get('stw'):
+            m.append({'scheme': 'stw', 'id': v['stw'], 'uri': 'http://zbw.eu/stw/descriptor/' + v['stw'], 'label': v['stw_label'], 'rel': v['rel'], 'verified': True})
+        if v.get('wd'):
+            m.append({'scheme': 'wikidata', 'id': v['wd'], 'uri': 'http://www.wikidata.org/entity/' + v['wd'], 'rel': v['rel'], 'verified': True, 'via': 'stw'})
+        n['match'] = m
+        n['jel'] = [{'code': c, 'title': JEL_TITLE.get(c, '')} for c in v.get('jel', [])]
+    return G
+
 TYMAP = {'Concept': ['skos:Concept', 'schema:DefinedTerm'], 'Method': ['skos:Concept', 'schema:DefinedTerm'], 'Term': ['skos:Concept', 'schema:DefinedTerm'], 'Distribution': ['skos:Concept', 'schema:DefinedTerm'], 'Theory': ['skos:Concept', 'schema:DefinedTerm'], 'Work': ['schema:CreativeWork'], 'Claim': ['schema:Claim'], 'QuizItem': ['schema:Question'], 'Metric': ['skos:Concept'], 'Question': ['schema:Question']}
 def kg_ld(G):
     ctx = {'skos': 'http://www.w3.org/2004/02/skos/core#', 'schema': 'https://schema.org/', 'dct': 'http://purl.org/dc/terms/', 'prov': 'http://www.w3.org/ns/prov#', 'lab': 'urn:lab:'}
@@ -198,6 +219,10 @@ def kg_ld(G):
     for n in G['nodes']:
         o = {'@id': n['id'], '@type': TYMAP.get(n['type'], []) + ['lab:' + n['type']], 'skos:prefLabel': [{'@value': n['label']['ko'], '@language': 'ko'}, {'@value': n['label']['en'], '@language': 'en'}]}
         if n.get('definition'): o['skos:definition'] = {'@value': n['definition']['ko'], '@language': 'ko'}
+        for mm in n.get('match', []):
+            if mm.get('uri'): o.setdefault('skos:' + mm['rel'], []).append({'@id': mm['uri']})
+        if n.get('jel'):
+            o['dct:subject'] = [{'@type': 'schema:DefinedTerm', 'schema:termCode': j['code'], 'schema:name': j['title'], 'schema:inDefinedTermSet': 'https://www.aeaweb.org/econlit/jelCodes.php'} for j in n['jel']]
         for ed in G['edges']:
             if ed['s'] == n['id']:
                 p = {'lab:broader': 'skos:broader', 'lab:partOf': 'schema:isPartOf', 'lab:relatedTo': 'skos:related', 'lab:assertedIn': 'schema:citation'}.get(ed['p'], ed['p'])
@@ -209,6 +234,7 @@ def jdump(o):
     return json.dumps(o, ensure_ascii=False).replace('</', '<\\/')
 
 def tail(P, G, extra_pd=None):
+    vocab_apply(G)
     meta = {'title': P['title'], 'series': SERIES, 'number': P['num'], 'creator': [{'name': AUTHOR, 'role': 'author', 'affiliation': AFFIL, 'url': WHO, 'sameAs': [WHO_OLD]}], 'contributor': [{'name': 'AI 보조 제작', 'role': 'assistant'}],
             'date': TODAY, 'version': VER, 'language': ['ko'], 'license': '', 'url': SITE + P['file'], 'about': [l['node'][0] for l in P['levels']] if P.get('levels') else [],
             'educationalLevel': '입문', 'learningResourceType': 'interactive explainer', 'basedOn': [r['id'] for r in P['refs'] if r['lab'].get('role') == 'primary'],
@@ -426,6 +452,8 @@ if __name__ == '__main__':
             open(os.path.join(OUT, 'tower.html'), 'w', encoding='utf-8').write(home.tower_page(CSS, SITE))
         if G:
             for n in G['nodes']:
-                if n['type'] in ('Concept', 'Method', 'Term', 'Distribution', 'Theory'): reg[n['id']] = {'ko': n['label']['ko'], 'en': n['label']['en'], 'page': n['page'], 'domain': n['domain']}
+                if n['type'] in ('Concept', 'Method', 'Term', 'Distribution', 'Theory'): reg[n['id']] = dict({'ko': n['label']['ko'], 'en': n['label']['en'], 'page': n['page'], 'domain': n['domain']},
+                        **({'jel': [j['code'] for j in n['jel']]} if n.get('jel') else {}),
+                        **{m['scheme']: {'id': m['id'], 'uri': m['uri'], 'rel': m['rel']} for m in n.get('match', []) if m.get('uri')})
         print(f, len(htm.encode()) // 1024, 'KB')
-    json.dump({'version': VER, 'date': TODAY, 'ids': reg}, open(os.path.join(OUT, 'KG_00_registry.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    json.dump({'version': VER, 'date': TODAY, 'vocabularies': {'jel': 'https://www.aeaweb.org/econlit/jelCodes.php', 'stw': 'http://zbw.eu/stw/', 'wikidata': 'http://www.wikidata.org/entity/'}, 'ids': reg}, open(os.path.join(OUT, 'KG_00_registry.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

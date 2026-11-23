@@ -65,6 +65,8 @@ src/build/                         빌드 도구 (sims_econ.js 실험 33개, das
 
 그림으로 먼저 보기(장마다 2장): Genspark 요청문은 `docs/genspark_ill/요청문.md`. 받은 PNG를 `src/build/ill_in/`에 넣고 `python3 src/build/import_ill.py && python3 src/build/build.py .`
 
+경제학 표준 색인어(JEL·STW·Wikidata) 대응표: `docs/ECON_VOCAB.md` (원본: `src/pages/_econ_vocab.py`)
+
 그래프 글자 겹침 검사: `node src/build/check_text.js <html…>`(슬라이더 끝값은 `EXT=max`·`EXT=min`), 연습장은 `node src/build/check_practice.js practice/index.html`
 
 표지 반영: Genspark 그림을 `src/build/covers_in/cover_<키>.png`로 넣고 `python3 src/build/import_covers.py` 실행 후 다시 빌드. 요청 꾸러미 다시 만들기: `python3 src/build/make_genspark_pack.py <fruitfly-lab-expressions 경로>`
